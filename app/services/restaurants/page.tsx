@@ -2,9 +2,9 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
-import { pageSEO } from "@/lib/seo";
+import { generateSEO } from "@/lib/seo";
 
-export const metadata = pageSEO.restaurants;
+export const metadata = generateSEO.restaurants;
 
 const features = [
   {

@@ -28,7 +28,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-lg shadow-md py-3"
+          ? "navbar-scrolled py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -41,11 +41,7 @@ export default function Navbar() {
               alt={siteConfig.name}
               width={160}
               height={45}
-              className={`h-11 w-auto transition-all duration-300 ${
-                isScrolled 
-                  ? "brightness-0" /* Black logo on white navbar */
-                  : "" /* Gold logo on dark hero - no filter needed */
-              }`}
+              className="h-11 w-auto transition-all duration-300"
               priority
             />
           </Link>
@@ -56,11 +52,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors duration-200 ${
-                  isScrolled
-                    ? "text-slate-600 hover:text-amber-600"
-                    : "text-white/90 hover:text-amber-400"
-                }`}
+                className="font-medium transition-colors duration-200 text-white/90 hover:text-amber-400"
               >
                 {link.label}
               </Link>
@@ -81,11 +73,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled
-                ? "text-slate-900 hover:bg-slate-100"
-                : "text-white hover:bg-white/10"
-            }`}
+            className="md:hidden p-2 rounded-lg transition-colors text-white hover:bg-white/10"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,15 +92,15 @@ export default function Navbar() {
             isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+          <div className="bg-[#1a1a1a] rounded-2xl shadow-xl p-4 border border-[#2a2a2a]">
             {/* Mobile Logo */}
-            <div className="flex justify-center pb-4 mb-4 border-b border-slate-100">
+            <div className="flex justify-center pb-4 mb-4 border-b border-[#2a2a2a]">
               <Image
                 src="/logo.png"
                 alt={siteConfig.name}
                 width={120}
                 height={35}
-                className="h-9 w-auto brightness-0"
+                className="h-9 w-auto"
               />
             </div>
             {navLinks.map((link) => (
@@ -120,7 +108,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-xl transition-colors font-medium"
+                className="block py-3 px-4 text-white/80 hover:text-amber-400 hover:bg-white/5 rounded-xl transition-colors font-medium"
               >
                 {link.label}
               </Link>
