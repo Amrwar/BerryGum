@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0f172a;
+  --color-primary: #0a0a0a;
   --color-accent: #f59e0b;
   --color-whatsapp: #25D366;
 }
@@ -12,14 +12,15 @@
   html { scroll-behavior: smooth; }
   
   body {
-    @apply antialiased bg-slate-900 text-slate-100;
+    @apply antialiased text-slate-100;
+    background: #0a0a0a;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-white;
   }
 
-  p { @apply text-slate-300; }
+  p { @apply text-slate-400; }
 
   ::selection { @apply bg-amber-500/30 text-white; }
 }
@@ -29,62 +30,65 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Sections - All Dark */
+  /* Sections - Pure Black */
   .section {
-    @apply py-16 md:py-20 lg:py-28 relative bg-slate-900;
+    @apply py-16 md:py-20 lg:py-28 relative;
+    background: #0a0a0a;
   }
 
   .section-dark {
-    @apply bg-slate-950;
+    background: #000000;
   }
 
   .section-alt {
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
   }
 
   /* Buttons */
   .btn {
     @apply inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold 
            transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 
-           focus:ring-offset-slate-900 text-sm md:text-base;
+           focus:ring-offset-black text-sm md:text-base;
   }
 
   .btn-sm { @apply px-4 py-2 text-sm rounded-lg; }
   .btn-lg { @apply px-6 py-3 md:px-8 md:py-4 text-base md:text-lg rounded-xl; }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 
+    @apply bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold
            hover:from-amber-400 hover:to-amber-500 focus:ring-amber-500
-           shadow-lg shadow-amber-500/25;
+           shadow-lg shadow-amber-500/30;
   }
 
   .btn-secondary {
-    @apply bg-slate-800 text-white hover:bg-slate-700 focus:ring-slate-500 border border-slate-700;
+    @apply bg-transparent text-white hover:bg-white/10 border border-white/20;
   }
 
   .btn-outline {
-    @apply border-2 border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-slate-900;
+    @apply border-2 border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-black;
   }
 
   .btn-outline-light {
-    @apply border-2 border-white/30 text-white hover:bg-white hover:text-slate-900;
+    @apply border-2 border-white/30 text-white hover:bg-white hover:text-black;
   }
 
   .btn-whatsapp {
-    @apply text-white shadow-lg shadow-green-500/25;
+    @apply text-white font-bold shadow-lg shadow-green-500/30;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   }
   .btn-whatsapp:hover {
     background: linear-gradient(135deg, #2be675 0%, #159e8d 100%);
   }
 
-  /* Cards */
+  /* Cards - Transparent with border */
   .card {
-    @apply rounded-2xl p-5 md:p-6 lg:p-8 transition-all duration-300 bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm;
+    @apply rounded-2xl p-5 md:p-6 lg:p-8 transition-all duration-300;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .card:hover {
-    @apply border-amber-500/30 -translate-y-1;
-    box-shadow: 0 20px 40px -20px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
   }
 
   /* Headings - Responsive */
@@ -95,36 +99,55 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    background-image: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
   }
 
   /* Badge */
   .badge {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium;
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    color: #fbbf24;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium text-amber-400;
+    background: transparent;
+    border: 1px solid rgba(245, 158, 11, 0.4);
   }
 
   /* Inputs */
   .input {
-    @apply w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white
-           focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50;
+    @apply w-full px-4 py-3 rounded-xl text-white
+           focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .input::placeholder { @apply text-slate-500; }
+  .input:focus {
+    background: rgba(255, 255, 255, 0.08);
+  }
 
   /* Feature Icon */
   .feature-icon {
-    @apply w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 bg-amber-500/10 border border-amber-500/20;
+    @apply w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
   }
   .feature-icon svg { @apply w-6 h-6 md:w-7 md:h-7 text-amber-400; }
+
+  /* Section Header */
+  .section-header {
+    @apply text-center mb-12 md:mb-16;
+  }
 }
 
 @layer utilities {
   .bg-grid {
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 60px 60px;
+  }
+
+  .bg-glow-amber {
+    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  }
+
+  .bg-glow-top {
+    background: radial-gradient(ellipse at top, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
   }
 
   .animation-delay-200 { animation-delay: 200ms; }
@@ -146,7 +169,8 @@
 .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
 
-*:focus-visible { @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-slate-900; }
+*:focus-visible { @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-black; }
