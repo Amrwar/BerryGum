@@ -359,7 +359,7 @@ export default function RestaurantsPage() {
             <span className="badge badge-accent mb-4">FAQ</span>
             <h2 className="heading-lg mb-4">Common Questions About Restaurant Websites</h2>
           </div>
-          <FAQ items={restaurantFAQs} />
+          <FAQ />
         </div>
       </Section>
 
