@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Section, { SectionHeader } from "@/components/Section";
 import PortfolioGrid from "@/components/PortfolioGrid";
@@ -217,15 +217,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Portfolio Preview */}
-      <Section variant="alt">
-        <SectionHeader
-          badge="Our Work"
-          title="Projects We Are Proud Of"
-          subtitle="Take a look at some of our recent work and see the quality we deliver."
-        />
-        <PortfolioGrid limit={6} showFilters={false} />
-      </Section>
+      
 
       {/* FAQ Section */}
       <Section>
