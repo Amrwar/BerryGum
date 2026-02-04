@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0a0a0a;
-  --color-accent: #f59e0b;
+  --color-primary: #0f172a;
+  --color-secondary: #1e293b;
+  --color-accent: #06b6d4;
+  --color-accent-light: #22d3ee;
+  --color-success: #10b981;
   --color-whatsapp: #25D366;
 }
 
@@ -12,17 +15,19 @@
   html { scroll-behavior: smooth; }
   
   body {
-    @apply antialiased text-slate-100;
-    background: #0a0a0a;
+    @apply antialiased;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-white;
   }
 
-  p { @apply text-slate-400; }
+  p { @apply text-slate-300; }
 
-  ::selection { @apply bg-amber-500/30 text-white; }
+  ::selection { @apply bg-cyan-500/30 text-white; }
 }
 
 @layer components {
@@ -30,65 +35,85 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Sections - Pure Black */
+  /* Sections - Professional Blue Gradients */
   .section {
     @apply py-16 md:py-20 lg:py-28 relative;
-    background: #0a0a0a;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
   }
 
   .section-dark {
-    background: #000000;
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
   }
 
   .section-alt {
-    background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
   }
+
+  .section-light {
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+  .section-light h1, .section-light h2, .section-light h3, .section-light h4 { @apply text-slate-900; }
+  .section-light p { @apply text-slate-600; }
 
   /* Buttons */
   .btn {
     @apply inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold 
            transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 
-           focus:ring-offset-black text-sm md:text-base;
+           focus:ring-offset-slate-900 text-sm md:text-base;
   }
 
   .btn-sm { @apply px-4 py-2 text-sm rounded-lg; }
   .btn-lg { @apply px-6 py-3 md:px-8 md:py-4 text-base md:text-lg rounded-xl; }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold
-           hover:from-amber-400 hover:to-amber-500 focus:ring-amber-500
-           shadow-lg shadow-amber-500/30;
+    @apply text-slate-900 font-bold shadow-lg;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.5);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+    box-shadow: 0 15px 40px -10px rgba(6, 182, 212, 0.6);
+    transform: translateY(-2px);
   }
 
   .btn-secondary {
-    @apply bg-transparent text-white hover:bg-white/10 border border-white/20;
+    @apply bg-slate-800 text-white hover:bg-slate-700 border border-slate-600;
   }
 
   .btn-outline {
-    @apply border-2 border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-black;
+    @apply border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-slate-900;
   }
 
   .btn-outline-light {
-    @apply border-2 border-white/30 text-white hover:bg-white hover:text-black;
+    @apply border-2 border-white/30 text-white hover:bg-white hover:text-slate-900;
   }
 
   .btn-whatsapp {
-    @apply text-white font-bold shadow-lg shadow-green-500/30;
+    @apply text-white font-bold shadow-lg;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.5);
   }
   .btn-whatsapp:hover {
     background: linear-gradient(135deg, #2be675 0%, #159e8d 100%);
+    transform: translateY(-2px);
   }
 
-  /* Cards - Transparent with border */
+  /* Cards - Glass morphism */
   .card {
     @apply rounded-2xl p-5 md:p-6 lg:p-8 transition-all duration-300;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    backdrop-filter: blur(12px);
   }
   .card:hover {
-    border-color: rgba(245, 158, 11, 0.5);
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .card-highlight {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.3);
   }
 
   /* Headings - Responsive */
@@ -99,60 +124,95 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
+    background-image: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #0891b2 100%);
+  }
+
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #34d399 0%, #10b981 100%);
   }
 
   /* Badge */
   .badge {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium text-amber-400;
-    background: transparent;
-    border: 1px solid rgba(245, 158, 11, 0.4);
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium text-cyan-400;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  .badge-success {
+    @apply text-emerald-400;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
   }
 
   /* Inputs */
   .input {
-    @apply w-full px-4 py-3 rounded-xl text-white
-           focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply w-full px-4 py-3 rounded-xl text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-cyan-500/50;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
   }
   .input::placeholder { @apply text-slate-500; }
+  .input:hover { border-color: rgba(148, 163, 184, 0.4); }
   .input:focus {
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(6, 182, 212, 0.5);
+    background: rgba(15, 23, 42, 1);
   }
 
   /* Feature Icon */
   .feature-icon {
     @apply w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.05) 100%);
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0.05) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.3);
   }
-  .feature-icon svg { @apply w-6 h-6 md:w-7 md:h-7 text-amber-400; }
+  .feature-icon svg { @apply w-6 h-6 md:w-7 md:h-7 text-cyan-400; }
 
-  /* Section Header */
-  .section-header {
-    @apply text-center mb-12 md:mb-16;
+  /* Stats */
+  .stat-value { @apply text-4xl md:text-5xl font-bold text-gradient; }
+  .stat-label { @apply text-sm text-slate-400 mt-1; }
+
+  /* Pricing Card Special */
+  .pricing-popular {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 2px solid rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 60px rgba(6, 182, 212, 0.15);
   }
+
+  /* Trust indicators */
+  .trust-badge {
+    @apply flex items-center gap-2 text-sm text-slate-400;
+  }
+  .trust-badge svg { @apply w-5 h-5 text-emerald-500; }
 }
 
 @layer utilities {
   .bg-grid {
-    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
-  .bg-glow-amber {
-    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  .bg-dots {
+    background-image: radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .bg-glow-cyan {
+    background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
   }
 
   .bg-glow-top {
-    background: radial-gradient(ellipse at top, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+    background: radial-gradient(ellipse at top, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  }
+
+  .bg-glow-green {
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
   }
 
   .animation-delay-200 { animation-delay: 200ms; }
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
 }
 
 @keyframes fade-in {
@@ -160,17 +220,33 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.7; }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .animate-fade-in { animation: fade-in 0.6s ease-out forwards; opacity: 0; }
+.animate-float { animation: float 3s ease-in-out infinite; }
 .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #444; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-*:focus-visible { @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-black; }
+*:focus-visible { @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-slate-900; }
