@@ -1,0 +1,396 @@
+import Link from "next/link";
+import Section from "@/components/Section";
+import FAQ from "@/components/FAQ";
+import { siteConfig } from "@/lib/config";
+import { pageSEO } from "@/lib/seo";
+
+export const metadata = pageSEO.restaurants;
+
+const features = [
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    title: "Digital Menu",
+    description: "Beautiful, mobile-friendly menus with photos and descriptions. Easy to update when you change dishes or prices.",
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: "Table Reservations",
+    description: "Online table booking system that syncs with your operations. Reduce no-shows with automated reminders.",
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    title: "Online Ordering",
+    description: "Accept pickup and delivery orders directly through your website. Skip third-party fees and own your customer data.",
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: "Photo Gallery",
+    description: "Showcase your dishes, ambiance, and events with stunning photo galleries that make visitors hungry.",
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+      </svg>
+    ),
+    title: "Reviews Integration",
+    description: "Display your best Google and TripAdvisor reviews. Build trust and credibility with new customers.",
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: "Location & Directions",
+    description: "Interactive maps, clear directions, and operating hours. Make it easy for customers to find you.",
+  },
+];
+
+const benefits = [
+  { stat: "40%", label: "Increase in reservations" },
+  { stat: "25%", label: "More online orders" },
+  { stat: "0%", label: "Third-party order fees" },
+  { stat: "50+", label: "Restaurants served" },
+];
+
+const restaurantFAQs = [
+  {
+    question: "Can customers order food directly through my website?",
+    answer: "Yes! We can integrate an online ordering system that lets customers place pickup or delivery orders directly on your site. You keep 100% of the revenue - no third-party fees like with delivery apps.",
+  },
+  {
+    question: "How easy is it to update the menu?",
+    answer: "Very easy! We build your menu in a way that lets you update dishes, prices, and photos yourself. No technical skills needed. Or, with our monthly plans, we can handle all updates for you.",
+  },
+  {
+    question: "Do you integrate with POS systems?",
+    answer: "We can integrate with most popular POS systems used in Egypt. Orders from your website can flow directly into your existing workflow. We'll discuss your setup during the consultation.",
+  },
+  {
+    question: "Can I show my menu in both Arabic and English?",
+    answer: "Absolutely! We build bilingual websites with seamless language switching. Your menu will look beautiful in both Arabic and English, helping you serve local and international customers.",
+  },
+  {
+    question: "How do online reservations work?",
+    answer: "Customers can book tables directly on your website. They select date, time, and party size. You receive instant notifications and can manage bookings through a simple dashboard. Automatic reminders reduce no-shows.",
+  },
+];
+
+export default function RestaurantsPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <Section className="pt-32 pb-20 bg-gradient-to-b from-amber-50 to-white">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="badge bg-amber-100 text-amber-700 mb-4">For Restaurants & Cafés</span>
+            <h1 className="heading-xl mb-6">
+              A Website That Makes <span className="text-amber-600">Mouths Water</span>
+            </h1>
+            <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+              Get more diners with a stunning restaurant website. Digital menus, 
+              online reservations, and direct ordering - all designed to fill your tables 
+              and boost your revenue.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp.replace(/\+/g, "")}?text=${encodeURIComponent("Hi! I'm interested in a website for my restaurant.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp text-base px-8 py-4"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Get Free Consultation
+              </a>
+              <Link href="/pricing" className="btn-outline text-base px-8 py-4">
+                View Pricing
+              </Link>
+            </div>
+          </div>
+
+          {/* Visual Element */}
+          <div className="relative">
+            <div className="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl p-8 shadow-2xl">
+              <div className="bg-white rounded-2xl h-full p-6 shadow-lg overflow-hidden">
+                {/* Mock Restaurant Website Preview */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                        <span className="text-xl">🍽️</span>
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900 text-sm">Zamalek Bistro</div>
+                        <div className="text-xs text-slate-500">Fine Dining</div>
+                      </div>
+                    </div>
+                    <div className="bg-amber-500 text-white text-xs px-3 py-1 rounded-full">
+                      Book Now
+                    </div>
+                  </div>
+                  
+                  {/* Food Images Grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {["🥗", "🍝", "🍖", "🍰"].map((emoji, i) => (
+                      <div key={i} className="aspect-square bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg flex items-center justify-center text-3xl">
+                        {emoji}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Menu Preview */}
+                  <div className="bg-slate-50 rounded-lg p-3">
+                    <div className="text-xs font-bold text-slate-700 mb-2">Today&apos;s Special</div>
+                    <div className="flex justify-between items-center">
+                      <div className="text-sm text-slate-600">Grilled Sea Bass</div>
+                      <div className="text-sm font-bold text-amber-600">350 EGP</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Floating Elements */}
+            <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">⭐</span>
+                <div>
+                  <div className="font-bold text-slate-900">4.9/5</div>
+                  <div className="text-xs text-slate-500">500+ Reviews</div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 animate-float" style={{ animationDelay: "1s" }}>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Order Confirmed!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Stats Section */}
+      <Section className="bg-amber-500 text-white py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {benefits.map((benefit, index) => (
+            <div key={index}>
+              <div className="text-3xl md:text-4xl font-bold mb-1">{benefit.stat}</div>
+              <div className="text-amber-100 text-sm">{benefit.label}</div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Features Grid */}
+      <Section>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="badge badge-accent mb-4">Features</span>
+          <h2 className="heading-lg mb-4">
+            Everything Your Restaurant Needs Online
+          </h2>
+          <p className="text-slate-600 text-lg">
+            From beautiful menus to direct ordering, we build restaurant websites 
+            that turn visitors into paying customers.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="card p-8 hover:border-amber-200 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Menu Showcase Section */}
+      <Section className="bg-slate-900 text-white">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="badge bg-amber-500/20 text-amber-400 mb-4">Digital Menus</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Menus That Make Customers Order More
+            </h2>
+            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              Beautiful, mobile-optimized menus with mouth-watering photos and 
+              detailed descriptions. Studies show digital menus with photos 
+              increase average order value by 30%.
+            </p>
+            <ul className="space-y-4">
+              {[
+                "High-quality food photography integration",
+                "Easy-to-update pricing and items",
+                "Category organization and filtering",
+                "Dietary labels (vegetarian, halal, etc.)",
+                "Bilingual support (Arabic/English)",
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Menu Visual */}
+          <div className="bg-slate-800 rounded-3xl p-8">
+            <div className="bg-white rounded-2xl p-6 text-slate-900">
+              <div className="text-center mb-6">
+                <div className="text-2xl font-bold">Our Menu</div>
+                <div className="flex justify-center gap-4 mt-4">
+                  {["All", "Starters", "Mains", "Desserts"].map((cat, i) => (
+                    <button
+                      key={i}
+                      className={`px-3 py-1 rounded-full text-sm ${
+                        i === 0 ? "bg-amber-500 text-white" : "bg-slate-100"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { name: "Grilled Salmon", desc: "With herbs and lemon butter", price: "280" },
+                  { name: "Beef Tenderloin", desc: "Served with seasonal vegetables", price: "350" },
+                  { name: "Chocolate Fondant", desc: "Warm chocolate cake with ice cream", price: "120" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 p-3 bg-slate-50 rounded-xl">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg flex items-center justify-center text-2xl">
+                      {i === 0 ? "🐟" : i === 1 ? "🥩" : "🍫"}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-bold">{item.name}</div>
+                      <div className="text-sm text-slate-500">{item.desc}</div>
+                    </div>
+                    <div className="text-amber-600 font-bold">{item.price} EGP</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Process Section */}
+      <Section className="bg-slate-50">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="badge badge-accent mb-4">Our Process</span>
+          <h2 className="heading-lg mb-4">From Concept to Launch in 3 Weeks</h2>
+          <p className="text-slate-600 text-lg">
+            A simple process designed to get your restaurant online without disrupting your operations.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-8">
+          {[
+            {
+              step: "01",
+              title: "Tasting Menu",
+              description: "We learn about your restaurant, cuisine, and brand personality.",
+            },
+            {
+              step: "02",
+              title: "Recipe Design",
+              description: "We create a custom design that captures your restaurant's essence.",
+            },
+            {
+              step: "03",
+              title: "Cooking",
+              description: "We build your site with menus, ordering, and reservations.",
+            },
+            {
+              step: "04",
+              title: "Serving",
+              description: "Your website goes live and starts bringing hungry customers!",
+            },
+          ].map((phase, index) => (
+            <div key={index} className="text-center">
+              <div className="w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                {phase.step}
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{phase.title}</h3>
+              <p className="text-slate-600 text-sm">{phase.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="badge badge-accent mb-4">FAQ</span>
+            <h2 className="heading-lg mb-4">Common Questions About Restaurant Websites</h2>
+          </div>
+          <FAQ items={restaurantFAQs} />
+        </div>
+      </Section>
+
+      {/* CTA Section */}
+      <Section className="bg-gradient-to-br from-amber-500 to-orange-500 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Fill More Tables?
+          </h2>
+          <p className="text-amber-100 text-lg mb-10 max-w-2xl mx-auto">
+            Join 50+ restaurants across Egypt who trust us with their online presence. 
+            Get started with a free consultation today.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp.replace(/\+/g, "")}?text=${encodeURIComponent("Hi! I'm interested in a website for my restaurant.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp text-base px-8 py-4"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Get Free Consultation
+            </a>
+            <Link href="/contact" className="bg-white text-amber-700 hover:bg-amber-50 font-semibold px-8 py-4 rounded-full transition-all">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
