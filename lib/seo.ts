@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { siteConfig } from "./config";
 
 interface SEOProps {
@@ -16,8 +16,8 @@ export function generateSEO({
   ogImage = "/og-image.jpg",
   noIndex = false,
 }: SEOProps = {}): Metadata {
-  const fullTitle = title 
-    ? `${title} | ${siteConfig.name}` 
+  const fullTitle = title
+    ? `${title} | ${siteConfig.name}`
     : `${siteConfig.name} - ${siteConfig.tagline}`;
   
   const metaDescription = description || siteConfig.description;
@@ -25,12 +25,14 @@ export function generateSEO({
   const defaultKeywords = [
     "web design Egypt",
     "website development Cairo",
-    "ØªØµÙ…ÙŠÙ… Ù…ÙˆØ§Ù‚Ø¹ Ù…ØµØ±",
+    "website builder Egypt",
     "web studio Egypt",
     "restaurant website",
     "clinic website",
     "medical website Egypt",
     "ecommerce Egypt",
+    "professional websites",
+    "business website Egypt",
   ];
 
   return {
@@ -95,7 +97,7 @@ export const structuredData = {
     description: siteConfig.description,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Giza",
+      addressLocality: "Cairo",
       addressCountry: "EG",
       streetAddress: siteConfig.address,
     },
@@ -118,7 +120,7 @@ export const structuredData = {
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address,
-      addressLocality: "Giza",
+      addressLocality: "Cairo",
       addressCountry: "EG",
     },
     priceRange: "$$",
