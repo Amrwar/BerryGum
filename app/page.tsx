@@ -56,32 +56,32 @@ const features = [
   {
     title: "Lightning Fast",
     description: "Optimized for speed with Core Web Vitals in mind",
-    icon: "âš¡",
+    icon: "star",
   },
   {
     title: "SEO Optimized",
     description: "Built to rank higher on Google search results",
-    icon: "ðŸ”",
+    icon: "star",
   },
   {
     title: "Mobile First",
     description: "Perfect experience on all devices and screen sizes",
-    icon: "ðŸ“±",
+    icon: "star",
   },
   {
     title: "Secure",
     description: "SSL certificates and security best practices",
-    icon: "ðŸ”’",
+    icon: "star",
   },
   {
     title: "Analytics Ready",
     description: "Track visitors and measure your success",
-    icon: "ðŸ“Š",
+    icon: "star",
   },
   {
     title: "24/7 Support",
     description: "Always here when you need assistance",
-    icon: "ðŸ’¬",
+    icon: "star",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
             <div key={feature.title} className="card p-6 hover:border-amber-200 transition-colors">
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 {feature.title}
               </h3>
@@ -236,7 +236,7 @@ export default function HomePage() {
         <FAQ limit={5} />
         <div className="mt-8 text-center">
           <Link href="/pricing#faq" className="text-amber-600 font-medium hover:text-amber-700">
-            View all FAQs â†’
+            View all FAQs →
           </Link>
         </div>
       </Section>
@@ -277,3 +277,4 @@ export default function HomePage() {
     </>
   );
 }
+
