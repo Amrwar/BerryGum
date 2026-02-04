@@ -46,7 +46,7 @@ function validateFormData(data: ContactFormData): { valid: boolean; errors: stri
 // Send email using Resend API
 async function sendEmailWithResend(data: ContactFormData): Promise<{ success: boolean; error?: string }> {
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "hello@pixelcraftstudio.com";
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "hello@BerryGumstudio.com";
 
   if (!RESEND_API_KEY) {
     return { success: false, error: "Email service not configured" };
@@ -60,7 +60,7 @@ async function sendEmailWithResend(data: ContactFormData): Promise<{ success: bo
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "PixelCraft Studio <noreply@pixelcraftstudio.com>",
+        from: "BerryGum Developments <noreply@BerryGumstudio.com>",
         to: [CONTACT_EMAIL],
         reply_to: data.email,
         subject: `New Contact Form Submission from ${data.name}`,
@@ -114,7 +114,7 @@ async function sendEmailWithResend(data: ContactFormData): Promise<{ success: bo
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #94a3b8; font-size: 12px;">
-              <p>This email was sent from the PixelCraft Studio website contact form.</p>
+              <p>This email was sent from the BerryGum Developments website contact form.</p>
               <p>Submitted at: ${new Date().toLocaleString("en-EG", { timeZone: "Africa/Cairo" })}</p>
             </div>
           </div>

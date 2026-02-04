@@ -13,7 +13,7 @@ export const metadata: Metadata = generateSEO({
 
 const testimonials = [
   {
-    quote: "PixelCraft transformed our online presence. Our appointment bookings increased by 200% within the first month!",
+    quote: "BerryGum transformed our online presence. Our appointment bookings increased by 200% within the first month!",
     author: "Dr. Ahmed Hassan",
     role: "Cairo Dental Care",
     rating: 5,

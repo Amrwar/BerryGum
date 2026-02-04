@@ -1,312 +1,140 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== CSS Variables ===== */
 :root {
   --color-primary: #0f172a;
-  --color-primary-light: #1e293b;
   --color-accent: #f59e0b;
-  --color-accent-light: #fbbf24;
-  --color-accent-dark: #d97706;
-  --color-surface: #1e293b;
-  --color-surface-light: #334155;
-  --color-text: #f8fafc;
-  --color-text-muted: #94a3b8;
   --color-whatsapp: #25D366;
 }
 
-/* ===== Base Styles ===== */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
+  html { scroll-behavior: smooth; }
+  
   body {
-    @apply antialiased;
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-    color: var(--color-text);
-    min-height: 100vh;
+    @apply antialiased bg-slate-900 text-slate-100;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-white;
   }
 
-  p {
-    @apply text-slate-300;
-  }
+  p { @apply text-slate-300; }
 
-  ::selection {
-    @apply bg-amber-500/30 text-white;
-  }
+  ::selection { @apply bg-amber-500/30 text-white; }
 }
 
-/* ===== Component Classes ===== */
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* ===== Section Styles - ALL DARK ===== */
+  /* Sections - All Dark */
   .section {
-    @apply py-20 lg:py-28 relative;
-  }
-
-  .section-default {
-    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    @apply py-16 md:py-20 lg:py-28 relative bg-slate-900;
   }
 
   .section-dark {
-    background: 
-      radial-gradient(ellipse at top, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-      linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    @apply bg-slate-950;
   }
 
   .section-alt {
-    background: 
-      radial-gradient(ellipse at bottom right, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-      linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
   }
 
-  /* ===== Buttons ===== */
+  /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold 
+    @apply inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold 
            transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 
-           focus:ring-offset-slate-900 transform hover:scale-[1.02] active:scale-[0.98];
+           focus:ring-offset-slate-900 text-sm md:text-base;
   }
 
-  .btn-sm {
-    @apply px-4 py-2 text-sm rounded-lg;
-  }
-
-  .btn-lg {
-    @apply px-8 py-4 text-lg rounded-xl;
-  }
+  .btn-sm { @apply px-4 py-2 text-sm rounded-lg; }
+  .btn-lg { @apply px-6 py-3 md:px-8 md:py-4 text-base md:text-lg rounded-xl; }
 
   .btn-primary {
     @apply bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 
            hover:from-amber-400 hover:to-amber-500 focus:ring-amber-500
-           shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40;
+           shadow-lg shadow-amber-500/25;
   }
 
   .btn-secondary {
-    @apply bg-slate-700 text-white hover:bg-slate-600 focus:ring-slate-500
-           border border-slate-600;
+    @apply bg-slate-800 text-white hover:bg-slate-700 focus:ring-slate-500 border border-slate-700;
   }
 
   .btn-outline {
-    @apply border-2 border-amber-500 text-amber-400 
-           hover:bg-amber-500 hover:text-slate-900 focus:ring-amber-500;
+    @apply border-2 border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-slate-900;
   }
 
   .btn-outline-light {
-    @apply border-2 border-white/30 text-white 
-           hover:bg-white hover:text-slate-900 focus:ring-white;
+    @apply border-2 border-white/30 text-white hover:bg-white hover:text-slate-900;
   }
 
   .btn-whatsapp {
-    @apply text-white focus:ring-green-500
-           shadow-lg shadow-green-500/25 hover:shadow-green-500/40;
+    @apply text-white shadow-lg shadow-green-500/25;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   }
-
   .btn-whatsapp:hover {
     background: linear-gradient(135deg, #2be675 0%, #159e8d 100%);
   }
 
-  /* ===== Cards - Dark Glass Style ===== */
+  /* Cards */
   .card {
-    @apply rounded-2xl p-6 lg:p-8 transition-all duration-300;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    backdrop-filter: blur(10px);
+    @apply rounded-2xl p-5 md:p-6 lg:p-8 transition-all duration-300 bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm;
   }
-
   .card:hover {
-    border-color: rgba(245, 158, 11, 0.3);
-    box-shadow: 0 20px 40px -20px rgba(245, 158, 11, 0.15),
-                0 0 0 1px rgba(245, 158, 11, 0.1);
-    transform: translateY(-4px);
+    @apply border-amber-500/30 -translate-y-1;
+    box-shadow: 0 20px 40px -20px rgba(245, 158, 11, 0.15);
   }
 
-  .card-highlight {
-    background: linear-gradient(145deg, rgba(245, 158, 11, 0.1) 0%, rgba(15, 23, 42, 0.95) 100%);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-  }
+  /* Headings - Responsive */
+  .heading-xl { @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight; }
+  .heading-lg { @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight; }
+  .heading-md { @apply text-xl sm:text-2xl md:text-3xl font-bold; }
+  .heading-sm { @apply text-lg sm:text-xl md:text-2xl font-bold; }
 
-  .card-glass {
-    @apply rounded-2xl p-6 lg:p-8;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  /* ===== Headings ===== */
-  .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
-  }
-
-  .heading-lg {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
-  }
-
-  .heading-md {
-    @apply text-2xl md:text-3xl font-bold;
-  }
-
-  .heading-sm {
-    @apply text-xl md:text-2xl font-bold;
-  }
-
-  /* ===== Text Gradient ===== */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   }
 
-  /* ===== Badge ===== */
+  /* Badge */
   .badge {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium;
     background: rgba(245, 158, 11, 0.1);
     border: 1px solid rgba(245, 158, 11, 0.2);
     color: #fbbf24;
   }
 
-  .badge-dot {
-    @apply w-2 h-2 rounded-full bg-amber-500 animate-pulse;
-  }
-
-  /* ===== Input Styles - Dark ===== */
+  /* Inputs */
   .input {
-    @apply w-full px-4 py-3 rounded-xl transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-amber-500/50;
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    color: white;
+    @apply w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white
+           focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50;
   }
+  .input::placeholder { @apply text-slate-500; }
 
-  .input:hover {
-    border-color: rgba(148, 163, 184, 0.4);
-  }
-
-  .input:focus {
-    border-color: rgba(245, 158, 11, 0.5);
-    background: rgba(30, 41, 59, 1);
-  }
-
-  .input::placeholder {
-    @apply text-slate-500;
-  }
-
-  /* ===== Feature Icons ===== */
+  /* Feature Icon */
   .feature-icon {
-    @apply w-14 h-14 rounded-xl flex items-center justify-center mb-4;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.05) 100%);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    @apply w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 bg-amber-500/10 border border-amber-500/20;
   }
-
-  .feature-icon svg {
-    @apply w-7 h-7 text-amber-400;
-  }
-
-  /* ===== Stats ===== */
-  .stat-value {
-    @apply text-4xl md:text-5xl font-bold text-gradient;
-  }
-
-  .stat-label {
-    @apply text-sm text-slate-400 mt-1;
-  }
-
-  /* ===== Dividers ===== */
-  .divider {
-    @apply border-t border-slate-700/50;
-  }
-
-  .divider-glow {
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.3) 50%, transparent 100%);
-  }
-
-  /* ===== Glow Effects ===== */
-  .glow-amber {
-    box-shadow: 0 0 60px 20px rgba(245, 158, 11, 0.15);
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 60px 20px rgba(59, 130, 246, 0.1);
-  }
+  .feature-icon svg { @apply w-6 h-6 md:w-7 md:h-7 text-amber-400; }
 }
 
-/* ===== Utility Classes ===== */
 @layer utilities {
   .bg-grid {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
-  }
-
-  .bg-dots {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .overlay-gradient-top {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, transparent 100%);
-  }
-
-  .overlay-gradient-bottom {
-    background: linear-gradient(0deg, rgba(15, 23, 42, 1) 0%, transparent 100%);
   }
 
   .animation-delay-200 { animation-delay: 200ms; }
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-600 { animation-delay: 600ms; }
-  .animation-delay-800 { animation-delay: 800ms; }
-  .animation-delay-1000 { animation-delay: 1000ms; }
-  .animation-delay-2000 { animation-delay: 2000ms; }
-
-  .hover-lift {
-    @apply transition-transform duration-300;
-  }
-  .hover-lift:hover {
-    transform: translateY(-8px);
-  }
-
-  .link-hover {
-    @apply relative;
-  }
-  .link-hover::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300;
-  }
-  .link-hover:hover::after {
-    @apply w-full;
-  }
 }
 
-/* ===== Animations ===== */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 @keyframes pulse-slow {
@@ -314,63 +142,11 @@
   50% { opacity: 0.7; }
 }
 
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.4); }
-}
+.animate-fade-in { animation: fade-in 0.6s ease-out forwards; opacity: 0; }
+.animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-  opacity: 0;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
-}
-
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
-}
-
-/* ===== Custom Scrollbar ===== */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #334155 #0f172a;
-}
-
-/* ===== Focus States ===== */
-*:focus-visible {
-  @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-slate-900;
-}
+*:focus-visible { @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-slate-900; }
