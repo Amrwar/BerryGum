@@ -4,7 +4,7 @@ import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
 import { generateSEO } from "@/lib/seo";
 
-export const metadata = generateSEO.restaurants;
+export const metadata = generateSEO({ title: "Restaurant Websites", description: "Professional website design for restaurants, cafes, and food businesses in Egypt. Online menus, reservations, and delivery integration.", keywords: ["restaurant website Egypt", "cafe website design", "food business website"] });
 
 const features = [
   {
