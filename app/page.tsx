@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Hero from "@/components/Hero";
 import Section, { SectionHeader } from "@/components/Section";
 import PortfolioGrid from "@/components/PortfolioGrid";
@@ -56,32 +56,32 @@ const features = [
   {
     title: "Lightning Fast",
     description: "Optimized for speed with Core Web Vitals in mind",
-    icon: "⚡",
+    icon: "âš¡",
   },
   {
     title: "SEO Optimized",
     description: "Built to rank higher on Google search results",
-    icon: "🔍",
+    icon: "ðŸ”",
   },
   {
     title: "Mobile First",
     description: "Perfect experience on all devices and screen sizes",
-    icon: "📱",
+    icon: "ðŸ“±",
   },
   {
     title: "Secure",
     description: "SSL certificates and security best practices",
-    icon: "🔒",
+    icon: "ðŸ”’",
   },
   {
     title: "Analytics Ready",
     description: "Track visitors and measure your success",
-    icon: "📊",
+    icon: "ðŸ“Š",
   },
   {
     title: "24/7 Support",
     description: "Always here when you need assistance",
-    icon: "💬",
+    icon: "ðŸ’¬",
   },
 ];
 
@@ -236,7 +236,7 @@ export default function HomePage() {
         <FAQ limit={5} />
         <div className="mt-8 text-center">
           <Link href="/pricing#faq" className="text-amber-600 font-medium hover:text-amber-700">
-            View all FAQs →
+            View all FAQs â†’
           </Link>
         </div>
       </Section>

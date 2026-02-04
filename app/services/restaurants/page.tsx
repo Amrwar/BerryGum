@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Section from "@/components/Section";
 import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
@@ -101,7 +101,7 @@ export default function RestaurantsPage() {
       <Section className="pt-32 pb-20 bg-gradient-to-b from-amber-50 to-white">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="badge bg-amber-100 text-amber-700 mb-4">For Restaurants & Cafés</span>
+            <span className="badge bg-amber-100 text-amber-700 mb-4">For Restaurants & CafÃ©s</span>
             <h1 className="heading-xl mb-6">
               A Website That Makes <span className="text-amber-600">Mouths Water</span>
             </h1>
@@ -137,7 +137,7 @@ export default function RestaurantsPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
-                        <span className="text-xl">🍽️</span>
+                        <span className="text-xl">ðŸ½ï¸</span>
                       </div>
                       <div>
                         <div className="font-bold text-slate-900 text-sm">Zamalek Bistro</div>
@@ -151,7 +151,7 @@ export default function RestaurantsPage() {
                   
                   {/* Food Images Grid */}
                   <div className="grid grid-cols-2 gap-2">
-                    {["🥗", "🍝", "🍖", "🍰"].map((emoji, i) => (
+                    {["ðŸ¥—", "ðŸ", "ðŸ–", "ðŸ°"].map((emoji, i) => (
                       <div key={i} className="aspect-square bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg flex items-center justify-center text-3xl">
                         {emoji}
                       </div>
@@ -172,7 +172,7 @@ export default function RestaurantsPage() {
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float">
               <div className="flex items-center gap-2">
-                <span className="text-2xl">⭐</span>
+                <span className="text-2xl">â­</span>
                 <div>
                   <div className="font-bold text-slate-900">4.9/5</div>
                   <div className="text-xs text-slate-500">500+ Reviews</div>
@@ -293,7 +293,7 @@ export default function RestaurantsPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 p-3 bg-slate-50 rounded-xl">
                     <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg flex items-center justify-center text-2xl">
-                      {i === 0 ? "🐟" : i === 1 ? "🥩" : "🍫"}
+                      {i === 0 ? "ðŸŸ" : i === 1 ? "ðŸ¥©" : "ðŸ«"}
                     </div>
                     <div className="flex-1">
                       <div className="font-bold">{item.name}</div>

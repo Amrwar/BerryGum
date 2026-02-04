@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -53,9 +53,9 @@ const projects = [
   },
   {
     id: 6,
-    title: "Oasis Café",
+    title: "Oasis CafÃ©",
     category: "Restaurants",
-    description: "Trendy café website with loyalty program integration",
+    description: "Trendy cafÃ© website with loyalty program integration",
     image: "/portfolio/restaurant-2.jpg",
     color: "from-amber-500/20 to-yellow-500/20",
     tags: ["F&B", "Loyalty", "Social Integration"],

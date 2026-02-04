@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/lib/config";
@@ -43,7 +43,7 @@ export default function WhatsAppFloat() {
         }`}
       >
         <div className="bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-xl whitespace-nowrap">
-          Need help? Chat with us! 💬
+          Need help? Chat with us! ðŸ’¬
           <div className="absolute -bottom-1 right-6 w-3 h-3 bg-slate-900 rotate-45" />
         </div>
       </div>

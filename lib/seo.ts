@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { siteConfig } from "./config";
 
 interface SEOProps {
@@ -25,7 +25,7 @@ export function generateSEO({
   const defaultKeywords = [
     "web design Egypt",
     "website development Cairo",
-    "تصميم مواقع مصر",
+    "ØªØµÙ…ÙŠÙ… Ù…ÙˆØ§Ù‚Ø¹ Ù…ØµØ±",
     "web studio Egypt",
     "restaurant website",
     "clinic website",

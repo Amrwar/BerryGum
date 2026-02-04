@@ -6,7 +6,7 @@
   
   // Contact Information
   whatsapp: "+201107578212",
-  email: "hello@BerryGum.studio",
+  email: "BerryGumStudio@yahoo.com",
   phone: "+20 110 757 8212",
   address: "Smart Village, 6th of October City, Giza, Egypt",
   

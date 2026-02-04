@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -217,7 +217,7 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
               </div>
 
               <Link
-                href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(`مرحباً! أريد الاستفسار عن باقة ${plan.name}`)}`}
+                href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(`Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ø±ÙŠØ¯ Ø§Ù„Ø§Ø³ØªÙØ³Ø§Ø± Ø¹Ù† Ø¨Ø§Ù‚Ø© ${plan.name}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn w-full mb-8 ${
