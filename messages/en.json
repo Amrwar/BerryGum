@@ -1,0 +1,145 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Professional Web Design Studio",
+    "title": "We Build Websites That",
+    "titleHighlight": "Grow Your Business",
+    "subtitle": "Professional web design for clinics, restaurants, e-commerce stores, and businesses in Egypt. Beautiful designs. Fast performance. Real results.",
+    "cta": "Start Your Project",
+    "viewPricing": "View Pricing"
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "Websites Built for Your Industry",
+    "subtitle": "We specialize in creating stunning, functional websites tailored to specific industries.",
+    "clinics": {
+      "title": "Clinic Websites",
+      "description": "Professional medical websites with appointment booking, patient portals, and HIPAA-compliant forms."
+    },
+    "restaurants": {
+      "title": "Restaurant Websites",
+      "description": "Mouth-watering designs with online menus, table reservations, and delivery integration."
+    },
+    "ecommerce": {
+      "title": "E-Commerce",
+      "description": "Full-featured online stores with payment gateways, inventory management, and order tracking."
+    },
+    "corporate": {
+      "title": "Corporate Sites",
+      "description": "Establish credibility with professional corporate websites that showcase your brand."
+    },
+    "learnMore": "Learn more"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Your Digital Partner in Egypt",
+    "description1": "We are a passionate team of designers and developers based in Egypt, dedicated to helping businesses establish a powerful online presence. With over 5 years of experience, we have helped 150+ businesses across the Middle East grow with stunning, conversion-focused websites.",
+    "description2": "Our approach combines international design standards with local market understanding, ensuring your website not only looks world-class but also resonates with your target audience.",
+    "stats": {
+      "projects": "Projects Completed",
+      "satisfaction": "Client Satisfaction",
+      "experience": "Years Experience",
+      "clients": "Active Clients"
+    }
+  },
+  "features": {
+    "badge": "Why Choose Us",
+    "title": "Everything You Need to Succeed Online",
+    "subtitle": "We do not just build websites. We build growth engines for your business.",
+    "fast": {
+      "title": "Lightning Fast",
+      "description": "Optimized for speed with Core Web Vitals in mind"
+    },
+    "seo": {
+      "title": "SEO Optimized",
+      "description": "Built to rank higher on Google search results"
+    },
+    "mobile": {
+      "title": "Mobile First",
+      "description": "Perfect experience on all devices and screen sizes"
+    },
+    "secure": {
+      "title": "Secure",
+      "description": "SSL certificates and security best practices"
+    },
+    "analytics": {
+      "title": "Analytics Ready",
+      "description": "Track visitors and measure your success"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Always here when you need assistance"
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We have got answers.",
+    "viewAll": "View all FAQs"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Online Presence?",
+    "subtitle": "Let us discuss your project and see how we can help your business grow. Get in touch today for a free consultation.",
+    "whatsapp": "Chat on WhatsApp",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with love in Egypt"
+  },
+  "pricing": {
+    "badge": "Transparent Pricing",
+    "title": "Simple, Honest Pricing",
+    "subtitle": "Choose between one-time website builds or ongoing management plans. No hidden fees, no surprises.",
+    "oneTime": "One-Time Build",
+    "monthly": "Monthly Management",
+    "popular": "MOST POPULAR",
+    "getStarted": "Get Started",
+    "egp": "EGP",
+    "month": "/mo",
+    "compare": {
+      "badge": "Compare Plans",
+      "title": "What is Included in Each Plan",
+      "subtitle": "A detailed comparison to help you choose the right plan for your business."
+    },
+    "process": {
+      "badge": "Our Process",
+      "title": "How We Work",
+      "subtitle": "A transparent, collaborative process that ensures your project success."
+    },
+    "cta": {
+      "title": "Need a Custom Quote?",
+      "subtitle": "Every business is unique. Let us discuss your specific requirements and create a tailored solution.",
+      "button": "Chat About Pricing"
+    }
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "title": "Let us Start a Conversation",
+    "subtitle": "Have a project in mind? We would love to hear about it.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title": "Contact Information",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  }
+}
