@@ -1,4 +1,4 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   name: "BerryGum Developments",
   tagline: "Ù†Ø¨Ù†ÙŠ Ø­Ø¶ÙˆØ±Ùƒ Ø§Ù„Ø±Ù‚Ù…ÙŠ",
   description: "Premium web design and development studio in Egypt. We craft stunning websites for clinics, restaurants, and businesses.",

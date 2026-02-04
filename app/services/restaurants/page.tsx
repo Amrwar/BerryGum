@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Section from "@/components/Section";
 import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";

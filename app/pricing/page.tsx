@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
 import Section, { SectionHeader } from "@/components/Section";
@@ -71,10 +71,10 @@ export default function PricingPage() {
                 { feature: "SEO Optimization", starter: "Basic", pro: "Advanced", enterprise: "Full Package" },
                 { feature: "Contact Forms", starter: "1", pro: "Multiple + CRM", enterprise: "Advanced + API" },
                 { feature: "WhatsApp Integration", starter: "Button", pro: "Chat Widget", enterprise: "Business API" },
-                { feature: "Blog/News Section", starter: "â€”", pro: "âœ“", enterprise: "âœ“ with Categories" },
-                { feature: "E-commerce", starter: "â€”", pro: "â€”", enterprise: "Up to 50 Products" },
-                { feature: "Custom Animations", starter: "â€”", pro: "âœ“", enterprise: "Premium" },
-                { feature: "Multi-language", starter: "â€”", pro: "â€”", enterprise: "âœ“" },
+                { feature: "Blog/News Section", starter: ""”", pro: "âœ“", enterprise: "âœ“ with Categories" },
+                { feature: "E-commerce", starter: ""”", pro: ""”", enterprise: "Up to 50 Products" },
+                { feature: "Custom Animations", starter: ""”", pro: "âœ“", enterprise: "Premium" },
+                { feature: "Multi-language", starter: ""”", pro: ""”", enterprise: "âœ“" },
                 { feature: "Support Period", starter: "1 Month", pro: "3 Months", enterprise: "6 Months" },
                 { feature: "Revisions", starter: "2 Rounds", pro: "4 Rounds", enterprise: "Unlimited" },
               ].map((row, index) => (

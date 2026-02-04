@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { siteConfig } from "./config";
 
 interface SEOProps {

@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
 import Section, { SectionHeader } from "@/components/Section";
@@ -170,7 +170,7 @@ export default function ClinicsPage() {
                 If your clinic doesn&apos;t have a professional website, you&apos;re losing patients to competitors who do.
               </p>
               <p>
-                A well-designed medical website doesn&apos;t just look goodâ€”it builds trust, answers patient questions 24/7, 
+                A well-designed medical website doesn&apos;t just look good"”it builds trust, answers patient questions 24/7, 
                 and reduces the workload on your front desk by enabling online bookings.
               </p>
               <p>

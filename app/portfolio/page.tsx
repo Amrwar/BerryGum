@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
 import Section, { SectionHeader } from "@/components/Section";
