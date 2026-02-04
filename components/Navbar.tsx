@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -36,16 +36,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo + Company Name */}
           <Link href="/" className="flex items-center group">
-            <Image
-              src="/logo.png"
-              alt={siteConfig.name}
-              width={45}
-              height={45}
-              className={`h-10 w-auto transition-all duration-300 ${
-                isScrolled ? "brightness-0" : ""
-              }`}
-              priority
-            />
+            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-md border-2 border-white/20">
+              <Image
+                src="/logo.png"
+                alt={siteConfig.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="ml-3">
               <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
                 isScrolled ? "text-slate-900" : "text-white"
@@ -53,7 +52,7 @@ export default function Navbar() {
                 BerryGum
               </span>
               <span className={`text-xs block -mt-0.5 font-medium transition-colors duration-300 ${
-                isScrolled ? "text-slate-500" : "text-slate-300"
+                isScrolled ? "text-slate-500" : "text-white/70"
               }`}>
                 Website Builder
               </span>
@@ -112,6 +111,21 @@ export default function Navbar() {
           }`}
         >
           <div className="bg-white rounded-xl shadow-xl p-4 border border-slate-100">
+            {/* Mobile Logo */}
+            <div className="flex items-center gap-3 pb-4 mb-4 border-b border-slate-100">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm">
+                <Image
+                  src="/logo.png"
+                  alt={siteConfig.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <span className="text-lg font-bold text-slate-900">BerryGum</span>
+                <span className="text-xs block text-slate-500">Website Builder</span>
+              </div>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
