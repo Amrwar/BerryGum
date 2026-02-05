@@ -2,82 +2,41 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 
-const categories = ["All", "Clinics", "Restaurants", "E-commerce", "Corporate"];
+const categoryKeys = ["all", "clinics", "restaurants", "ecommerce", "corporate"] as const;
 
-const projects = [
-  {
-    id: 1,
-    title: "Cairo Dental Care",
-    category: "Clinics",
-    description: "Modern dental clinic website with online booking system",
-    image: "/portfolio/clinic-1.jpg",
-    color: "from-blue-500/20 to-cyan-500/20",
-    tags: ["Healthcare", "Booking System", "Responsive"],
-  },
-  {
-    id: 2,
-    title: "Nile Grill House",
-    category: "Restaurants",
-    description: "Restaurant website with menu and reservation system",
-    image: "/portfolio/restaurant-1.jpg",
-    color: "from-orange-500/20 to-red-500/20",
-    tags: ["F&B", "Online Menu", "Reservations"],
-  },
-  {
-    id: 3,
-    title: "Sphinx Fashion",
-    category: "E-commerce",
-    description: "Full e-commerce store with payment integration",
-    image: "/portfolio/ecommerce-1.jpg",
-    color: "from-purple-500/20 to-pink-500/20",
-    tags: ["E-commerce", "Payments", "Inventory"],
-  },
-  {
-    id: 4,
-    title: "Alexandria Eye Center",
-    category: "Clinics",
-    description: "Ophthalmology clinic with patient portal",
-    image: "/portfolio/clinic-2.jpg",
-    color: "from-green-500/20 to-emerald-500/20",
-    tags: ["Healthcare", "Patient Portal", "HIPAA"],
-  },
-  {
-    id: 5,
-    title: "Pharaoh Consulting",
-    category: "Corporate",
-    description: "Professional corporate website with case studies",
-    image: "/portfolio/corporate-1.jpg",
-    color: "from-slate-500/20 to-zinc-500/20",
-    tags: ["Corporate", "Blog", "Multilingual"],
-  },
-  {
-    id: 6,
-    title: "Oasis CafÃ©",
-    category: "Restaurants",
-    description: "Trendy cafÃ© website with loyalty program integration",
-    image: "/portfolio/restaurant-2.jpg",
-    color: "from-amber-500/20 to-yellow-500/20",
-    tags: ["F&B", "Loyalty", "Social Integration"],
-  },
-  {
-    id: 7,
-    title: "Pyramids Tech Solutions",
-    category: "Corporate",
-    description: "Tech company website with service showcase",
-    image: "/portfolio/corporate-2.jpg",
-    color: "from-indigo-500/20 to-blue-500/20",
-    tags: ["Technology", "Portfolio", "Contact Forms"],
-  },
-  {
-    id: 8,
-    title: "Desert Bloom Spa",
-    category: "Clinics",
-    description: "Wellness spa with booking and gift cards",
-    image: "/portfolio/clinic-3.jpg",
-    color: "from-rose-500/20 to-pink-500/20",
-    tags: ["Wellness", "Booking", "Gift Cards"],
-  },
+const projectCategoryMap = [
+  "clinics",
+  "restaurants",
+  "ecommerce",
+  "clinics",
+  "corporate",
+  "restaurants",
+  "corporate",
+  "clinics",
+];
+
+const projectColors = [
+  "from-blue-500/20 to-cyan-500/20",
+  "from-orange-500/20 to-red-500/20",
+  "from-purple-500/20 to-pink-500/20",
+  "from-green-500/20 to-emerald-500/20",
+  "from-slate-500/20 to-zinc-500/20",
+  "from-amber-500/20 to-yellow-500/20",
+  "from-indigo-500/20 to-blue-500/20",
+  "from-rose-500/20 to-pink-500/20",
+];
+
+const projectTags = [
+  ["Healthcare", "Booking System", "Responsive"],
+  ["F&B", "Online Menu", "Reservations"],
+  ["E-commerce", "Payments", "Inventory"],
+  ["Healthcare", "Patient Portal", "HIPAA"],
+  ["Corporate", "Blog", "Multilingual"],
+  ["F&B", "Loyalty", "Social Integration"],
+  ["Technology", "Portfolio", "Contact Forms"],
+  ["Wellness", "Booking", "Gift Cards"],
 ];
 
 interface PortfolioGridProps {
@@ -86,10 +45,26 @@ interface PortfolioGridProps {
 }
 
 export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGridProps) {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("all");
+  const { t, messages } = useLanguage();
+
+  const categories = categoryKeys.map((key) => ({
+    key,
+    label: t(`portfolioGrid.categories.${key}`),
+  }));
+
+  const projectsData = messages.portfolioGrid.projects;
+  const projects = Object.values(projectsData).map((proj: any, index: number) => ({
+    id: index + 1,
+    title: proj.title,
+    category: projectCategoryMap[index],
+    description: proj.description,
+    color: projectColors[index],
+    tags: projectTags[index],
+  }));
 
   const filteredProjects = projects
-    .filter((project) => activeCategory === "All" || project.category === activeCategory)
+    .filter((project) => activeCategory === "all" || project.category === activeCategory)
     .slice(0, limit || projects.length);
 
   return (
@@ -98,15 +73,15 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((category) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={category.key}
+              onClick={() => setActiveCategory(category.key)}
               className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all ${
-                activeCategory === category
+                activeCategory === category.key
                   ? "bg-slate-900 text-white shadow-lg"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>
@@ -128,11 +103,11 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                   </svg>
                 </div>
               </div>
-              
+
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <button className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  View Project
+                  {t("portfolioGrid.viewProject")}
                 </button>
               </div>
             </div>
@@ -141,7 +116,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">
-                  {project.category}
+                  {t(`portfolioGrid.categories.${project.category}`)}
                 </span>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
@@ -168,8 +143,8 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
       {limit && projects.length > limit && (
         <div className="mt-12 text-center">
           <Link href="/portfolio" className="btn btn-outline">
-            View All Projects
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {t("portfolioGrid.viewAll")}
+            <svg className="w-5 h-5 ml-2 rtl:ml-0 rtl:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

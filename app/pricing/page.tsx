@@ -1,30 +1,40 @@
-﻿import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { generateSEO } from "@/lib/seo";
 import Section, { SectionHeader } from "@/components/Section";
 import PricingCards from "@/components/PricingCards";
 import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
-
-export const metadata: Metadata = generateSEO({
-  title: "Pricing",
-  description: "Transparent pricing for website development and monthly management plans. One-time builds starting at 15,000 EGP. Monthly management from 2,500 EGP/month.",
-  keywords: ["web design pricing Egypt", "website cost Egypt", "web development rates"],
-});
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function PricingPage() {
+  const { t, messages } = useLanguage();
+
+  const compareRows = Object.values(messages.pricing.compare.rows) as {
+    feature: string;
+    starter: string;
+    pro: string;
+    enterprise: string;
+  }[];
+
+  const processSteps = Object.values(messages.pricing.process.steps) as {
+    step: string;
+    title: string;
+    description: string;
+  }[];
+
   return (
     <>
       {/* Hero */}
       <section className="hero pt-32 pb-20 overflow-hidden">
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="badge mb-6">Transparent Pricing</span>
+            <span className="badge mb-6">{t("pricing.badge")}</span>
             <h1 className="heading-xl text-white mb-6">
-              Simple, Honest Pricing
+              {t("pricing.title")}
             </h1>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Choose between one-time website builds or ongoing management plans. No hidden fees, no surprises.
+              {t("pricing.subtitle")}
             </p>
           </div>
         </div>
@@ -38,34 +48,23 @@ export default function PricingPage() {
       {/* Comparison Table */}
       <Section variant="alt">
         <SectionHeader
-          badge="Compare Plans"
-          title="What's Included in Each Plan"
-          subtitle="A detailed comparison to help you choose the right plan for your business."
+          badge={t("pricing.compare.badge")}
+          title={t("pricing.compare.title")}
+          subtitle={t("pricing.compare.subtitle")}
         />
 
         <div className="overflow-x-auto">
           <table className="w-full min-w-[800px]">
             <thead>
               <tr className="border-b border-slate-200">
-                <th className="text-left py-4 px-4 font-semibold text-slate-900">Feature</th>
-                <th className="text-center py-4 px-4 font-semibold text-slate-900">Starter</th>
-                <th className="text-center py-4 px-4 font-semibold text-slate-900 bg-blue-50">Professional</th>
-                <th className="text-center py-4 px-4 font-semibold text-slate-900">Enterprise</th>
+                <th className="text-left rtl:text-right py-4 px-4 font-semibold text-slate-900">{t("pricing.compare.feature")}</th>
+                <th className="text-center py-4 px-4 font-semibold text-slate-900">{messages.pricing.plans.oneTime["0"].name}</th>
+                <th className="text-center py-4 px-4 font-semibold text-slate-900 bg-blue-50">{messages.pricing.plans.oneTime["1"].name}</th>
+                <th className="text-center py-4 px-4 font-semibold text-slate-900">{messages.pricing.plans.oneTime["2"].name}</th>
               </tr>
             </thead>
             <tbody>
-              {[
-                { feature: "Number of Pages", starter: "Up to 5", pro: "Up to 15", enterprise: "Unlimited" },
-                { feature: "Custom Design", starter: "Template-based", pro: "Custom", enterprise: "Premium Custom" },
-                { feature: "Mobile Responsive", starter: "Yes", pro: "Yes", enterprise: "Yes" },
-                { feature: "SEO Optimization", starter: "Basic", pro: "Advanced", enterprise: "Full Package" },
-                { feature: "Contact Forms", starter: "1", pro: "Multiple", enterprise: "Advanced + API" },
-                { feature: "WhatsApp Integration", starter: "Button", pro: "Chat Widget", enterprise: "Business API" },
-                { feature: "Blog Section", starter: "No", pro: "Yes", enterprise: "Yes + Categories" },
-                { feature: "E-commerce", starter: "No", pro: "No", enterprise: "Up to 50 Products" },
-                { feature: "Support Period", starter: "1 Month", pro: "3 Months", enterprise: "6 Months" },
-                { feature: "Revisions", starter: "2 Rounds", pro: "4 Rounds", enterprise: "Unlimited" },
-              ].map((row, index) => (
+              {compareRows.map((row, index) => (
                 <tr key={index} className="border-b border-slate-100 hover:bg-slate-50">
                   <td className="py-4 px-4 text-slate-700">{row.feature}</td>
                   <td className="py-4 px-4 text-center text-slate-600">{row.starter}</td>
@@ -81,18 +80,13 @@ export default function PricingPage() {
       {/* Process Section */}
       <Section>
         <SectionHeader
-          badge="Our Process"
-          title="How We Work"
-          subtitle="A transparent, collaborative process that ensures your project's success."
+          badge={t("pricing.process.badge")}
+          title={t("pricing.process.title")}
+          subtitle={t("pricing.process.subtitle")}
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { step: "01", title: "Discovery", description: "We learn about your business, goals, and target audience." },
-            { step: "02", title: "Design", description: "Our designers create mockups that capture your brand perfectly." },
-            { step: "03", title: "Development", description: "We build your website with clean code, optimized for speed." },
-            { step: "04", title: "Launch", description: "After testing and approval, we launch and provide training." },
-          ].map((phase) => (
+          {processSteps.map((phase) => (
             <div key={phase.step} className="relative">
               <div className="text-6xl font-bold text-slate-100 mb-4">{phase.step}</div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{phase.title}</h3>
@@ -105,9 +99,9 @@ export default function PricingPage() {
       {/* FAQ Section */}
       <Section variant="alt" id="faq">
         <SectionHeader
-          badge="FAQ"
-          title="Frequently Asked Questions"
-          subtitle="Everything you need to know about our services and pricing."
+          badge={t("pricing.faq.badge")}
+          title={t("pricing.faq.title")}
+          subtitle={t("pricing.faq.subtitle")}
         />
         <FAQ />
       </Section>
@@ -117,10 +111,10 @@ export default function PricingPage() {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="heading-lg text-white mb-6">
-              Need a Custom Quote?
+              {t("pricing.cta.title")}
             </h2>
             <p className="text-xl text-blue-100 mb-10">
-              Every business is unique. Let us discuss your specific requirements and create a tailored solution.
+              {t("pricing.cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -129,13 +123,13 @@ export default function PricingPage() {
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                Chat About Pricing
+                {t("pricing.cta.button")}
               </Link>
               <Link href="/contact" className="btn btn-outline-light btn-lg">
-                Contact Us
+                {t("cta.contact")}
               </Link>
             </div>
           </div>

@@ -2,19 +2,21 @@
 
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/lib/config";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function WhatsAppFloat() {
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Show button after scrolling down a bit
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
-    
+
     // Show tooltip after 5 seconds on first load
     const tooltipTimer = setTimeout(() => {
       setShowTooltip(true);
@@ -43,7 +45,7 @@ export default function WhatsAppFloat() {
         }`}
       >
         <div className="bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-xl whitespace-nowrap">
-          Need help? Chat with us! ðŸ’¬
+          {t("whatsappFloat.tooltip")}
           <div className="absolute -bottom-1 right-6 w-3 h-3 bg-slate-900 rotate-45" />
         </div>
       </div>
@@ -59,7 +61,7 @@ export default function WhatsAppFloat() {
       >
         {/* Pulse Animation */}
         <span className="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-20" />
-        
+
         {/* Icon */}
         <svg
           className="w-8 h-8 text-white relative z-10"

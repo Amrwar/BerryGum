@@ -1,4 +1,4 @@
-﻿{
+{
   "nav": {
     "home": "Home",
     "pricing": "Pricing",
@@ -81,7 +81,49 @@
     "badge": "FAQ",
     "title": "Frequently Asked Questions",
     "subtitle": "Got questions? We have got answers.",
-    "viewAll": "View all FAQs"
+    "viewAll": "View all FAQs",
+    "items": {
+      "0": {
+        "question": "How long does it take to build a website?",
+        "answer": "Typically, a Starter website takes 2-3 weeks, Professional takes 4-6 weeks, and Enterprise projects take 8-12 weeks. Timeline depends on content readiness and revision rounds."
+      },
+      "1": {
+        "question": "Do you require a deposit to start?",
+        "answer": "Yes, we require a 50% deposit to begin work. The remaining 50% is due upon project completion before the site goes live."
+      },
+      "2": {
+        "question": "What do I need to provide to get started?",
+        "answer": "We need your brand assets (logo, colors, fonts if any), content (text, images, videos), and a clear understanding of your goals. We also offer content writing services at an additional cost."
+      },
+      "3": {
+        "question": "Will my website work on mobile devices?",
+        "answer": "Absolutely! All our websites are fully responsive and optimized for mobile, tablet, and desktop devices. Mobile-first design is a standard in all our packages."
+      },
+      "4": {
+        "question": "Do you provide website hosting?",
+        "answer": "Yes, we can help you set up hosting on premium providers. Monthly management plans include hosting monitoring. We recommend reliable Egyptian and international hosting providers."
+      },
+      "5": {
+        "question": "What's included in the monthly management plans?",
+        "answer": "Monthly plans include regular updates, security monitoring, backups, content updates, and support. The level of service increases with each tier. A 12-month minimum contract is required."
+      },
+      "6": {
+        "question": "Can I update the website myself after it's built?",
+        "answer": "Yes! We build websites on user-friendly platforms with content management systems. We provide training on how to make basic updates. For complex changes, our monthly plans cover that."
+      },
+      "7": {
+        "question": "Do you offer SEO services?",
+        "answer": "All packages include basic SEO setup. Our Professional and Enterprise packages include advanced SEO. For ongoing SEO management, our monthly plans include SEO monitoring and optimization."
+      },
+      "8": {
+        "question": "What if I need changes after the website is launched?",
+        "answer": "Minor changes within the first month are included. After that, our monthly management plans cover regular updates. For one-time changes, we offer hourly rates."
+      },
+      "9": {
+        "question": "Can you help with e-commerce websites?",
+        "answer": "Yes! Our Enterprise package includes e-commerce functionality for up to 50 products. For larger stores, we offer custom solutions. We integrate with local payment gateways in Egypt."
+      }
+    }
   },
   "cta": {
     "title": "Ready to Transform Your Online Presence?",
@@ -106,40 +148,348 @@
     "getStarted": "Get Started",
     "egp": "EGP",
     "month": "/mo",
+    "whatsIncluded": "What's included",
+    "notIncluded": "Not included",
+    "contractNote": "12-month minimum contract required",
+    "customNote": "Need a custom solution? We're happy to discuss your specific requirements.",
+    "customButton": "Contact Us for Custom Quote",
     "compare": {
       "badge": "Compare Plans",
-      "title": "What is Included in Each Plan",
-      "subtitle": "A detailed comparison to help you choose the right plan for your business."
+      "title": "What's Included in Each Plan",
+      "subtitle": "A detailed comparison to help you choose the right plan for your business.",
+      "feature": "Feature",
+      "rows": {
+        "0": { "feature": "Number of Pages", "starter": "Up to 5", "pro": "Up to 15", "enterprise": "Unlimited" },
+        "1": { "feature": "Custom Design", "starter": "Template-based", "pro": "Custom", "enterprise": "Premium Custom" },
+        "2": { "feature": "Mobile Responsive", "starter": "Yes", "pro": "Yes", "enterprise": "Yes" },
+        "3": { "feature": "SEO Optimization", "starter": "Basic", "pro": "Advanced", "enterprise": "Full Package" },
+        "4": { "feature": "Contact Forms", "starter": "1", "pro": "Multiple", "enterprise": "Advanced + API" },
+        "5": { "feature": "WhatsApp Integration", "starter": "Button", "pro": "Chat Widget", "enterprise": "Business API" },
+        "6": { "feature": "Blog Section", "starter": "No", "pro": "Yes", "enterprise": "Yes + Categories" },
+        "7": { "feature": "E-commerce", "starter": "No", "pro": "No", "enterprise": "Up to 50 Products" },
+        "8": { "feature": "Support Period", "starter": "1 Month", "pro": "3 Months", "enterprise": "6 Months" },
+        "9": { "feature": "Revisions", "starter": "2 Rounds", "pro": "4 Rounds", "enterprise": "Unlimited" }
+      }
     },
     "process": {
       "badge": "Our Process",
       "title": "How We Work",
-      "subtitle": "A transparent, collaborative process that ensures your project success."
+      "subtitle": "A transparent, collaborative process that ensures your project's success.",
+      "steps": {
+        "0": { "step": "01", "title": "Discovery", "description": "We learn about your business, goals, and target audience." },
+        "1": { "step": "02", "title": "Design", "description": "Our designers create mockups that capture your brand perfectly." },
+        "2": { "step": "03", "title": "Development", "description": "We build your website with clean code, optimized for speed." },
+        "3": { "step": "04", "title": "Launch", "description": "After testing and approval, we launch and provide training." }
+      }
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about our services and pricing."
     },
     "cta": {
       "title": "Need a Custom Quote?",
       "subtitle": "Every business is unique. Let us discuss your specific requirements and create a tailored solution.",
       "button": "Chat About Pricing"
+    },
+    "plans": {
+      "oneTime": {
+        "0": {
+          "name": "Starter",
+          "description": "Perfect for small businesses getting started online",
+          "price": "15,000",
+          "currency": "EGP",
+          "features": ["Up to 5 pages", "Mobile responsive design", "Basic SEO setup", "Contact form", "WhatsApp integration", "Social media links", "1 month support", "Basic analytics setup"],
+          "notIncluded": ["E-commerce functionality", "Custom animations", "Blog setup"]
+        },
+        "1": {
+          "name": "Professional",
+          "description": "For growing businesses that need more features",
+          "price": "30,000",
+          "currency": "EGP",
+          "features": ["Up to 15 pages", "Premium responsive design", "Advanced SEO optimization", "Contact form with CRM", "WhatsApp chat widget", "Social media integration", "3 months support", "Google Analytics + Search Console", "Blog/News section", "Custom animations", "Speed optimization"],
+          "notIncluded": ["E-commerce functionality"]
+        },
+        "2": {
+          "name": "Enterprise",
+          "description": "Complete solution for established businesses",
+          "price": "55,000",
+          "currency": "EGP",
+          "features": ["Unlimited pages", "Custom premium design", "Full SEO package", "Advanced forms & integrations", "WhatsApp Business API ready", "Full social media suite", "6 months priority support", "Advanced analytics dashboard", "Blog with categories", "Premium animations", "E-commerce ready (up to 50 products)", "Multi-language support", "Custom admin panel"],
+          "notIncluded": []
+        }
+      },
+      "monthly": {
+        "0": {
+          "name": "Basic Care",
+          "description": "Essential maintenance for worry-free websites",
+          "price": "2,500",
+          "currency": "EGP/mo",
+          "features": ["Monthly updates & backups", "Security monitoring", "Uptime monitoring", "Minor content updates (2/month)", "Email support", "Monthly performance report", "Plugin/software updates"],
+          "notIncluded": ["Design changes", "New feature development", "Priority support"]
+        },
+        "1": {
+          "name": "Growth Plan",
+          "description": "Active management to grow your online presence",
+          "price": "5,000",
+          "currency": "EGP/mo",
+          "features": ["Everything in Basic Care", "Weekly backups", "Content updates (8/month)", "Priority email & phone support", "SEO monitoring & reports", "Social media graphics (4/month)", "Speed optimization", "Minor design adjustments", "Blog post formatting"],
+          "notIncluded": ["Major feature development"]
+        },
+        "2": {
+          "name": "Premium Partner",
+          "description": "Full-service digital partner for your business",
+          "price": "10,000",
+          "currency": "EGP/mo",
+          "features": ["Everything in Growth Plan", "Daily backups", "Unlimited content updates", "24/7 priority support", "Full SEO management", "Social media graphics (12/month)", "Monthly strategy calls", "A/B testing", "New feature development (4hrs/month)", "Dedicated account manager", "Competitor monitoring"],
+          "notIncluded": []
+        }
+      }
     }
   },
   "contact": {
     "badge": "Get in Touch",
     "title": "Let us Start a Conversation",
     "subtitle": "Have a project in mind? We would love to hear about it.",
+    "heroSubtitle": "Ready to transform your online presence? Fill out the form below or reach out directly. We respond within 24 hours.",
+    "heroTitle": "Let's Start Your Project",
     "form": {
       "name": "Your Name",
+      "fullName": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number",
+      "company": "Company Name",
+      "budget": "Estimated Budget",
+      "budgetPlaceholder": "Select a range",
+      "budgetOptions": {
+        "0": "15,000 - 30,000 EGP",
+        "1": "30,000 - 55,000 EGP",
+        "2": "55,000+ EGP",
+        "3": "Monthly Plan",
+        "4": "Not Sure Yet"
+      },
       "message": "Your Message",
+      "messagePlaceholder": "Describe your project, goals, and any specific requirements...",
       "send": "Send Message",
-      "sending": "Sending..."
+      "sending": "Sending...",
+      "sendUs": "Send Us a Message",
+      "projectLabel": "Tell Us About Your Project",
+      "namePlaceholder": "Ahmed Hassan",
+      "emailPlaceholder": "ahmed@example.com",
+      "phonePlaceholder": "+20 10 1234 5678",
+      "companyPlaceholder": "Your Company"
     },
     "info": {
       "title": "Contact Information",
+      "subtitle": "Prefer to reach out directly? Here are all the ways you can contact us. We're always happy to hear from you.",
       "whatsapp": "WhatsApp",
+      "whatsappFastest": "WhatsApp (Fastest)",
+      "whatsappReply": "Usually replies in minutes",
       "email": "Email",
+      "emailReply": "We respond within 24 hours",
       "phone": "Phone",
-      "address": "Address"
+      "address": "Address",
+      "office": "Office",
+      "followUs": "Follow Us"
+    },
+    "status": {
+      "sending": "Sending your message...",
+      "success": "Thank you! We'll get back to you within 24 hours.",
+      "messageSent": "Message Sent!",
+      "orWhatsapp": "Or Chat on WhatsApp",
+      "errorGeneric": "Something went wrong. Please try again.",
+      "errorNetwork": "Network error. Please check your connection and try again."
     }
+  },
+  "portfolioPage": {
+    "badge": "Our Work",
+    "title": "Projects We're Proud Of",
+    "subtitle": "Explore our portfolio of successful projects across various industries. Each website is crafted with care and designed to deliver results.",
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "What Our Clients Say",
+      "subtitle": "Don't just take our word for it. Here's what our clients have to say about working with us.",
+      "items": {
+        "0": {
+          "quote": "BerryGum transformed our online presence. Our appointment bookings increased by 200% within the first month!",
+          "author": "Dr. Ahmed Hassan",
+          "role": "Cairo Dental Care"
+        },
+        "1": {
+          "quote": "Professional, responsive, and delivered exactly what we needed. Our restaurant website now reflects the quality of our food.",
+          "author": "Mohamed El-Sayed",
+          "role": "Nile Grill House"
+        },
+        "2": {
+          "quote": "The team understood our brand perfectly. Our e-commerce sales tripled after the new website launch.",
+          "author": "Sara Ibrahim",
+          "role": "Sphinx Fashion"
+        }
+      }
+    },
+    "stats": {
+      "projects": "Projects Completed",
+      "satisfaction": "Client Satisfaction",
+      "clients": "Active Clients",
+      "experience": "Years of Experience"
+    },
+    "cta": {
+      "title": "Ready to Join Our Success Stories?",
+      "subtitle": "Let's create something amazing together. Start your project with us today.",
+      "startProject": "Start Your Project",
+      "viewPricing": "View Pricing"
+    }
+  },
+  "portfolioGrid": {
+    "categories": {
+      "all": "All",
+      "clinics": "Clinics",
+      "restaurants": "Restaurants",
+      "ecommerce": "E-commerce",
+      "corporate": "Corporate"
+    },
+    "viewProject": "View Project",
+    "viewAll": "View All Projects",
+    "projects": {
+      "0": { "title": "Cairo Dental Care", "description": "Modern dental clinic website with online booking system" },
+      "1": { "title": "Nile Grill House", "description": "Restaurant website with menu and reservation system" },
+      "2": { "title": "Sphinx Fashion", "description": "Full e-commerce store with payment integration" },
+      "3": { "title": "Alexandria Eye Center", "description": "Ophthalmology clinic with patient portal" },
+      "4": { "title": "Pharaoh Consulting", "description": "Professional corporate website with case studies" },
+      "5": { "title": "Oasis Cafe", "description": "Trendy cafe website with loyalty program integration" },
+      "6": { "title": "Pyramids Tech Solutions", "description": "Tech company website with service showcase" },
+      "7": { "title": "Desert Bloom Spa", "description": "Wellness spa with booking and gift cards" }
+    }
+  },
+  "whatsappFloat": {
+    "tooltip": "Need help? Chat with us!"
+  },
+  "clinicsPage": {
+    "badge": "Healthcare Web Solutions",
+    "title": "Professional Websites for",
+    "titleHighlight": "Medical Clinics",
+    "subtitle": "Build patient trust and streamline appointments with a modern, professional website designed specifically for healthcare providers in Egypt.",
+    "cta": "Discuss Your Clinic Website",
+    "viewPricing": "View Pricing",
+    "whyBadge": "Why Your Clinic Needs a Website",
+    "whyTitle": "Patients Search Online First",
+    "whyP1": "<strong>87% of patients</strong> research healthcare providers online before making an appointment. If your clinic doesn't have a professional website, you're losing patients to competitors who do.",
+    "whyP2": "A well-designed medical website doesn't just look good — it builds trust, answers patient questions 24/7, and reduces the workload on your front desk by enabling online bookings.",
+    "whyP3": "We specialize in healthcare websites that comply with best practices, load fast, and convert visitors into patients.",
+    "withoutWebsite": "Without a Professional Website:",
+    "withoutItems": {
+      "0": "Patients can't find you online",
+      "1": "No 24/7 appointment booking",
+      "2": "Competitors capture your market",
+      "3": "Staff overwhelmed with phone calls",
+      "4": "No platform to showcase expertise"
+    },
+    "featuresBadge": "Features",
+    "featuresTitle": "Everything Your Clinic Website Needs",
+    "featuresSubtitle": "Purpose-built features that help medical practices attract and serve patients better.",
+    "features": {
+      "0": { "title": "Online Appointment Booking", "description": "Let patients book appointments 24/7 with an integrated scheduling system that syncs with your calendar." },
+      "1": { "title": "Trust-Building Design", "description": "Clean, professional aesthetics that convey credibility and make patients feel confident in your care." },
+      "2": { "title": "Doctor Profiles", "description": "Showcase your medical team with detailed profiles, credentials, specializations, and patient testimonials." },
+      "3": { "title": "Mobile-First Design", "description": "Most patients search on mobile. Your website will look perfect on every device." },
+      "4": { "title": "WhatsApp Integration", "description": "One-click WhatsApp contact for quick inquiries and appointment requests." },
+      "5": { "title": "Service Listings", "description": "Detailed pages for each service you offer with clear descriptions and pricing transparency." }
+    },
+    "includedBadge": "What's Included",
+    "includedTitle": "Complete Clinic Website Package",
+    "includedSubtitle": "Everything you need to establish a professional online presence for your medical practice.",
+    "includedItems": {
+      "0": "Custom responsive design",
+      "1": "Online appointment system",
+      "2": "Doctor profile pages",
+      "3": "Service/treatment pages",
+      "4": "Patient testimonials section",
+      "5": "WhatsApp integration",
+      "6": "Google Maps integration",
+      "7": "Contact forms",
+      "8": "SEO optimization",
+      "9": "Speed optimization",
+      "10": "SSL security certificate",
+      "11": "3 months support"
+    },
+    "startingAt": "Starting at",
+    "priceNote": "Custom medical website with all features included. Payment plans available.",
+    "getFreeQuote": "Get a Free Quote",
+    "portfolioBadge": "Our Work",
+    "portfolioTitle": "Clinic Websites We've Built",
+    "portfolioSubtitle": "See how we've helped healthcare providers establish their online presence.",
+    "portfolioItems": {
+      "0": { "name": "Cairo Dental Center", "type": "Multi-specialty Dental Clinic" },
+      "1": { "name": "Nile Women's Health", "type": "OB/GYN Clinic" },
+      "2": { "name": "Vision Plus Eye Care", "type": "Ophthalmology Practice" }
+    },
+    "viewFullPortfolio": "View Full Portfolio",
+    "testimonial": {
+      "quote": "Our new website has transformed how patients find us. Online bookings increased by 300% and our reception staff can now focus on in-clinic patients instead of answering phone calls all day.",
+      "author": "Dr. Ahmed Hassan",
+      "company": "Cairo Dental Center"
+    },
+    "ctaTitle": "Ready to Grow Your Practice?",
+    "ctaSubtitle": "Join 50+ clinics and healthcare providers who trust us with their online presence. Let's create a website that brings you more patients.",
+    "startProject": "Start Your Project",
+    "contactUs": "Contact Us",
+    "whatsappClinic": "Hi! I'm interested in a website for my clinic. Can we discuss?",
+    "whatsappQuote": "Hi! I'd like to get a quote for a clinic website."
+  },
+  "restaurantsPage": {
+    "badge": "For Restaurants & Cafes",
+    "title": "A Website That Makes",
+    "titleHighlight": "Mouths Water",
+    "subtitle": "Get more diners with a stunning restaurant website. Digital menus, online reservations, and direct ordering - all designed to fill your tables and boost your revenue.",
+    "cta": "Get Free Consultation",
+    "viewPricing": "View Pricing",
+    "whatsappRestaurant": "Hi! I'm interested in a website for my restaurant.",
+    "stats": {
+      "0": { "stat": "40%", "label": "Increase in reservations" },
+      "1": { "stat": "25%", "label": "More online orders" },
+      "2": { "stat": "0%", "label": "Third-party order fees" },
+      "3": { "stat": "50+", "label": "Restaurants served" }
+    },
+    "featuresBadge": "Features",
+    "featuresTitle": "Everything Your Restaurant Needs Online",
+    "featuresSubtitle": "From beautiful menus to direct ordering, we build restaurant websites that turn visitors into paying customers.",
+    "features": {
+      "0": { "title": "Digital Menu", "description": "Beautiful, mobile-friendly menus with photos and descriptions. Easy to update when you change dishes or prices." },
+      "1": { "title": "Table Reservations", "description": "Online table booking system that syncs with your operations. Reduce no-shows with automated reminders." },
+      "2": { "title": "Online Ordering", "description": "Accept pickup and delivery orders directly through your website. Skip third-party fees and own your customer data." },
+      "3": { "title": "Photo Gallery", "description": "Showcase your dishes, ambiance, and events with stunning photo galleries that make visitors hungry." },
+      "4": { "title": "Reviews Integration", "description": "Display your best Google and TripAdvisor reviews. Build trust and credibility with new customers." },
+      "5": { "title": "Location & Directions", "description": "Interactive maps, clear directions, and operating hours. Make it easy for customers to find you." }
+    },
+    "menuBadge": "Digital Menus",
+    "menuTitle": "Menus That Make Customers Order More",
+    "menuSubtitle": "Beautiful, mobile-optimized menus with mouth-watering photos and detailed descriptions. Studies show digital menus with photos increase average order value by 30%.",
+    "menuItems": {
+      "0": "High-quality food photography integration",
+      "1": "Easy-to-update pricing and items",
+      "2": "Category organization and filtering",
+      "3": "Dietary labels (vegetarian, halal, etc.)",
+      "4": "Bilingual support (Arabic/English)"
+    },
+    "ourMenu": "Our Menu",
+    "menuCategories": { "0": "All", "1": "Starters", "2": "Mains", "3": "Desserts" },
+    "processBadge": "Our Process",
+    "processTitle": "From Concept to Launch in 3 Weeks",
+    "processSubtitle": "A simple process designed to get your restaurant online without disrupting your operations.",
+    "processSteps": {
+      "0": { "step": "01", "title": "Tasting Menu", "description": "We learn about your restaurant, cuisine, and brand personality." },
+      "1": { "step": "02", "title": "Recipe Design", "description": "We create a custom design that captures your restaurant's essence." },
+      "2": { "step": "03", "title": "Cooking", "description": "We build your site with menus, ordering, and reservations." },
+      "3": { "step": "04", "title": "Serving", "description": "Your website goes live and starts bringing hungry customers!" }
+    },
+    "faqBadge": "FAQ",
+    "faqTitle": "Common Questions About Restaurant Websites",
+    "ctaTitle": "Ready to Fill More Tables?",
+    "ctaSubtitle": "Join 50+ restaurants across Egypt who trust us with their online presence. Get started with a free consultation today.",
+    "contactUs": "Contact Us",
+    "bookNow": "Book Now",
+    "todaysSpecial": "Today's Special",
+    "reviews": "Reviews",
+    "orderConfirmed": "Order Confirmed!"
   }
 }
