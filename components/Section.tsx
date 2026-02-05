@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface SectionProps {
   children: ReactNode;
   className?: string;
-  variant?: "default" | "dark" | "alt";
+  variant?: "default" | "dark" | "alt" | "glass";
   id?: string;
 }
 
@@ -17,14 +17,22 @@ export default function Section({
     default: "bg-white",
     dark: "bg-slate-900 text-white",
     alt: "bg-slate-50",
+    glass: "bg-gradient-to-b from-slate-50 to-white",
   };
 
   return (
     <section
       id={id}
-      className={`section ${variants[variant]} ${className}`}
+      className={`section ${variants[variant]} ${className} relative overflow-hidden`}
     >
-      <div className="container-custom">
+      {/* Subtle decorative background for visual interest */}
+      {variant === "glass" && (
+        <>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        </>
+      )}
+      <div className="container-custom relative z-10">
         {children}
       </div>
     </section>

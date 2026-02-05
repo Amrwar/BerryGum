@@ -23,19 +23,19 @@ const config: Config = {
           900: "#0f172a",
           950: "#020617",
         },
-        // Accent color (rose)
+        // Accent color (amber/gold for brand identity)
         accent: {
-          50: "#fff1f2",
-          100: "#ffe4e6",
-          200: "#fecdd3",
-          300: "#fda4af",
-          400: "#fb7185",
-          500: "#f43f5e",
-          600: "#e11d48",
-          700: "#be123c",
-          800: "#9f1239",
-          900: "#881337",
-          950: "#4c0519",
+          50: "#fffbeb",
+          100: "#fef3c7",
+          200: "#fde68a",
+          300: "#fcd34d",
+          400: "#fbbf24",
+          500: "#f59e0b",
+          600: "#d97706",
+          700: "#b45309",
+          800: "#92400e",
+          900: "#78350f",
+          950: "#451a03",
         },
       },
       fontFamily: {
@@ -50,6 +50,9 @@ const config: Config = {
         "slide-in-right": "slideInRight 0.5s ease-out",
         "scale-in": "scaleIn 0.3s ease-out",
         "bounce-subtle": "bounceSubtle 2s ease-in-out infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
+        "shimmer": "shimmer 2s linear infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
       },
       keyframes: {
         float: {
@@ -76,6 +79,18 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-5px)" },
         },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -83,9 +98,14 @@ const config: Config = {
         "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
       },
       boxShadow: {
-        "glow": "0 0 40px -10px rgba(244, 63, 94, 0.3)",
-        "glow-lg": "0 0 60px -15px rgba(244, 63, 94, 0.4)",
-        "inner-glow": "inset 0 2px 20px 0 rgba(244, 63, 94, 0.1)",
+        "glow": "0 0 40px -10px rgba(245, 158, 11, 0.3)",
+        "glow-lg": "0 0 60px -15px rgba(245, 158, 11, 0.4)",
+        "inner-glow": "inset 0 2px 20px 0 rgba(245, 158, 11, 0.1)",
+        "glass": "0 8px 32px rgba(0, 0, 0, 0.1)",
+        "glass-lg": "0 20px 40px rgba(0, 0, 0, 0.15)",
+        "glow-amber": "0 0 40px -10px rgba(245, 158, 11, 0.4)",
+        "glow-amber-lg": "0 0 60px -15px rgba(245, 158, 11, 0.5)",
+        "card-hover": "0 20px 40px -15px rgba(0, 0, 0, 0.15)",
       },
       spacing: {
         "18": "4.5rem",
