@@ -144,7 +144,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">{t("contact.info.whatsappFastest")}</div>
-                    <div className="text-slate-600">{siteConfig.whatsapp}</div>
+                    <div className="text-slate-600" dir="ltr">{siteConfig.whatsapp}</div>
                     <div className="text-sm text-green-600 mt-1">{t("contact.info.whatsappReply")}</div>
                   </div>
                 </a>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">{t("contact.info.phone")}</div>
-                    <div className="text-slate-600">{siteConfig.phone}</div>
+                    <div className="text-slate-600" dir="ltr">{siteConfig.phone}</div>
                     <div className="text-sm text-slate-500 mt-1">{siteConfig.hours.weekdays}</div>
                   </div>
                 </a>
