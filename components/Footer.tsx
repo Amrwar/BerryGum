@@ -12,12 +12,11 @@ export default function Footer() {
     services: [
       { label: t("services.clinics.title"), href: "/services/clinics" },
       { label: t("services.restaurants.title"), href: "/services/restaurants" },
+      { label: t("services.startups.title"), href: "/services/startups" },
       { label: t("services.ecommerce.title"), href: "/pricing" },
-      { label: t("services.corporate.title"), href: "/pricing" },
     ],
     company: [
       { label: t("nav.home"), href: "/" },
-      { label: t("nav.portfolio"), href: "/portfolio" },
       { label: t("nav.pricing"), href: "/pricing" },
       { label: t("nav.contact"), href: "/contact" },
     ],

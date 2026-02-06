@@ -10,13 +10,19 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const { t } = useLanguage();
 
   const navLinks = [
     { href: "/", label: t("nav.home") },
     { href: "/pricing", label: t("nav.pricing") },
-    { href: "/portfolio", label: t("nav.portfolio") },
     { href: "/contact", label: t("nav.contact") },
+  ];
+
+  const serviceLinks = [
+    { href: "/services/clinics", label: t("services.clinics.title"), icon: "🏥" },
+    { href: "/services/restaurants", label: t("services.restaurants.title"), icon: "🍽️" },
+    { href: "/services/startups", label: t("services.startups.title"), icon: "🚀" },
   ];
 
   useEffect(() => {
@@ -64,19 +70,86 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`font-medium transition-colors duration-200 ${
+            <Link
+              href="/"
+              className={`font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? "text-slate-600 hover:text-amber-600"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              {t("nav.home")}
+            </Link>
+
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className={`font-medium transition-colors duration-200 flex items-center gap-1 ${
                   isScrolled
-                    ? "text-slate-600 hover:text-blue-600"
+                    ? "text-slate-600 hover:text-amber-600"
                     : "text-white/90 hover:text-white"
                 }`}
               >
-                {link.label}
-              </Link>
-            ))}
+                {t("nav.services")}
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 rtl:left-auto rtl:right-0 mt-2 w-64 transition-all duration-200 ${
+                  servicesOpen
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                <div className="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                    >
+                      <span className="text-xl">{service.icon}</span>
+                      <span className="font-medium">{service.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="/pricing"
+              className={`font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? "text-slate-600 hover:text-amber-600"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              {t("nav.pricing")}
+            </Link>
+
+            <Link
+              href="/contact"
+              className={`font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? "text-slate-600 hover:text-amber-600"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              {t("nav.contact")}
+            </Link>
+
             <LanguageSwitcher />
             <Link
               href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.general)}`}
@@ -132,16 +205,47 @@ export default function Navbar() {
               </div>
               <LanguageSwitcher />
             </div>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block py-3 px-4 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-colors font-medium"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+            >
+              {t("nav.home")}
+            </Link>
+
+            {/* Mobile Services Section */}
+            <div className="py-2">
+              <div className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                {t("nav.services")}
+              </div>
+              {serviceLinks.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-3 py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+                >
+                  <span>{service.icon}</span>
+                  <span>{service.label}</span>
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              href="/pricing"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+            >
+              {t("nav.pricing")}
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+            >
+              {t("nav.contact")}
+            </Link>
             <Link
               href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.general)}`}
               target="_blank"

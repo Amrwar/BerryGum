@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "services": "Services",
     "pricing": "Pricing",
     "portfolio": "Portfolio",
     "contact": "Contact",
@@ -33,6 +34,10 @@
     "corporate": {
       "title": "Corporate Sites",
       "description": "Establish credibility with professional corporate websites that showcase your brand."
+    },
+    "startups": {
+      "title": "Startups",
+      "description": "Launch your startup with a modern website that attracts investors and customers. MVP-ready designs with growth in mind."
     },
     "learnMore": "Learn more"
   },
@@ -435,6 +440,64 @@
     "contactUs": "Contact Us",
     "whatsappClinic": "Hi! I'm interested in a website for my clinic. Can we discuss?",
     "whatsappQuote": "Hi! I'd like to get a quote for a clinic website."
+  },
+  "startupsPage": {
+    "badge": "For Startups & New Ventures",
+    "title": "Launch Your Startup with a",
+    "titleHighlight": "Winning Website",
+    "subtitle": "First impressions matter. Get a professional website that impresses investors, attracts customers, and sets your startup apart from the competition.",
+    "cta": "Let's Build Your MVP",
+    "viewPricing": "View Pricing",
+    "whatsappStartup": "Hi! I'm launching a startup and need a website.",
+    "whatsappQuote": "Hi! I'd like to get a quote for a startup website.",
+    "whyBadge": "Why Your Startup Needs a Website",
+    "whyTitle": "Your Website is Your First Investor Pitch",
+    "whyP1": "<strong>92% of investors</strong> research startups online before taking meetings. Your website is often your first impression - make it count.",
+    "whyP2": "A professional website builds credibility, explains your value proposition clearly, and can even help validate your idea by capturing early interest.",
+    "whyP3": "We specialize in startup websites that look like you've already raised your Series A - without the Series A budget.",
+    "benefitsTitle": "With a Professional Website:",
+    "benefits": {
+      "0": "Look credible to investors and partners",
+      "1": "Capture early customer interest",
+      "2": "Validate your idea with landing pages",
+      "3": "Build your email list from day one",
+      "4": "Stand out from competition"
+    },
+    "featuresBadge": "Features",
+    "featuresTitle": "Everything Your Startup Needs to Launch",
+    "featuresSubtitle": "Purpose-built features that help startups attract investors and early customers.",
+    "features": {
+      "0": { "title": "Launch-Ready Design", "description": "Modern, bold designs that make your startup look established and trustworthy from day one." },
+      "1": { "title": "Analytics & Tracking", "description": "Know your numbers. Track visitors, conversions, and user behavior to make data-driven decisions." },
+      "2": { "title": "Lead Capture", "description": "Convert visitors into leads with email signup forms, waitlists, and early access campaigns." },
+      "3": { "title": "Brand Identity", "description": "Consistent branding across your website that tells your startup's story and builds recognition." },
+      "4": { "title": "Team & About Pages", "description": "Showcase your founding team's expertise and build trust with investors and customers." },
+      "5": { "title": "Scalable Foundation", "description": "Built to grow with you. Easy to add features, pages, and functionality as you scale." }
+    },
+    "includedBadge": "What's Included",
+    "includedTitle": "Complete Startup Website Package",
+    "includedSubtitle": "Everything you need to establish a professional online presence for your startup.",
+    "includedItems": {
+      "0": "Modern responsive design",
+      "1": "Landing page optimization",
+      "2": "Email capture forms",
+      "3": "Team/founder profiles",
+      "4": "Product/service showcase",
+      "5": "WhatsApp integration",
+      "6": "Social media links",
+      "7": "Contact forms",
+      "8": "SEO optimization",
+      "9": "Speed optimization",
+      "10": "Google Analytics setup",
+      "11": "3 months support"
+    },
+    "startingAt": "Starting at",
+    "priceNote": "Professional startup website with all features included. Payment plans available.",
+    "getFreeQuote": "Get a Free Quote",
+    "ctaTitle": "Ready to Launch?",
+    "ctaSubtitle": "Join ambitious founders who trust us to build their online presence. Let's create a website that helps you take off.",
+    "startProject": "Start Your Project",
+    "contactUs": "Contact Us"
   },
   "restaurantsPage": {
     "badge": "For Restaurants & Cafes",
