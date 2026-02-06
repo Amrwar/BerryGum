@@ -1,30 +1,30 @@
 export const siteConfig = {
-  name: "PixelCraft Studio",
-  tagline: "نبني حضورك الرقمي",
+  name: "BerryGum",
+  tagline: "We Build Digital Experiences",
   description: "Premium web design and development studio in Egypt. We craft stunning websites for clinics, restaurants, and businesses.",
-  url: "https://pixelcraft.studio",
-  
+  url: "https://berry-gum.vercel.app",
+
   // Contact Information
   whatsapp: "+201107578212",
-  email: "hello@pixelcraft.studio",
-  phone: "+20 2 1234 5678",
+  email: "berrygumstudio@yahoo.com",
+  phone: "+201107578212",
   address: "Smart Village, 6th of October City, Giza, Egypt",
-  
+
   // Social Links
   social: {
-    instagram: "https://instagram.com/pixelcraftstudio",
-    facebook: "https://facebook.com/pixelcraftstudio",
-    linkedin: "https://linkedin.com/company/pixelcraftstudio",
-    behance: "https://behance.net/pixelcraftstudio",
+    instagram: "https://instagram.com/berrygumstudio",
+    facebook: "https://facebook.com/berrygumstudio",
+    linkedin: "https://linkedin.com/company/berrygumstudio",
+    behance: "https://behance.net/berrygumstudio",
   },
-  
+
   // WhatsApp message templates
   whatsappMessages: {
-    general: "مرحباً! أريد الاستفسار عن خدماتكم",
-    pricing: "مرحباً! أريد معرفة المزيد عن الأسعار",
-    contact: "مرحباً! أريد التواصل معكم بخصوص مشروع جديد",
+    general: "Hello! I would like to inquire about your services",
+    pricing: "Hello! I would like to know more about your pricing",
+    contact: "Hello! I would like to discuss a new project",
   },
-  
+
   // Business hours
   hours: {
     weekdays: "9:00 AM - 6:00 PM",
