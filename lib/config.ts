@@ -12,10 +12,7 @@ export const siteConfig = {
 
   // Social Links
   social: {
-    instagram: "https://instagram.com/berrygumstudio",
-    facebook: "https://facebook.com/berrygumstudio",
-    linkedin: "https://linkedin.com/company/berrygumstudio",
-    behance: "https://behance.net/berrygumstudio",
+    instagram: "https://instagram.com/BerryGumStudio",
   },
 
   // WhatsApp message templates
