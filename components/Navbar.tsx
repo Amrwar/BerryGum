@@ -43,28 +43,16 @@ export default function Navbar() {
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between">
-          {/* Logo + Company Name */}
+          {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-md border-2 border-white/20">
+            <div className="relative w-36 h-14 sm:w-44 sm:h-16">
               <Image
                 src="/logo.png"
                 alt={siteConfig.name}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
-            </div>
-            <div className="ml-3 rtl:ml-0 rtl:mr-3">
-              <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
-                isScrolled ? "text-slate-900" : "text-white"
-              }`}>
-                BerryGum
-              </span>
-              <span className={`text-xs block -mt-0.5 font-medium transition-colors duration-300 ${
-                isScrolled ? "text-slate-500" : "text-white/70"
-              }`}>
-                Website Builder
-              </span>
             </div>
           </Link>
 
@@ -189,19 +177,13 @@ export default function Navbar() {
         >
           <div className="bg-white rounded-xl shadow-xl p-4 border border-slate-100">
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm">
-                  <Image
-                    src="/logo.png"
-                    alt={siteConfig.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="text-lg font-bold text-slate-900">BerryGum</span>
-                  <span className="text-xs block text-slate-500">Website Builder</span>
-                </div>
+              <div className="relative w-32 h-12">
+                <Image
+                  src="/logo.png"
+                  alt={siteConfig.name}
+                  fill
+                  className="object-contain"
+                />
               </div>
               <LanguageSwitcher />
             </div>

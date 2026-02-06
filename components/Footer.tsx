@@ -28,11 +28,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6">
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden">
-                <Image src="/logo.png" alt={siteConfig.name} fill className="object-cover" />
+            <Link href="/" className="inline-block mb-6">
+              <div className="relative w-40 h-14">
+                <Image src="/logo.png" alt={siteConfig.name} fill className="object-contain" />
               </div>
-              <span className="text-xl font-bold">BerryGum</span>
             </Link>
             <p className="text-slate-400 mb-6 leading-relaxed">
               {siteConfig.description}
