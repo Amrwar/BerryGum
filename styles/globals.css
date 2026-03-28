@@ -39,13 +39,16 @@
   }
 
   .section-dark {
-    @apply bg-slate-900 text-white;
+    background: #FDFAF3;
+    @apply text-slate-900;
+    border-top: 1px solid rgba(201, 160, 90, 0.2);
+    border-bottom: 1px solid rgba(201, 160, 90, 0.2);
   }
-  .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { @apply text-white; }
-  .section-dark p { @apply text-slate-300; }
+  .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { @apply text-slate-900; }
+  .section-dark p { @apply text-slate-600; }
 
   .section-alt {
-    @apply bg-slate-50;
+    background: #FDFAF3;
   }
 
   .section-gold {
@@ -55,19 +58,17 @@
   .section-gold h1, .section-gold h2, .section-gold h3, .section-gold h4 { @apply text-white; }
   .section-gold p { color: rgba(201, 160, 90, 0.8); }
 
-  /* Hero - Deep dark with gold accent for luxury feel */
+  /* Hero - Clean white with gold accent */
   .hero {
-    @apply relative overflow-hidden;
-    background: linear-gradient(135deg, #080808 0%, #111111 50%, #080808 100%);
+    @apply relative overflow-hidden bg-white;
   }
 
   .hero::before {
     content: '';
     @apply absolute inset-0 pointer-events-none;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201, 160, 90, 0.15), transparent),
-      radial-gradient(ellipse 60% 40% at 100% 50%, rgba(212, 175, 55, 0.08), transparent),
-      radial-gradient(ellipse 60% 40% at 0% 50%, rgba(201, 160, 90, 0.08), transparent);
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201, 160, 90, 0.12), transparent),
+      radial-gradient(ellipse 50% 40% at 100% 60%, rgba(212, 175, 55, 0.07), transparent);
   }
 
   /* Buttons */
@@ -137,13 +138,11 @@
   }
 
   .card-dark {
-    @apply bg-slate-800/90 border-slate-700/50;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply bg-white border border-amber-200;
   }
-  .card-dark:hover { @apply border-amber-500/30; }
-  .card-dark h3, .card-dark h4 { @apply text-white; }
-  .card-dark p { @apply text-slate-300; }
+  .card-dark:hover { @apply border-amber-400; }
+  .card-dark h3, .card-dark h4 { @apply text-slate-900; }
+  .card-dark p { @apply text-slate-600; }
 
   /* Headings */
   .heading-xl { @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight; }
@@ -210,11 +209,11 @@
     @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   }
   .navbar-scrolled {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 20px rgba(201, 160, 90, 0.15);
+    border-bottom: 1px solid rgba(201, 160, 90, 0.2);
   }
   .navbar-transparent {
     @apply bg-transparent;
@@ -222,12 +221,12 @@
 
   /* Footer */
   .footer {
-    background: #080808;
-    @apply text-slate-300;
-    border-top: 1px solid rgba(201, 160, 90, 0.2);
+    background: #FFFFFF;
+    @apply text-slate-700;
+    border-top: 2px solid rgba(201, 160, 90, 0.4);
   }
-  .footer a { @apply text-slate-400 hover:text-amber-400 transition-colors; }
-  .footer h4 { @apply text-white; }
+  .footer a { @apply text-slate-500 hover:text-amber-600 transition-colors; }
+  .footer h4 { @apply text-slate-900; }
 
   /* Pricing */
   .pricing-card {
@@ -313,10 +312,10 @@
   }
 
   .glass-dark {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 160, 90, 0.3);
   }
 
   /* Gradient borders */
@@ -375,10 +374,10 @@
 .animate-fade-in { animation: fade-in 0.5s ease-out forwards; opacity: 0; }
 .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; opacity: 0; }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fafaf7; }
+::-webkit-scrollbar-thumb { background: rgba(201, 160, 90, 0.4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 160, 90, 0.7); }
 
 *:focus-visible { @apply outline-none ring-2 ring-amber-500 ring-offset-2; }
 

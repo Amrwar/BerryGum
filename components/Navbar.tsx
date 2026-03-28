@@ -63,7 +63,7 @@ export default function Navbar() {
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
                   ? "text-slate-600 hover:text-amber-600"
-                  : "text-white/90 hover:text-white"
+                  : "text-slate-800 hover:text-amber-600"
               }`}
             >
               {t("nav.home")}
@@ -79,7 +79,7 @@ export default function Navbar() {
                 className={`font-medium transition-colors duration-200 flex items-center gap-1 ${
                   isScrolled
                     ? "text-slate-600 hover:text-amber-600"
-                    : "text-white/90 hover:text-white"
+                    : "text-slate-800 hover:text-amber-600"
                 }`}
               >
                 {t("nav.services")}
@@ -121,7 +121,7 @@ export default function Navbar() {
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
                   ? "text-slate-600 hover:text-amber-600"
-                  : "text-white/90 hover:text-white"
+                  : "text-slate-800 hover:text-amber-600"
               }`}
             >
               {t("nav.pricing")}
@@ -132,7 +132,7 @@ export default function Navbar() {
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
                   ? "text-slate-600 hover:text-amber-600"
-                  : "text-white/90 hover:text-white"
+                  : "text-slate-800 hover:text-amber-600"
               }`}
             >
               {t("nav.portfolio")}
@@ -143,7 +143,7 @@ export default function Navbar() {
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
                   ? "text-slate-600 hover:text-amber-600"
-                  : "text-white/90 hover:text-white"
+                  : "text-slate-800 hover:text-amber-600"
               }`}
             >
               {t("nav.contact")}
@@ -166,7 +166,7 @@ export default function Navbar() {
             className={`md:hidden p-2 rounded-lg transition-colors ${
               isScrolled
                 ? "text-slate-900 hover:bg-slate-100"
-                : "text-white hover:bg-white/10"
+                : "text-slate-800 hover:bg-amber-50"
             }`}
             aria-label="Toggle menu"
           >

@@ -15,9 +15,9 @@ export default function Section({
 }: SectionProps) {
   const variants = {
     default: "bg-white",
-    dark: "bg-slate-900 text-white",
-    alt: "bg-slate-50",
-    glass: "bg-gradient-to-b from-slate-50 to-white",
+    dark: "section-dark",
+    alt: "bg-[#FDFAF3]",
+    glass: "bg-gradient-to-b from-[#FDFAF3] to-white",
   };
 
   return (
@@ -28,8 +28,8 @@ export default function Section({
       {/* Subtle decorative background for visual interest */}
       {variant === "glass" && (
         <>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-50/60 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         </>
       )}
       <div className="container-custom relative z-10">
