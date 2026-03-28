@@ -128,6 +128,17 @@ export default function Navbar() {
             </Link>
 
             <Link
+              href="/portfolio"
+              className={`font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? "text-slate-600 hover:text-amber-600"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              {t("nav.portfolio")}
+            </Link>
+
+            <Link
               href="/contact"
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
@@ -219,6 +230,14 @@ export default function Navbar() {
               className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
             >
               {t("nav.pricing")}
+            </Link>
+
+            <Link
+              href="/portfolio"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+            >
+              {t("nav.portfolio")}
             </Link>
 
             <Link
