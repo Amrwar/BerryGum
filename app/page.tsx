@@ -152,7 +152,14 @@ export default function HomePage() {
         <SectionHeader badge={t("features.badge")} title={t("features.title")} subtitle={t("features.subtitle")} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <div key={feature.title} className="card p-6 group">
+            <div
+              key={feature.title}
+              className="group relative bg-white px-7 py-8 transition-all duration-300 hover:shadow-lg"
+              style={{
+                borderTop: "2px solid rgba(201, 160, 90, 0.6)",
+                borderBottom: "2px solid rgba(201, 160, 90, 0.6)",
+              }}
+            >
               <div className="feature-icon group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{feature.title}</h3>
               <p className="text-slate-500 text-sm">{feature.description}</p>
