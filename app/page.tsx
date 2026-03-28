@@ -120,7 +120,7 @@ export default function HomePage() {
             <div className="aspect-square bg-gradient-to-br from-amber-100/50 to-slate-100 rounded-3xl overflow-hidden shadow-glass">
               {/* Decorative floating elements */}
               <div className="absolute top-8 right-8 w-16 h-16 bg-amber-400/20 rounded-xl rotate-12 animate-float" />
-              <div className="absolute bottom-12 left-8 w-12 h-12 bg-blue-400/20 rounded-lg -rotate-6 animate-float animation-delay-400" />
+              <div className="absolute bottom-12 left-8 w-12 h-12 bg-amber-400/15 rounded-lg -rotate-6 animate-float animation-delay-400" />
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-3/4 h-3/4 bg-white rounded-2xl shadow-glass-lg p-6 flex flex-col">
@@ -177,7 +177,7 @@ export default function HomePage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-grid opacity-10" />
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-amber-500/20 rounded-full blur-[80px] animate-pulse-slow" />
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-blue-500/15 rounded-full blur-[60px] animate-pulse-slow animation-delay-600" />
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-amber-500/10 rounded-full blur-[60px] animate-pulse-slow animation-delay-600" />
 
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto">

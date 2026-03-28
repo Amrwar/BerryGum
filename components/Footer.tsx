@@ -23,13 +23,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="footer text-white">
       <div className="container-custom py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <div className="relative w-40 h-14">
+              <div className="relative w-52 h-20">
                 <Image src="/logo.png" alt={siteConfig.name} fill className="object-contain" />
               </div>
             </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-amber-900/30">
         <div className="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} {siteConfig.name}. {t("footer.rights")}
