@@ -4,39 +4,30 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 
-const categoryKeys = ["all", "clinics", "restaurants", "ecommerce", "corporate"] as const;
+const categoryKeys = ["all", "clinics", "restaurants", "businessSystems", "business", "ecommerce"] as const;
 
 const projectCategoryMap = [
   "clinics",
   "restaurants",
+  "businessSystems",
+  "business",
   "ecommerce",
-  "clinics",
-  "corporate",
-  "restaurants",
-  "corporate",
-  "clinics",
 ];
 
 const projectColors = [
   "from-blue-500/20 to-cyan-500/20",
   "from-orange-500/20 to-red-500/20",
-  "from-purple-500/20 to-pink-500/20",
-  "from-green-500/20 to-emerald-500/20",
   "from-slate-500/20 to-zinc-500/20",
-  "from-amber-500/20 to-yellow-500/20",
   "from-indigo-500/20 to-blue-500/20",
-  "from-rose-500/20 to-pink-500/20",
+  "from-purple-500/20 to-pink-500/20",
 ];
 
 const projectTags = [
-  ["Healthcare", "Booking System", "Responsive"],
+  ["Healthcare", "Booking System", "Patient Portal"],
   ["F&B", "Online Menu", "Reservations"],
+  ["ERP", "Inventory", "Dashboard"],
+  ["Corporate", "Blog", "Lead Generation"],
   ["E-commerce", "Payments", "Inventory"],
-  ["Healthcare", "Patient Portal", "HIPAA"],
-  ["Corporate", "Blog", "Multilingual"],
-  ["F&B", "Loyalty", "Social Integration"],
-  ["Technology", "Portfolio", "Contact Forms"],
-  ["Wellness", "Booking", "Gift Cards"],
 ];
 
 interface PortfolioGridProps {

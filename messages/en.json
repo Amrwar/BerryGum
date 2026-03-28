@@ -348,22 +348,20 @@
   "portfolioGrid": {
     "categories": {
       "all": "All",
-      "clinics": "Clinics",
+      "clinics": "Clinics & Medical",
       "restaurants": "Restaurants",
-      "ecommerce": "E-commerce",
-      "corporate": "Corporate"
+      "businessSystems": "Business Systems",
+      "business": "Business",
+      "ecommerce": "E-commerce"
     },
     "viewProject": "View Project",
     "viewAll": "View All Projects",
     "projects": {
-      "0": { "title": "Cairo Dental Care", "description": "Modern dental clinic website with online booking system" },
-      "1": { "title": "Nile Grill House", "description": "Restaurant website with menu and reservation system" },
-      "2": { "title": "Sphinx Fashion", "description": "Full e-commerce store with payment integration" },
-      "3": { "title": "Alexandria Eye Center", "description": "Ophthalmology clinic with patient portal" },
-      "4": { "title": "Pharaoh Consulting", "description": "Professional corporate website with case studies" },
-      "5": { "title": "Oasis Cafe", "description": "Trendy cafe website with loyalty program integration" },
-      "6": { "title": "Pyramids Tech Solutions", "description": "Tech company website with service showcase" },
-      "7": { "title": "Desert Bloom Spa", "description": "Wellness spa with booking and gift cards" }
+      "0": { "title": "Medical Clinic Website", "description": "Professional clinic website with online appointment booking and doctor profiles" },
+      "1": { "title": "Restaurant Website", "description": "Restaurant website with digital menu, online reservations, and WhatsApp ordering" },
+      "2": { "title": "Business Management System", "description": "Custom business system with inventory management, invoicing, and reporting dashboard" },
+      "3": { "title": "Corporate Business Website", "description": "Professional business website with service pages, team showcase, and lead generation" },
+      "4": { "title": "E-commerce Store", "description": "Full-featured online store with product catalog, cart, and payment integration" }
     }
   },
   "whatsappFloat": {
