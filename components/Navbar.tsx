@@ -42,7 +42,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <div className="relative w-44 h-16 sm:w-52 sm:h-[72px]">
@@ -56,8 +56,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation — centered links */}
+          <div className="hidden md:flex items-center justify-center gap-6 absolute left-1/2 -translate-x-1/2">
             <Link
               href="/"
               className={`font-medium transition-colors duration-200 ${
@@ -101,7 +101,7 @@ export default function Navbar() {
                     : "opacity-0 invisible -translate-y-2"
                 }`}
               >
-                <div className="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
+                <div className="bg-white rounded-xl shadow-xl border border-amber-100 overflow-hidden p-2">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
@@ -148,7 +148,10 @@ export default function Navbar() {
             >
               {t("nav.contact")}
             </Link>
+          </div>
 
+          {/* Right side: Language + CTA */}
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
             <Link
               href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.general)}`}
