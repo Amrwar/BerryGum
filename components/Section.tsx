@@ -16,8 +16,8 @@ export default function Section({
   const variants = {
     default: "bg-white",
     dark: "section-dark",
-    alt: "bg-[#fdf6ff]",
-    glass: "bg-gradient-to-b from-[#fdf6ff] to-white",
+    alt: "bg-[#f8fafc]",
+    glass: "bg-[#f8fafc]",
   };
 
   return (

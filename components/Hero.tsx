@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="hero flex items-center justify-center relative overflow-hidden">
+    <section className="hero min-h-[88vh] flex items-center justify-center relative overflow-hidden">
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-grid-light opacity-20" />
 
