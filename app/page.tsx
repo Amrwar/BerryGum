@@ -82,7 +82,7 @@ export default function HomePage() {
         <SectionHeader badge={t("services.badge")} title={t("services.title")} subtitle={t("services.subtitle")} />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
-            <Link key={service.title} href={service.href} className="group card p-6">
+            <Link key={service.title} href={service.href} className="group card p-6 border-t-2 border-b-2 border-t-purple-300 border-b-purple-300 border-l border-r border-l-slate-200 border-r-slate-200">
               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 {service.icon}
               </div>
