@@ -138,7 +138,7 @@ export default function HomePage() {
       <Section variant="alt" id="about">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <div className="flex justify-center mb-4">
+            <div className="mb-4">
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
                 <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   {/* centre person */}
