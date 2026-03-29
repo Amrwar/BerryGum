@@ -5,6 +5,7 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section, { SectionHeader } from "@/components/Section";
 import ServicesIllustration from "@/components/ServicesIllustration";
+import AboutIllustration from "@/components/AboutIllustration";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -129,7 +130,11 @@ export default function HomePage() {
       <Section variant="alt" id="about">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <span className="badge mb-6">{t("about.badge")}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+              style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
+              <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>{t("about.badge")}</span>
+            </div>
             <h2 className="heading-lg text-slate-900 mb-6">{t("about.title")}</h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">{t("about.description1")}</p>
             <p className="text-slate-600 leading-relaxed mb-8">{t("about.description2")}</p>
@@ -142,33 +147,8 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-purple-50/50 to-white rounded-3xl overflow-hidden shadow-glass">
-              {/* Decorative floating elements */}
-              <div className="absolute top-8 right-8 w-16 h-16 bg-purple-200/30 rounded-xl rotate-12 animate-float" />
-              <div className="absolute bottom-12 left-8 w-12 h-12 bg-pink-200/20 rounded-lg -rotate-6 animate-float animation-delay-400" />
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3/4 h-3/4 bg-white rounded-2xl shadow-glass-lg p-6 flex flex-col">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-fuchsia-400" />
-                    <div className="w-3 h-3 rounded-full bg-green-400" />
-                  </div>
-                  <div className="flex-1 bg-slate-50 rounded-lg p-4">
-                    <div className="w-1/3 h-4 bg-purple-200 rounded mb-3" />
-                    <div className="w-full h-3 bg-slate-200 rounded mb-2" />
-                    <div className="w-4/5 h-3 bg-slate-200 rounded mb-2" />
-                    <div className="w-2/3 h-3 bg-slate-200 rounded mb-6" />
-                    <div className="grid grid-cols-3 gap-2">
-                      <div className="aspect-square bg-gradient-to-br from-purple-200 to-purple-100 rounded-lg" />
-                      <div className="aspect-square bg-gradient-to-br from-emerald-200 to-emerald-100 rounded-lg" />
-                      <div className="aspect-square bg-gradient-to-br from-purple-200 to-purple-100 rounded-lg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center justify-center">
+            <AboutIllustration />
           </div>
         </div>
       </Section>
