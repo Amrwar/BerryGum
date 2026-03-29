@@ -14,16 +14,17 @@ const featureIcons = [
   <svg key="5" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>,
 ];
 
-type ClinicsFeature = { title: string; description: string };
-type ClinicsPortfolioItem = { name: string; kind: string };
-
 export default function ClinicsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.clinicsPage.features) as Array<ClinicsFeature>;
-  const includedItems = Object.values(messages.clinicsPage.includedItems) as Array<string>;
-  const withoutItems = Object.values(messages.clinicsPage.withoutItems) as Array<string>;
-  const portfolioItems = Object.values(messages.clinicsPage.portfolioItems) as Array<ClinicsPortfolioItem>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const features: any[] = Object.values(messages.clinicsPage.features as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const includedItems: any[] = Object.values(messages.clinicsPage.includedItems as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const withoutItems: any[] = Object.values(messages.clinicsPage.withoutItems as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const portfolioItems: any[] = Object.values(messages.clinicsPage.portfolioItems as any);
 
   return (
     <>
@@ -188,7 +189,7 @@ export default function ClinicsPage() {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900">{item.name}</h3>
-              <p className="text-sm text-slate-500">{(item as any).type}</p>
+              <p className="text-sm text-slate-500">{item.kind}</p>
             </div>
           ))}
         </div>
@@ -218,10 +219,6 @@ export default function ClinicsPage() {
 
       {/* CTA Section */}
       <Section variant="dark" className="relative overflow-hidden">
-        
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-500/20" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        </div>
         <div className="relative text-center max-w-3xl mx-auto">
           <h2 className="heading-lg text-white mb-6">
             {t("clinicsPage.ctaTitle")}

@@ -22,11 +22,16 @@ type RestaurantProcessStep = { step: string; title: string; description: string 
 export default function RestaurantsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.restaurantsPage.features) as Array<RestaurantFeature>;
-  const stats = Object.values(messages.restaurantsPage.stats) as Array<RestaurantStat>;
-  const menuItems = Object.values(messages.restaurantsPage.menuItems) as Array<string>;
-  const menuCategories = Object.values(messages.restaurantsPage.menuCategories) as Array<string>;
-  const processSteps = Object.values(messages.restaurantsPage.processSteps) as Array<RestaurantProcessStep>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const features: any[] = Object.values(messages.restaurantsPage.features as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const stats: any[] = Object.values(messages.restaurantsPage.stats as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const menuItems: any[] = Object.values(messages.restaurantsPage.menuItems as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const menuCategories: any[] = Object.values(messages.restaurantsPage.menuCategories as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const processSteps: any[] = Object.values(messages.restaurantsPage.processSteps as any);
 
   return (
     <>

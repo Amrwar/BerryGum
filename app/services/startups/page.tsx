@@ -19,9 +19,12 @@ type StartupsFeature = { title: string; description: string };
 export default function StartupsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.startupsPage.features) as Array<StartupsFeature>;
-  const includedItems = Object.values(messages.startupsPage.includedItems) as Array<string>;
-  const benefits = Object.values(messages.startupsPage.benefits) as Array<string>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const features: any[] = Object.values(messages.startupsPage.features as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const includedItems: any[] = Object.values(messages.startupsPage.includedItems as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const benefits: any[] = Object.values(messages.startupsPage.benefits as any);
 
   return (
     <>

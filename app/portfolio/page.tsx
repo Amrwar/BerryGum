@@ -11,7 +11,8 @@ type Testimonial = { quote: string; author: string; role: string };
 export default function PortfolioPage() {
   const { t, messages } = useLanguage();
 
-  const testimonials = Object.values(messages.portfolioPage.testimonials.items) as Array<Testimonial>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const testimonials: any[] = Object.values(messages.portfolioPage.testimonials.items as any);
 
   return (
     <>

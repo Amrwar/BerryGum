@@ -13,8 +13,10 @@ type ProcessStep = { step: string; title: string; description: string };
 export default function PricingPage() {
   const { t, messages } = useLanguage();
 
-  const compareRows = Object.values(messages.pricing.compare.rows) as Array<CompareRow>;
-  const processSteps = Object.values(messages.pricing.process.steps) as Array<ProcessStep>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const compareRows: any[] = Object.values(messages.pricing.compare.rows as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const processSteps: any[] = Object.values(messages.pricing.process.steps as any);
 
   return (
     <>
