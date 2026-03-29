@@ -21,7 +21,11 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero pt-44 pb-16 overflow-hidden">
+      <section className="hero relative pt-44 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+             style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+             style={{ background: "radial-gradient(circle, rgba(30,10,94,0.09) 0%, rgba(155,32,160,0.05) 50%, transparent 70%)" }} />
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge mb-4">{t("pricing.badge")}</span>

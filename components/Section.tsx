@@ -53,22 +53,6 @@ function BrandDivider({ bgColor }: { bgColor: string }) {
   );
 }
 
-/**
- * In-bounds line for glass sections which must keep overflow-hidden.
- */
-function SimpleLine() {
-  return (
-    <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ height: "1px", zIndex: 2 }}>
-      <div
-        style={{
-          margin: "0 5%",
-          height: "100%",
-          background: "linear-gradient(to right, transparent, rgba(155,32,160,0.4) 30%, rgba(224,0,122,0.4) 70%, transparent)",
-        }}
-      />
-    </div>
-  );
-}
 
 export default function Section({
   children,
@@ -83,9 +67,8 @@ export default function Section({
     glass: "bg-[#f8fafc]",
   }[variant];
 
-  // glass keeps overflow-hidden for its decorative blobs;
-  // everything else is overflow-visible so BrandDivider can straddle the boundary.
-  const overflowClass = variant === "glass" ? "overflow-hidden" : "overflow-visible";
+  // All non-dark sections use overflow-visible so BrandDivider can straddle the boundary.
+  const overflowClass = variant === "dark" ? "overflow-hidden" : "overflow-visible";
 
   const bgColor = variant === "alt" || variant === "glass" ? "#f8fafc" : "white";
 
@@ -95,8 +78,7 @@ export default function Section({
       className={`section ${variantClass} ${overflowClass} ${className} relative`}
     >
       {/* Every non-dark section gets a top divider — one per boundary, no doubles */}
-      {variant === "glass" && <SimpleLine />}
-      {(variant === "alt" || variant === "default") && <BrandDivider bgColor={bgColor} />}
+      {variant !== "dark" && <BrandDivider bgColor={bgColor} />}
 
       {variant === "glass" && (
         <>
