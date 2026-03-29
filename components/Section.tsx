@@ -7,22 +7,52 @@ interface SectionProps {
   id?: string;
 }
 
-function WaveTop() {
+/** Gradient line + diamond ornament divider, sits at a section boundary */
+function BrandDivider({ position }: { position: "top" | "bottom" }) {
+  const edge = position === "top" ? "top-0" : "bottom-0";
   return (
-    <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ height: "52px", zIndex: 1 }}>
-      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" style={{ width: "100%", height: "100%", display: "block" }}>
-        <path d="M0,0 L1440,0 L1440,32 C1200,12 960,52 720,32 C480,12 240,52 0,32 Z" fill="white" />
-      </svg>
-    </div>
-  );
-}
+    <div
+      className={`absolute ${edge} left-0 right-0 flex items-center pointer-events-none`}
+      style={{ zIndex: 2, padding: "0 5%" }}
+    >
+      {/* Left gradient line */}
+      <div
+        className="flex-1"
+        style={{
+          height: "1px",
+          background:
+            "linear-gradient(to right, transparent, rgba(155,32,160,0.5))",
+        }}
+      />
 
-function WaveBottom() {
-  return (
-    <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height: "52px", zIndex: 1 }}>
-      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" style={{ width: "100%", height: "100%", display: "block" }}>
-        <path d="M0,52 L1440,52 L1440,20 C1200,40 960,0 720,20 C480,40 240,0 0,20 Z" fill="white" />
-      </svg>
+      {/* Center ornament — diamond flanked by small dots */}
+      <div className="flex items-center gap-1.5 mx-4 flex-shrink-0">
+        <span
+          className="block w-1.5 h-1.5 rounded-full"
+          style={{ background: "rgba(155,32,160,0.4)" }}
+        />
+        <span
+          className="block w-2.5 h-2.5 rotate-45"
+          style={{
+            background: "linear-gradient(135deg, #9b20a0, #e0007a)",
+            borderRadius: "2px",
+          }}
+        />
+        <span
+          className="block w-1.5 h-1.5 rounded-full"
+          style={{ background: "rgba(224,0,122,0.4)" }}
+        />
+      </div>
+
+      {/* Right gradient line */}
+      <div
+        className="flex-1"
+        style={{
+          height: "1px",
+          background:
+            "linear-gradient(to left, transparent, rgba(224,0,122,0.5))",
+        }}
+      />
     </div>
   );
 }
@@ -47,7 +77,7 @@ export default function Section({
       id={id}
       className={`section ${variants[variant]} ${className} relative overflow-hidden`}
     >
-      {isAlt && <WaveTop />}
+      {isAlt && <BrandDivider position="top" />}
       {variant === "glass" && (
         <>
           <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -57,7 +87,7 @@ export default function Section({
       <div className="container-custom relative z-10">
         {children}
       </div>
-      {isAlt && <WaveBottom />}
+      {isAlt && <BrandDivider position="bottom" />}
     </section>
   );
 }
