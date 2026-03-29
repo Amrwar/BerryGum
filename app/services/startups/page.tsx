@@ -149,19 +149,29 @@ export default function StartupsPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-center">
-            <div className="text-purple-300 text-sm font-medium mb-2">{t("startupsPage.startingAt")}</div>
-            <div className="text-5xl font-bold text-white mb-2">15,000</div>
-            <div className="text-slate-400 mb-6">EGP</div>
-            <p className="text-slate-400 text-sm mb-6">{t("startupsPage.priceNote")}</p>
-            <Link
-              href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(t("startupsPage.whatsappQuote"))}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary w-full"
-            >
-              {t("startupsPage.getFreeQuote")}
-            </Link>
+          <div className="relative rounded-2xl p-8 text-white overflow-hidden text-center" style={{ background: "var(--gradient-brand)" }}>
+            <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold mb-4">
+                {t("startupsPage.startingAt")}
+              </span>
+              <div className="flex items-baseline justify-center gap-2 mb-1">
+                <span className="text-5xl font-bold">15,000</span>
+                <span className="text-xl text-white/70">EGP</span>
+              </div>
+              <p className="text-white/70 text-sm mb-6 mt-2">{t("startupsPage.priceNote")}</p>
+              <Link
+                href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(t("startupsPage.whatsappQuote"))}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn w-full justify-center font-bold shadow-lg"
+                style={{ background: "white", color: "#9b20a0" }}
+              >
+                {t("startupsPage.getFreeQuote")}
+              </Link>
+            </div>
           </div>
         </div>
       </Section>

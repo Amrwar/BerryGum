@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
+import Section, { SectionHeader } from "@/components/Section";
+import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -379,6 +381,16 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <Section variant="alt" id="faq">
+        <SectionHeader
+          badge={t("faq.badge")}
+          title={t("faq.title")}
+          subtitle={t("faq.subtitle")}
+        />
+        <FAQ />
+      </Section>
     </>
   );
 }

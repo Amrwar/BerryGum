@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Section, { SectionHeader } from "@/components/Section";
 import PricingCards from "@/components/PricingCards";
-import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -93,16 +92,6 @@ export default function PricingPage() {
             </div>
           ))}
         </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section variant="alt" id="faq">
-        <SectionHeader
-          badge={t("pricing.faq.badge")}
-          title={t("pricing.faq.title")}
-          subtitle={t("pricing.faq.subtitle")}
-        />
-        <FAQ />
       </Section>
 
       {/* CTA Section */}

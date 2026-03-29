@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section, { SectionHeader } from "@/components/Section";
-import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -180,17 +179,6 @@ export default function HomePage() {
               <p className="text-slate-500 text-sm">{feature.description}</p>
             </div>
           ))}
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section variant="alt">
-        <SectionHeader badge={t("faq.badge")} title={t("faq.title")} subtitle={t("faq.subtitle")} />
-        <FAQ limit={5} />
-        <div className="mt-8 text-center">
-          <Link href="/pricing#faq" className="text-fuchsia-700 font-medium hover:text-pink-600 transition-colors">
-            {t("faq.viewAll")} &rarr;
-          </Link>
         </div>
       </Section>
 
