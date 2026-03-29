@@ -68,12 +68,48 @@ export default function HomePage() {
   ];
 
   const features = [
-    { title: t("features.fast.title"), description: t("features.fast.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> },
-    { title: t("features.seo.title"), description: t("features.seo.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> },
-    { title: t("features.mobile.title"), description: t("features.mobile.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg> },
-    { title: t("features.secure.title"), description: t("features.secure.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg> },
-    { title: t("features.analytics.title"), description: t("features.analytics.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg> },
-    { title: t("features.support.title"), description: t("features.support.description"), icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg> },
+    {
+      title: t("features.fast.title"),
+      description: t("features.fast.description"),
+      bullets: [t("features.fast.b1"), t("features.fast.b2"), t("features.fast.b3")],
+      color: "from-violet-500 to-fuchsia-500",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+    },
+    {
+      title: t("features.seo.title"),
+      description: t("features.seo.description"),
+      bullets: [t("features.seo.b1"), t("features.seo.b2"), t("features.seo.b3")],
+      color: "from-fuchsia-500 to-pink-500",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>,
+    },
+    {
+      title: t("features.mobile.title"),
+      description: t("features.mobile.description"),
+      bullets: [t("features.mobile.b1"), t("features.mobile.b2"), t("features.mobile.b3")],
+      color: "from-pink-500 to-rose-500",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>,
+    },
+    {
+      title: t("features.secure.title"),
+      description: t("features.secure.description"),
+      bullets: [t("features.secure.b1"), t("features.secure.b2"), t("features.secure.b3")],
+      color: "from-indigo-500 to-violet-600",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+    },
+    {
+      title: t("features.analytics.title"),
+      description: t("features.analytics.description"),
+      bullets: [t("features.analytics.b1"), t("features.analytics.b2"), t("features.analytics.b3")],
+      color: "from-purple-600 to-fuchsia-500",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+    },
+    {
+      title: t("features.support.title"),
+      description: t("features.support.description"),
+      bullets: [t("features.support.b1"), t("features.support.b2"), t("features.support.b3")],
+      color: "from-fuchsia-500 to-purple-600",
+      icon: <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>,
+    },
   ];
 
   const stats = [
@@ -194,11 +230,33 @@ export default function HomePage() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative bg-white px-6 py-7 rounded-xl border border-slate-200 border-t-2 border-b-2 border-t-purple-200 border-b-purple-200 transition-all duration-300 hover:shadow-md"
+              className="group relative bg-white rounded-2xl p-6 border border-slate-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 hover:border-transparent"
             >
-              <div className="feature-icon group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{feature.title}</h3>
-              <p className="text-slate-500 text-sm">{feature.description}</p>
+              {/* Hover top accent line */}
+              <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+              {/* Icon tile */}
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                {feature.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+
+              {/* Description */}
+              <p className="text-slate-500 text-sm leading-relaxed mb-4">{feature.description}</p>
+
+              {/* Bullet points */}
+              <ul className="space-y-2">
+                {feature.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-center gap-2 text-xs text-slate-600">
+                    <svg className="w-3.5 h-3.5 text-fuchsia-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

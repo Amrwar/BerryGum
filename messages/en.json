@@ -60,27 +60,45 @@
     "subtitle": "We do not just build websites. We build growth engines for your business.",
     "fast": {
       "title": "Lightning Fast",
-      "description": "Optimized for speed with Core Web Vitals in mind"
+      "description": "Pages load in under 2 seconds. We use modern build tools, optimized images, and CDN delivery to score top Core Web Vitals — keeping visitors engaged and boosting your search rankings.",
+      "b1": "Sub-2s load time",
+      "b2": "Core Web Vitals A+",
+      "b3": "Global CDN delivery"
     },
     "seo": {
       "title": "SEO Optimized",
-      "description": "Built to rank higher on Google search results"
+      "description": "From clean semantic code to keyword-rich content architecture, every page is engineered to rank higher on Google and bring organic traffic from day one.",
+      "b1": "On-page keyword setup",
+      "b2": "Google Search Console",
+      "b3": "Structured data markup"
     },
     "mobile": {
       "title": "Mobile First",
-      "description": "Perfect experience on all devices and screen sizes"
+      "description": "Over 70% of web traffic is mobile. Every pixel is designed mobile-first then scaled up — delivering a flawless, app-like experience on every screen size.",
+      "b1": "Touch-optimized UI",
+      "b2": "All screen sizes",
+      "b3": "App-like experience"
     },
     "secure": {
-      "title": "Secure",
-      "description": "SSL certificates and security best practices"
+      "title": "Secure & Reliable",
+      "description": "SSL encryption, hardened security headers, and regular vulnerability checks keep your website and customers' data safe — with 99.9% uptime guaranteed.",
+      "b1": "SSL certificate included",
+      "b2": "Security headers",
+      "b3": "99.9% uptime guarantee"
     },
     "analytics": {
       "title": "Analytics Ready",
-      "description": "Track visitors and measure your success"
+      "description": "Know exactly who visits, what they click, and where they drop off. We set up Google Analytics, Search Console, and conversion tracking from the very start.",
+      "b1": "Google Analytics setup",
+      "b2": "Conversion tracking",
+      "b3": "Monthly performance report"
     },
     "support": {
       "title": "24/7 Support",
-      "description": "Always here when you need assistance"
+      "description": "Launching is just the beginning. Our team is always reachable via WhatsApp, email, or phone — ready to fix issues, answer questions, and push updates fast.",
+      "b1": "Fast response time",
+      "b2": "WhatsApp & email",
+      "b3": "Dedicated account manager"
     }
   },
   "faq": {

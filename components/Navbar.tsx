@@ -157,12 +157,7 @@ export default function Navbar() {
 
             {/* Right: CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <Link
-                href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.general)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary btn-sm"
-              >
+              <Link href="/contact" className="btn btn-primary btn-sm">
                 {t("nav.getStarted")}
               </Link>
             </div>
@@ -234,8 +229,7 @@ export default function Navbar() {
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 text-slate-700 hover:text-pink-600 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium">{t("nav.contact")}</Link>
 
             <Link
-              href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.general)}`}
-              target="_blank" rel="noopener noreferrer"
+              href="/contact"
               className="btn btn-primary w-full mt-3"
               onClick={() => setIsOpen(false)}
             >
