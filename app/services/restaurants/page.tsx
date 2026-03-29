@@ -28,10 +28,8 @@ export default function RestaurantsPage() {
     <>
       {/* Hero Section */}
       <section className="hero relative pt-36 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl" />
-        </div>
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+             style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
 
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

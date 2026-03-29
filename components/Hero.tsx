@@ -9,18 +9,12 @@ export default function Hero() {
 
   return (
     <section className="hero min-h-[88vh] flex items-center justify-center relative overflow-hidden">
-      {/* Subtle grid */}
-      <div className="absolute inset-0 bg-grid-light opacity-20" />
-
-      {/* Soft brand orbs */}
-      <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-pink-100/50 rounded-full blur-[100px]" />
-
-      {/* Decorative brand border elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-2xl rotate-12 opacity-15 hidden lg:block"
-           style={{ border: "1px solid rgba(155,32,160,0.4)" }} />
-      <div className="absolute bottom-32 right-20 w-24 h-24 rounded-xl -rotate-12 opacity-15 hidden lg:block"
-           style={{ border: "1px solid rgba(224,0,122,0.4)" }} />
+      {/* Brand color concentrated in top-right corner only */}
+      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
+      {/* Subtle secondary accent bottom-left */}
+      <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full pointer-events-none"
+           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.05) 0%, transparent 65%)" }} />
 
       <div className="container-custom relative z-10 pt-36 pb-20">
         <div className="max-w-4xl mx-auto text-center">
