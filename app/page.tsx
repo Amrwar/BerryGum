@@ -154,7 +154,7 @@ export default function HomePage() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative bg-white px-6 py-7 rounded-xl border-t-2 border-b-2 border-purple-200 transition-all duration-300 hover:shadow-md"
+              className="group relative bg-white px-6 py-7 rounded-xl border border-slate-200 border-t-2 border-b-2 border-t-purple-200 border-b-purple-200 transition-all duration-300 hover:shadow-md"
             >
               <div className="feature-icon group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{feature.title}</h3>
