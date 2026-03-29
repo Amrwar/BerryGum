@@ -18,7 +18,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero relative pt-36 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+      <section className="hero relative pt-44 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
              style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
         <div className="container-custom relative">
@@ -106,9 +106,6 @@ export default function PortfolioPage() {
 
       {/* CTA Section */}
       <Section variant="dark" className="relative overflow-hidden">
-        
-          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl" />
-        </div>
         <div className="relative text-center max-w-3xl mx-auto">
           <h2 className="heading-lg text-white mb-6">
             {t("portfolioPage.cta.title")}

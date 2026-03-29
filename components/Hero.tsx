@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full pointer-events-none"
            style={{ background: "radial-gradient(circle, rgba(155,32,160,0.05) 0%, transparent 65%)" }} />
 
-      <div className="container-custom relative z-10 pt-36 pb-20">
+      <div className="container-custom relative z-10 pt-44 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 animate-fade-in"
