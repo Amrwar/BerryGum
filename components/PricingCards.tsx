@@ -57,7 +57,7 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
 
       {isMonthly && (
         <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style={{ background: "rgba(155,32,160,0.1)", color: "#9b20a0" }}>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -74,13 +74,13 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
               key={plan.name}
               className={`card relative overflow-hidden ${
                 isPopular
-                  ? "border-2 border-amber-400 shadow-xl shadow-amber-500/10"
+                  ? "border-2 border-fuchsia-400 shadow-xl shadow-fuchsia-500/10"
                   : "border border-slate-200"
               }`}
             >
               {isPopular && (
                 <div className="absolute top-0 right-0">
-                  <div className="bg-gradient-to-r from-amber-500 to-amber-400 text-slate-900 text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+                  <div className="text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" style={{ background: "var(--gradient-brand)" }}>
                     {t("pricing.popular")}
                   </div>
                 </div>

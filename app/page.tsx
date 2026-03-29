@@ -20,7 +20,7 @@ export default function HomePage() {
       title: t("services.clinics.title"),
       description: t("services.clinics.description"),
       href: "/services/clinics",
-      color: "from-amber-400 to-yellow-300",
+      color: "from-purple-500 to-fuchsia-400",
     },
     {
       icon: (
@@ -31,7 +31,7 @@ export default function HomePage() {
       title: t("services.restaurants.title"),
       description: t("services.restaurants.description"),
       href: "/services/restaurants",
-      color: "from-amber-500 to-amber-300",
+      color: "from-fuchsia-500 to-pink-400",
     },
     {
       icon: (
@@ -42,7 +42,7 @@ export default function HomePage() {
       title: t("services.ecommerce.title"),
       description: t("services.ecommerce.description"),
       href: "/pricing",
-      color: "from-yellow-500 to-amber-400",
+      color: "from-pink-500 to-fuchsia-400",
     },
     {
       icon: (
@@ -53,7 +53,7 @@ export default function HomePage() {
       title: t("services.corporate.title"),
       description: t("services.corporate.description"),
       href: "/pricing",
-      color: "from-amber-600 to-amber-400",
+      color: "from-purple-600 to-pink-500",
     },
   ];
 
@@ -86,9 +86,9 @@ export default function HomePage() {
               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 {service.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{service.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{service.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{service.description}</p>
-              <div className="mt-4 flex items-center text-amber-600 font-medium text-sm">
+              <div className="mt-4 flex items-center text-fuchsia-700 font-medium text-sm">
                 {t("services.learnMore")}
                 <svg className="w-4 h-4 ml-1 rtl:ml-0 rtl:mr-1 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -117,27 +117,27 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-amber-100/50 to-slate-100 rounded-3xl overflow-hidden shadow-glass">
+            <div className="aspect-square bg-gradient-to-br from-purple-50/50 to-white rounded-3xl overflow-hidden shadow-glass">
               {/* Decorative floating elements */}
-              <div className="absolute top-8 right-8 w-16 h-16 bg-amber-400/20 rounded-xl rotate-12 animate-float" />
-              <div className="absolute bottom-12 left-8 w-12 h-12 bg-amber-400/15 rounded-lg -rotate-6 animate-float animation-delay-400" />
+              <div className="absolute top-8 right-8 w-16 h-16 bg-purple-200/30 rounded-xl rotate-12 animate-float" />
+              <div className="absolute bottom-12 left-8 w-12 h-12 bg-pink-200/20 rounded-lg -rotate-6 animate-float animation-delay-400" />
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-3/4 h-3/4 bg-white rounded-2xl shadow-glass-lg p-6 flex flex-col">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-amber-400" />
+                    <div className="w-3 h-3 rounded-full bg-fuchsia-400" />
                     <div className="w-3 h-3 rounded-full bg-green-400" />
                   </div>
                   <div className="flex-1 bg-slate-50 rounded-lg p-4">
-                    <div className="w-1/3 h-4 bg-amber-200 rounded mb-3" />
+                    <div className="w-1/3 h-4 bg-purple-200 rounded mb-3" />
                     <div className="w-full h-3 bg-slate-200 rounded mb-2" />
                     <div className="w-4/5 h-3 bg-slate-200 rounded mb-2" />
                     <div className="w-2/3 h-3 bg-slate-200 rounded mb-6" />
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="aspect-square bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg" />
+                      <div className="aspect-square bg-gradient-to-br from-purple-200 to-purple-100 rounded-lg" />
                       <div className="aspect-square bg-gradient-to-br from-emerald-200 to-emerald-100 rounded-lg" />
-                      <div className="aspect-square bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg" />
+                      <div className="aspect-square bg-gradient-to-br from-purple-200 to-purple-100 rounded-lg" />
                     </div>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function HomePage() {
               }}
             >
               <div className="feature-icon group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{feature.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{feature.title}</h3>
               <p className="text-slate-500 text-sm">{feature.description}</p>
             </div>
           ))}
@@ -172,7 +172,7 @@ export default function HomePage() {
         <SectionHeader badge={t("faq.badge")} title={t("faq.title")} subtitle={t("faq.subtitle")} />
         <FAQ limit={5} />
         <div className="mt-8 text-center">
-          <Link href="/pricing#faq" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+          <Link href="/pricing#faq" className="text-fuchsia-700 font-medium hover:text-pink-600 transition-colors">
             {t("faq.viewAll")} &rarr;
           </Link>
         </div>

@@ -16,8 +16,8 @@ export default function Section({
   const variants = {
     default: "bg-white",
     dark: "section-dark",
-    alt: "bg-[#FDFAF3]",
-    glass: "bg-gradient-to-b from-[#FDFAF3] to-white",
+    alt: "bg-[#fdf6ff]",
+    glass: "bg-gradient-to-b from-[#fdf6ff] to-white",
   };
 
   return (
@@ -28,8 +28,8 @@ export default function Section({
       {/* Subtle decorative background for visual interest */}
       {variant === "glass" && (
         <>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-50/60 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-50/60 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         </>
       )}
       <div className="container-custom relative z-10">
@@ -57,13 +57,10 @@ export function SectionHeader({
   return (
     <div className={`mb-12 lg:mb-16 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}>
       {badge && (
-        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 ${
-          light 
-            ? "bg-amber-500/10 border border-amber-500/20" 
-            : "bg-amber-100 border border-amber-200"
-        }`}>
-          <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
-          <span className={`text-sm font-medium ${light ? "text-amber-400" : "text-amber-700"}`}>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
+             style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
+          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
+          <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
             {badge}
           </span>
         </div>

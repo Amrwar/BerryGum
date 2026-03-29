@@ -30,10 +30,10 @@ export default function PricingPage() {
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge mb-6">{t("pricing.badge")}</span>
-            <h1 className="heading-xl text-white mb-6">
+            <h1 className="heading-xl text-slate-900 mb-6">
               {t("pricing.title")}
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               {t("pricing.subtitle")}
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function PricingPage() {
               <tr className="border-b border-slate-200">
                 <th className="text-left rtl:text-right py-4 px-4 font-semibold text-slate-900">{t("pricing.compare.feature")}</th>
                 <th className="text-center py-4 px-4 font-semibold text-slate-900">{messages.pricing.plans.oneTime["0"].name}</th>
-                <th className="text-center py-4 px-4 font-semibold text-slate-900 bg-blue-50">{messages.pricing.plans.oneTime["1"].name}</th>
+                <th className="text-center py-4 px-4 font-semibold text-slate-900 bg-purple-50/50">{messages.pricing.plans.oneTime["1"].name}</th>
                 <th className="text-center py-4 px-4 font-semibold text-slate-900">{messages.pricing.plans.oneTime["2"].name}</th>
               </tr>
             </thead>
@@ -68,7 +68,7 @@ export default function PricingPage() {
                 <tr key={index} className="border-b border-slate-100 hover:bg-slate-50">
                   <td className="py-4 px-4 text-slate-700">{row.feature}</td>
                   <td className="py-4 px-4 text-center text-slate-600">{row.starter}</td>
-                  <td className="py-4 px-4 text-center text-slate-900 font-medium bg-blue-50/50">{row.pro}</td>
+                  <td className="py-4 px-4 text-center text-slate-900 font-medium bg-purple-50/30">{row.pro}</td>
                   <td className="py-4 px-4 text-center text-slate-600">{row.enterprise}</td>
                 </tr>
               ))}
@@ -110,10 +110,10 @@ export default function PricingPage() {
       <section className="hero py-20 overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="heading-lg text-white mb-6">
+            <h2 className="heading-lg text-slate-900 mb-6">
               {t("pricing.cta.title")}
             </h2>
-            <p className="text-xl text-blue-100 mb-10">
+            <p className="text-xl text-slate-600 mb-10">
               {t("pricing.cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -128,7 +128,7 @@ export default function PricingPage() {
                 </svg>
                 {t("pricing.cta.button")}
               </Link>
-              <Link href="/contact" className="btn btn-outline-light btn-lg">
+              <Link href="/contact" className="btn btn-outline btn-lg">
                 {t("cta.contact")}
               </Link>
             </div>

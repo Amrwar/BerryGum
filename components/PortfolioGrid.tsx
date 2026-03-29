@@ -106,11 +106,11 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             {/* Content */}
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">
+                <span className="text-xs font-semibold text-fuchsia-700 bg-purple-50 px-2 py-1 rounded-md">
                   {t(`portfolioGrid.categories.${project.category}`)}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
                 {project.title}
               </h3>
               <p className="text-slate-500 text-sm mb-4">

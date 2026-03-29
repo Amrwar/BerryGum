@@ -22,7 +22,7 @@ export default function FAQ({ limit }: FAQProps) {
           <div
             key={index}
             className={`card overflow-hidden transition-all duration-300 ${
-              openIndex === index ? "border-amber-200 shadow-md" : ""
+              openIndex === index ? "border-purple-200 shadow-md" : ""
             }`}
           >
             <button
@@ -35,9 +35,10 @@ export default function FAQ({ limit }: FAQProps) {
               <span
                 className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all ${
                   openIndex === index
-                    ? "bg-amber-500 text-white rotate-180"
+                    ? "text-white rotate-180"
                     : "bg-slate-100 text-slate-500"
                 }`}
+                style={openIndex === index ? { background: "var(--gradient-brand)" } : undefined}
               >
                 <svg
                   className="w-5 h-5"
