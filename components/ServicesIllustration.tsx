@@ -4,7 +4,7 @@ export default function ServicesIllustration() {
       viewBox="0 0 336 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-[260px] h-auto"
+      className="h-10 w-auto mx-auto"
       aria-hidden="true"
     >
       <defs>
