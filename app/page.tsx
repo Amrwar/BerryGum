@@ -87,6 +87,22 @@ export default function HomePage() {
 
       {/* Services Section */}
       <Section id="services" variant="glass">
+        <div className="flex justify-center mb-4">
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(155,32,160,0.12) 0%, rgba(224,0,122,0.08) 100%)", border: "1px solid rgba(155,32,160,0.2)" }}>
+            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <defs>
+                <linearGradient id="servicesGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#9b20a0" />
+                  <stop offset="100%" stopColor="#e0007a" />
+                </linearGradient>
+              </defs>
+              <rect x="3" y="3" width="7" height="7" rx="1" stroke="url(#servicesGrad)" />
+              <rect x="14" y="3" width="7" height="7" rx="1" stroke="url(#servicesGrad)" />
+              <rect x="3" y="14" width="7" height="7" rx="1" stroke="url(#servicesGrad)" />
+              <rect x="14" y="14" width="7" height="7" rx="1" stroke="url(#servicesGrad)" />
+            </svg>
+          </div>
+        </div>
         <SectionHeader badge={t("services.badge")} title={t("services.title")} subtitle={t("services.subtitle")} />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
