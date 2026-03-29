@@ -13,8 +13,8 @@ type ProcessStep = { step: string; title: string; description: string };
 export default function PricingPage() {
   const { t, messages } = useLanguage();
 
-  const compareRows = Object.values(messages.pricing.compare.rows) as CompareRow[];
-  const processSteps = Object.values(messages.pricing.process.steps) as ProcessStep[];
+  const compareRows = Object.values(messages.pricing.compare.rows) as Array<CompareRow>;
+  const processSteps = Object.values(messages.pricing.process.steps) as Array<ProcessStep>;
 
   return (
     <>

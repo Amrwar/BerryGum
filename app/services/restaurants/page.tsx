@@ -22,11 +22,11 @@ type RestaurantProcessStep = { step: string; title: string; description: string 
 export default function RestaurantsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.restaurantsPage.features) as RestaurantFeature[];
-  const stats = Object.values(messages.restaurantsPage.stats) as RestaurantStat[];
-  const menuItems = Object.values(messages.restaurantsPage.menuItems) as string[];
-  const menuCategories = Object.values(messages.restaurantsPage.menuCategories) as string[];
-  const processSteps = Object.values(messages.restaurantsPage.processSteps) as RestaurantProcessStep[];
+  const features = Object.values(messages.restaurantsPage.features) as Array<RestaurantFeature>;
+  const stats = Object.values(messages.restaurantsPage.stats) as Array<RestaurantStat>;
+  const menuItems = Object.values(messages.restaurantsPage.menuItems) as Array<string>;
+  const menuCategories = Object.values(messages.restaurantsPage.menuCategories) as Array<string>;
+  const processSteps = Object.values(messages.restaurantsPage.processSteps) as Array<RestaurantProcessStep>;
 
   return (
     <>

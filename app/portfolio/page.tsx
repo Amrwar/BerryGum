@@ -11,7 +11,7 @@ type Testimonial = { quote: string; author: string; role: string };
 export default function PortfolioPage() {
   const { t, messages } = useLanguage();
 
-  const testimonials = Object.values(messages.portfolioPage.testimonials.items) as Testimonial[];
+  const testimonials = Object.values(messages.portfolioPage.testimonials.items) as Array<Testimonial>;
 
   return (
     <>

@@ -20,10 +20,10 @@ type ClinicsPortfolioItem = { name: string; kind: string };
 export default function ClinicsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.clinicsPage.features) as ClinicsFeature[];
-  const includedItems = Object.values(messages.clinicsPage.includedItems) as string[];
-  const withoutItems = Object.values(messages.clinicsPage.withoutItems) as string[];
-  const portfolioItems = Object.values(messages.clinicsPage.portfolioItems) as ClinicsPortfolioItem[];
+  const features = Object.values(messages.clinicsPage.features) as Array<ClinicsFeature>;
+  const includedItems = Object.values(messages.clinicsPage.includedItems) as Array<string>;
+  const withoutItems = Object.values(messages.clinicsPage.withoutItems) as Array<string>;
+  const portfolioItems = Object.values(messages.clinicsPage.portfolioItems) as Array<ClinicsPortfolioItem>;
 
   return (
     <>

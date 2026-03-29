@@ -19,9 +19,9 @@ type StartupsFeature = { title: string; description: string };
 export default function StartupsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.startupsPage.features) as StartupsFeature[];
-  const includedItems = Object.values(messages.startupsPage.includedItems) as string[];
-  const benefits = Object.values(messages.startupsPage.benefits) as string[];
+  const features = Object.values(messages.startupsPage.features) as Array<StartupsFeature>;
+  const includedItems = Object.values(messages.startupsPage.includedItems) as Array<string>;
+  const benefits = Object.values(messages.startupsPage.benefits) as Array<string>;
 
   return (
     <>
