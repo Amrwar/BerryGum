@@ -130,6 +130,21 @@ export default function HomePage() {
       <Section variant="alt" id="about">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
+            <div className="flex justify-center mb-4">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* centre person */}
+                  <circle cx="12" cy="8" r="3.5" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                  {/* left person */}
+                  <circle cx="4.5" cy="10" r="2.5" />
+                  <path d="M1 20c0-2.8 1.5-5 3.5-5" />
+                  {/* right person */}
+                  <circle cx="19.5" cy="10" r="2.5" />
+                  <path d="M23 20c0-2.8-1.5-5-3.5-5" />
+                </svg>
+              </div>
+            </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
               style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
