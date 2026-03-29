@@ -225,12 +225,19 @@ export default function HomePage() {
 
       {/* Features Section */}
       <Section>
+        <div className="flex justify-center mb-4">
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+        </div>
         <SectionHeader badge={t("features.badge")} title={t("features.title")} subtitle={t("features.subtitle")} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative bg-white rounded-2xl p-6 border border-slate-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 hover:border-transparent"
+              className="group relative bg-white rounded-2xl p-6 border-l border-r border-l-slate-100 border-r-slate-100 border-t-2 border-b-2 border-t-purple-300 border-b-purple-300 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60"
             >
               {/* Hover top accent line */}
               <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
