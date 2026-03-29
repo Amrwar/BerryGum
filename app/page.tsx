@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section, { SectionHeader } from "@/components/Section";
 import FAQ from "@/components/FAQ";
@@ -21,6 +22,7 @@ export default function HomePage() {
       description: t("services.clinics.description"),
       href: "/services/clinics",
       color: "from-purple-500 to-fuchsia-400",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=360&fit=crop&auto=format",
     },
     {
       icon: (
@@ -32,6 +34,7 @@ export default function HomePage() {
       description: t("services.restaurants.description"),
       href: "/services/restaurants",
       color: "from-fuchsia-500 to-pink-400",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=360&fit=crop&auto=format",
     },
     {
       icon: (
@@ -43,6 +46,7 @@ export default function HomePage() {
       description: t("services.ecommerce.description"),
       href: "/pricing",
       color: "from-pink-500 to-fuchsia-400",
+      image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=360&fit=crop&auto=format",
     },
     {
       icon: (
@@ -54,6 +58,7 @@ export default function HomePage() {
       description: t("services.corporate.description"),
       href: "/pricing",
       color: "from-purple-600 to-pink-500",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=360&fit=crop&auto=format",
     },
   ];
 
@@ -82,17 +87,31 @@ export default function HomePage() {
         <SectionHeader badge={t("services.badge")} title={t("services.title")} subtitle={t("services.subtitle")} />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
-            <Link key={service.title} href={service.href} className="group card p-6 border-t-2 border-b-2 border-t-purple-300 border-b-purple-300 border-l border-r border-l-slate-200 border-r-slate-200">
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                {service.icon}
+            <Link key={service.title} href={service.href} className="group card border-t-2 border-b-2 border-t-purple-300 border-b-purple-300 border-l border-r border-l-slate-200 border-r-slate-200 overflow-hidden flex flex-col p-0">
+              {/* Card image */}
+              <div className="relative h-44 w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{service.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{service.description}</p>
-              <div className="mt-4 flex items-center text-fuchsia-700 font-medium text-sm">
-                {t("services.learnMore")}
-                <svg className="w-4 h-4 ml-1 rtl:ml-0 rtl:mr-1 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+              {/* Card content */}
+              <div className="p-5 flex flex-col flex-1">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{service.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed flex-1">{service.description}</p>
+                <div className="mt-4 flex items-center text-fuchsia-700 font-medium text-sm">
+                  {t("services.learnMore")}
+                  <svg className="w-4 h-4 ml-1 rtl:ml-0 rtl:mr-1 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
