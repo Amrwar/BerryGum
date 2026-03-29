@@ -15,7 +15,7 @@ const featureIcons = [
 ];
 
 type ClinicsFeature = { title: string; description: string };
-type ClinicsPortfolioItem = { name: string; type: string };
+type ClinicsPortfolioItem = { name: string; kind: string };
 
 export default function ClinicsPage() {
   const { t, messages } = useLanguage();
@@ -188,7 +188,7 @@ export default function ClinicsPage() {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900">{item.name}</h3>
-              <p className="text-sm text-slate-500">{item.type}</p>
+              <p className="text-sm text-slate-500">{(item as any).type}</p>
             </div>
           ))}
         </div>
