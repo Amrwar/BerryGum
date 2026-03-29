@@ -9,12 +9,12 @@ export default function Hero() {
 
   return (
     <section className="hero min-h-[88vh] flex items-center justify-center relative overflow-hidden">
-      {/* Brand color concentrated in top-right corner only */}
+      {/* Brand glow — top-right */}
       <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
-      {/* Subtle secondary accent bottom-left */}
-      <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.05) 0%, transparent 65%)" }} />
+           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.10) 0%, rgba(224,0,122,0.06) 50%, transparent 70%)" }} />
+      {/* Brand glow — top-left (mirrored) */}
+      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+           style={{ background: "radial-gradient(circle, rgba(30,10,94,0.09) 0%, rgba(155,32,160,0.05) 50%, transparent 70%)" }} />
 
       <div className="container-custom relative z-10 pt-44 pb-20">
         <div className="max-w-4xl mx-auto text-center">

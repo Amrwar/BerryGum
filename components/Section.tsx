@@ -8,33 +8,17 @@ interface SectionProps {
 }
 
 /**
- * Divider container is 18px tall and offset by -9px so its vertical midpoint
- * sits exactly on the section boundary. The gradient line and ornament are both
- * centered at 50% of that container — i.e. right on the boundary edge.
- *
- * Requires the parent section to NOT have overflow-hidden (alt/default drop it).
- * Glass keeps overflow-hidden, so it uses a simpler in-bounds line instead.
+ * Centered divider: container is 18 px tall, offset -9 px so its midpoint
+ * is exactly on the section's top edge. Line + ornament both at 50% height.
+ * Requires the parent section to have overflow-visible (alt / default).
  */
-function BrandDivider({
-  position,
-  bgColor,
-}: {
-  position: "top" | "bottom";
-  bgColor: string;
-}) {
-  const isTop = position === "top";
-  const offset = "-9px"; // half of the 18px container
-
+function BrandDivider({ bgColor }: { bgColor: string }) {
   return (
     <div
       className="absolute left-0 right-0 pointer-events-none"
-      style={{
-        [isTop ? "top" : "bottom"]: offset,
-        height: "18px",
-        zIndex: 10,
-      }}
+      style={{ top: "-9px", height: "18px", zIndex: 10 }}
     >
-      {/* Gradient line — centered vertically in the 18px container */}
+      {/* Gradient line */}
       <div
         style={{
           position: "absolute",
@@ -47,8 +31,7 @@ function BrandDivider({
             "linear-gradient(to right, transparent, rgba(155,32,160,0.5) 30%, rgba(224,0,122,0.5) 70%, transparent)",
         }}
       />
-
-      {/* Ornament — centered both horizontally and vertically on the line */}
+      {/* Ornament — dot · diamond · dot, centered on the line */}
       <div
         style={{
           position: "absolute",
@@ -62,52 +45,25 @@ function BrandDivider({
           background: bgColor,
         }}
       >
-        <span
-          style={{
-            display: "block",
-            width: "5px",
-            height: "5px",
-            borderRadius: "50%",
-            background: "rgba(155,32,160,0.45)",
-          }}
-        />
-        <span
-          style={{
-            display: "block",
-            width: "8px",
-            height: "8px",
-            borderRadius: "2px",
-            transform: "rotate(45deg)",
-            background: "linear-gradient(135deg, #9b20a0, #e0007a)",
-          }}
-        />
-        <span
-          style={{
-            display: "block",
-            width: "5px",
-            height: "5px",
-            borderRadius: "50%",
-            background: "rgba(224,0,122,0.45)",
-          }}
-        />
+        <span style={{ display: "block", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(155,32,160,0.45)" }} />
+        <span style={{ display: "block", width: "8px", height: "8px", borderRadius: "2px", transform: "rotate(45deg)", background: "linear-gradient(135deg, #9b20a0, #e0007a)" }} />
+        <span style={{ display: "block", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(224,0,122,0.45)" }} />
       </div>
     </div>
   );
 }
 
-/** Simpler in-bounds line for sections that must keep overflow-hidden (glass). */
+/**
+ * In-bounds line for glass sections which must keep overflow-hidden.
+ */
 function SimpleLine() {
   return (
-    <div
-      className="absolute top-0 left-0 right-0 pointer-events-none"
-      style={{ height: "1px", zIndex: 2 }}
-    >
+    <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ height: "1px", zIndex: 2 }}>
       <div
         style={{
           margin: "0 5%",
           height: "100%",
-          background:
-            "linear-gradient(to right, transparent, rgba(155,32,160,0.4) 30%, rgba(224,0,122,0.4) 70%, transparent)",
+          background: "linear-gradient(to right, transparent, rgba(155,32,160,0.4) 30%, rgba(224,0,122,0.4) 70%, transparent)",
         }}
       />
     </div>
@@ -120,26 +76,27 @@ export default function Section({
   variant = "default",
   id,
 }: SectionProps) {
-  const variants = {
+  const variantClass = {
     default: "bg-white",
     dark: "section-dark",
     alt: "bg-[#f8fafc]",
     glass: "bg-[#f8fafc]",
-  };
+  }[variant];
 
-  // glass keeps overflow-hidden (needed for decorative blobs);
-  // alt and default drop it so BrandDivider can straddle the boundary.
-  const overflowClass =
-    variant === "glass" ? "overflow-hidden" : "overflow-visible";
+  // glass keeps overflow-hidden for its decorative blobs;
+  // everything else is overflow-visible so BrandDivider can straddle the boundary.
+  const overflowClass = variant === "glass" ? "overflow-hidden" : "overflow-visible";
+
+  const bgColor = variant === "alt" || variant === "glass" ? "#f8fafc" : "white";
 
   return (
     <section
       id={id}
-      className={`section ${variants[variant]} ${overflowClass} ${className} relative`}
+      className={`section ${variantClass} ${overflowClass} ${className} relative`}
     >
-      {/* Top divider — white→gray transition */}
-      {variant === "alt" && <BrandDivider position="top" bgColor="#f8fafc" />}
+      {/* Every non-dark section gets a top divider — one per boundary, no doubles */}
       {variant === "glass" && <SimpleLine />}
+      {(variant === "alt" || variant === "default") && <BrandDivider bgColor={bgColor} />}
 
       {variant === "glass" && (
         <>
@@ -149,9 +106,6 @@ export default function Section({
       )}
 
       <div className="container-custom relative z-10">{children}</div>
-
-      {/* Bottom divider — gray→white transition */}
-      {variant === "default" && <BrandDivider position="bottom" bgColor="white" />}
     </section>
   );
 }
@@ -172,35 +126,19 @@ export function SectionHeader({
   light = false,
 }: SectionHeaderProps) {
   return (
-    <div
-      className={`mb-8 lg:mb-10 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}
-    >
+    <div className={`mb-8 lg:mb-10 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}>
       {badge && (
         <div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
-          style={{
-            background: "rgba(155,32,160,0.08)",
-            border: "1px solid rgba(155,32,160,0.2)",
-          }}
+          style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}
         >
-          <span
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ background: "var(--gradient-brand)" }}
-          />
-          <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
-            {badge}
-          </span>
+          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
+          <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>{badge}</span>
         </div>
       )}
-      <h2 className={`heading-lg ${light ? "text-white" : "text-slate-900"}`}>
-        {title}
-      </h2>
+      <h2 className={`heading-lg ${light ? "text-white" : "text-slate-900"}`}>{title}</h2>
       {subtitle && (
-        <p
-          className={`mt-3 text-base ${light ? "text-slate-400" : "text-slate-600"}`}
-        >
-          {subtitle}
-        </p>
+        <p className={`mt-3 text-base ${light ? "text-slate-400" : "text-slate-600"}`}>{subtitle}</p>
       )}
     </div>
   );
