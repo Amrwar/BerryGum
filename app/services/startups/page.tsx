@@ -14,10 +14,12 @@ const featureIcons = [
   <svg key="5" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>,
 ];
 
+type StartupsFeature = { title: string; description: string };
+
 export default function StartupsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.startupsPage.features) as { title: string; description: string }[];
+  const features = Object.values(messages.startupsPage.features) as StartupsFeature[];
   const includedItems = Object.values(messages.startupsPage.includedItems) as string[];
   const benefits = Object.values(messages.startupsPage.benefits) as string[];
 

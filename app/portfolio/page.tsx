@@ -6,14 +6,12 @@ import PortfolioGrid from "@/components/PortfolioGrid";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
+type Testimonial = { quote: string; author: string; role: string };
+
 export default function PortfolioPage() {
   const { t, messages } = useLanguage();
 
-  const testimonials = Object.values(messages.portfolioPage.testimonials.items) as {
-    quote: string;
-    author: string;
-    role: string;
-  }[];
+  const testimonials = Object.values(messages.portfolioPage.testimonials.items) as Testimonial[];
 
   return (
     <>

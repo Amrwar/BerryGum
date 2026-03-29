@@ -15,14 +15,18 @@ const featureIcons = [
   <svg key="5" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
 ];
 
+type RestaurantFeature = { title: string; description: string };
+type RestaurantStat = { stat: string; label: string };
+type RestaurantProcessStep = { step: string; title: string; description: string };
+
 export default function RestaurantsPage() {
   const { t, messages } = useLanguage();
 
-  const features = Object.values(messages.restaurantsPage.features) as { title: string; description: string }[];
-  const stats = Object.values(messages.restaurantsPage.stats) as { stat: string; label: string }[];
+  const features = Object.values(messages.restaurantsPage.features) as RestaurantFeature[];
+  const stats = Object.values(messages.restaurantsPage.stats) as RestaurantStat[];
   const menuItems = Object.values(messages.restaurantsPage.menuItems) as string[];
   const menuCategories = Object.values(messages.restaurantsPage.menuCategories) as string[];
-  const processSteps = Object.values(messages.restaurantsPage.processSteps) as { step: string; title: string; description: string }[];
+  const processSteps = Object.values(messages.restaurantsPage.processSteps) as RestaurantProcessStep[];
 
   return (
     <>

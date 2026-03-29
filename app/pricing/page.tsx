@@ -7,26 +7,19 @@ import FAQ from "@/components/FAQ";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
+type CompareRow = { feature: string; starter: string; pro: string; enterprise: string };
+type ProcessStep = { step: string; title: string; description: string };
+
 export default function PricingPage() {
   const { t, messages } = useLanguage();
 
-  const compareRows = Object.values(messages.pricing.compare.rows) as {
-    feature: string;
-    starter: string;
-    pro: string;
-    enterprise: string;
-  }[];
-
-  const processSteps = Object.values(messages.pricing.process.steps) as {
-    step: string;
-    title: string;
-    description: string;
-  }[];
+  const compareRows = Object.values(messages.pricing.compare.rows) as CompareRow[];
+  const processSteps = Object.values(messages.pricing.process.steps) as ProcessStep[];
 
   return (
     <>
       {/* Hero */}
-      <section className="hero pt-36 pb-16 overflow-hidden">
+      <section className="hero pt-44 pb-16 overflow-hidden">
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge mb-4">{t("pricing.badge")}</span>
