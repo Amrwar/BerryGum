@@ -25,32 +25,30 @@ export default function ClinicsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pb-28 bg-slate-900 overflow-hidden">
+      <section className="hero relative pt-28 pb-14 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-teal-500/10" />
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-              <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-              <span className="text-blue-400 text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
+                 style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
+              <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
                 {t("clinicsPage.badge")}
               </span>
             </div>
 
-            <h1 className="heading-xl text-white mb-6">
+            <h1 className="heading-xl text-slate-900 mb-4">
               {t("clinicsPage.title")}{" "}
-              <span className="text-gradient bg-gradient-to-r from-blue-400 to-teal-400">
+              <span className="text-gradient">
                 {t("clinicsPage.titleHighlight")}
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-base text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
               {t("clinicsPage.subtitle")}
             </p>
 
@@ -66,7 +64,7 @@ export default function ClinicsPage() {
                 </svg>
                 {t("clinicsPage.cta")}
               </Link>
-              <Link href="/pricing" className="btn btn-outline-light btn-lg">
+              <Link href="/pricing" className="btn btn-outline btn-lg">
                 {t("clinicsPage.viewPricing")}
               </Link>
             </div>

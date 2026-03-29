@@ -55,7 +55,7 @@ export function SectionHeader({
   light = false,
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-12 lg:mb-16 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}>
+    <div className={`mb-8 lg:mb-10 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}>
       {badge && (
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
              style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
@@ -69,7 +69,7 @@ export function SectionHeader({
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-lg ${light ? "text-slate-400" : "text-slate-600"}`}>
+        <p className={`mt-3 text-base ${light ? "text-slate-400" : "text-slate-600"}`}>
           {subtitle}
         </p>
       )}

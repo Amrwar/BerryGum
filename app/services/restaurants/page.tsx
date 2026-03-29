@@ -27,11 +27,10 @@ export default function RestaurantsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pb-28 bg-white overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+      <section className="hero relative pt-28 pb-14 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-500/10" />
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative">
@@ -42,10 +41,10 @@ export default function RestaurantsPage() {
                 <span className="text-xl">🍽️</span>
                 <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>{t("restaurantsPage.badge")}</span>
               </div>
-              <h1 className="heading-xl text-slate-900 mb-6">
-                {t("restaurantsPage.title")} <span className="text-gradient-brand">{t("restaurantsPage.titleHighlight")}</span>
+              <h1 className="heading-xl text-slate-900 mb-4">
+                {t("restaurantsPage.title")} <span className="text-gradient">{t("restaurantsPage.titleHighlight")}</span>
               </h1>
-              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+              <p className="text-slate-600 text-base mb-6 leading-relaxed">
                 {t("restaurantsPage.subtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -60,7 +59,7 @@ export default function RestaurantsPage() {
                   </svg>
                   {t("restaurantsPage.cta")}
                 </a>
-                <Link href="/pricing" className="btn btn-outline-light btn-lg">
+                <Link href="/pricing" className="btn btn-outline btn-lg">
                   {t("restaurantsPage.viewPricing")}
                 </Link>
               </div>

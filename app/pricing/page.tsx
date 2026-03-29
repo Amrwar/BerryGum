@@ -26,14 +26,14 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero pt-32 pb-20 overflow-hidden">
+      <section className="hero pt-28 pb-14 overflow-hidden">
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="badge mb-6">{t("pricing.badge")}</span>
-            <h1 className="heading-xl text-slate-900 mb-6">
+            <span className="badge mb-4">{t("pricing.badge")}</span>
+            <h1 className="heading-xl text-slate-900 mb-4">
               {t("pricing.title")}
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-base text-slate-600 leading-relaxed">
               {t("pricing.subtitle")}
             </p>
           </div>

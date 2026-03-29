@@ -24,11 +24,10 @@ export default function StartupsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pb-28 bg-white overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+      <section className="hero relative pt-28 pb-14 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-500/10" />
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative">
@@ -41,14 +40,14 @@ export default function StartupsPage() {
               </span>
             </div>
 
-            <h1 className="heading-xl text-slate-900 mb-6">
+            <h1 className="heading-xl text-slate-900 mb-4">
               {t("startupsPage.title")}{" "}
-              <span className="text-gradient-brand">
+              <span className="text-gradient">
                 {t("startupsPage.titleHighlight")}
               </span>
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-base text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
               {t("startupsPage.subtitle")}
             </p>
 
@@ -64,7 +63,7 @@ export default function StartupsPage() {
                 </svg>
                 {t("startupsPage.cta")}
               </Link>
-              <Link href="/pricing" className="btn btn-outline-light btn-lg">
+              <Link href="/pricing" className="btn btn-outline btn-lg">
                 {t("startupsPage.viewPricing")}
               </Link>
             </div>
