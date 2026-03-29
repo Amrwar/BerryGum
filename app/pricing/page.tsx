@@ -26,7 +26,7 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero pt-28 pb-14 overflow-hidden">
+      <section className="hero pt-36 pb-16 overflow-hidden">
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge mb-4">{t("pricing.badge")}</span>

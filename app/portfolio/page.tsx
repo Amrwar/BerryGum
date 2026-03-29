@@ -18,7 +18,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero relative pt-28 pb-14 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+      <section className="hero relative pt-36 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
         <div className="absolute inset-0">
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl" />

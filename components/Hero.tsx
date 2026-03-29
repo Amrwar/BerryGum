@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute bottom-32 right-20 w-24 h-24 rounded-xl -rotate-12 opacity-15 hidden lg:block"
            style={{ border: "1px solid rgba(224,0,122,0.4)" }} />
 
-      <div className="container-custom relative z-10 py-20">
+      <div className="container-custom relative z-10 pt-36 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 animate-fade-in"
