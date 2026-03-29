@@ -55,12 +55,13 @@ export default function WhatsAppFloat() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-center w-16 h-16 bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 hover:scale-110"
+        className="group flex items-center justify-center w-16 h-16 rounded-full shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300 hover:scale-110"
+        style={{ background: "var(--gradient-brand)" }}
         aria-label="Chat on WhatsApp"
         onClick={() => setShowTooltip(false)}
       >
         {/* Pulse Animation */}
-        <span className="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-20" />
+        <span className="absolute w-full h-full rounded-full animate-ping opacity-20" style={{ background: "var(--gradient-brand)" }} />
 
         {/* Icon */}
         <svg
