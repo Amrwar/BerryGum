@@ -8,12 +8,12 @@ interface SectionProps {
 }
 
 /**
- * Gradient line + diamond ornament divider.
+ * Divider container is 18px tall and offset by -9px so its vertical midpoint
+ * sits exactly on the section boundary. The gradient line and ornament are both
+ * centered at 50% of that container — i.e. right on the boundary edge.
  *
- * position="top"    → line sits at the section's top edge, ornament just BELOW it (inside section)
- * position="bottom" → line sits at the section's bottom edge, ornament just ABOVE it (inside section)
- *
- * Both are fully contained within the section so overflow-hidden never clips them.
+ * Requires the parent section to NOT have overflow-hidden (alt/default drop it).
+ * Glass keeps overflow-hidden, so it uses a simpler in-bounds line instead.
  */
 function BrandDivider({
   position,
@@ -23,36 +23,38 @@ function BrandDivider({
   bgColor: string;
 }) {
   const isTop = position === "top";
+  const offset = "-9px"; // half of the 18px container
 
   return (
     <div
       className="absolute left-0 right-0 pointer-events-none"
       style={{
-        [isTop ? "top" : "bottom"]: 0,
+        [isTop ? "top" : "bottom"]: offset,
         height: "18px",
-        zIndex: 2,
+        zIndex: 10,
       }}
     >
-      {/* Full-width gradient line, flush with the edge */}
+      {/* Gradient line — centered vertically in the 18px container */}
       <div
         style={{
           position: "absolute",
-          [isTop ? "top" : "bottom"]: 0,
+          top: "50%",
           left: "5%",
           right: "5%",
           height: "1px",
+          transform: "translateY(-50%)",
           background:
             "linear-gradient(to right, transparent, rgba(155,32,160,0.5) 30%, rgba(224,0,122,0.5) 70%, transparent)",
         }}
       />
 
-      {/* Center ornament — sits inside the section so it is never clipped */}
+      {/* Ornament — centered both horizontally and vertically on the line */}
       <div
         style={{
           position: "absolute",
+          top: "50%",
           left: "50%",
-          [isTop ? "top" : "bottom"]: "1px",
-          transform: "translateX(-50%)",
+          transform: "translate(-50%, -50%)",
           display: "inline-flex",
           alignItems: "center",
           gap: "5px",
@@ -93,6 +95,25 @@ function BrandDivider({
   );
 }
 
+/** Simpler in-bounds line for sections that must keep overflow-hidden (glass). */
+function SimpleLine() {
+  return (
+    <div
+      className="absolute top-0 left-0 right-0 pointer-events-none"
+      style={{ height: "1px", zIndex: 2 }}
+    >
+      <div
+        style={{
+          margin: "0 5%",
+          height: "100%",
+          background:
+            "linear-gradient(to right, transparent, rgba(155,32,160,0.4) 30%, rgba(224,0,122,0.4) 70%, transparent)",
+        }}
+      />
+    </div>
+  );
+}
+
 export default function Section({
   children,
   className = "",
@@ -106,16 +127,19 @@ export default function Section({
     glass: "bg-[#f8fafc]",
   };
 
-  const isAlt = variant === "alt" || variant === "glass";
-  const isDefault = variant === "default";
+  // glass keeps overflow-hidden (needed for decorative blobs);
+  // alt and default drop it so BrandDivider can straddle the boundary.
+  const overflowClass =
+    variant === "glass" ? "overflow-hidden" : "overflow-visible";
 
   return (
     <section
       id={id}
-      className={`section ${variants[variant]} ${className} relative overflow-hidden`}
+      className={`section ${variants[variant]} ${overflowClass} ${className} relative`}
     >
-      {/* Top divider: only on alt/glass (transition from white → gray) */}
-      {isAlt && <BrandDivider position="top" bgColor="#f8fafc" />}
+      {/* Top divider — white→gray transition */}
+      {variant === "alt" && <BrandDivider position="top" bgColor="#f8fafc" />}
+      {variant === "glass" && <SimpleLine />}
 
       {variant === "glass" && (
         <>
@@ -126,8 +150,8 @@ export default function Section({
 
       <div className="container-custom relative z-10">{children}</div>
 
-      {/* Bottom divider: only on default/white (transition from gray → white) */}
-      {isDefault && <BrandDivider position="bottom" bgColor="white" />}
+      {/* Bottom divider — gray→white transition */}
+      {variant === "default" && <BrandDivider position="bottom" bgColor="white" />}
     </section>
   );
 }
