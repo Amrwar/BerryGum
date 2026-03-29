@@ -92,12 +92,17 @@
   }
 
   .btn-outline {
-    @apply border-2 text-fuchsia-700 hover:text-white focus:ring-fuchsia-500;
+    @apply border-2 text-fuchsia-700 focus:ring-fuchsia-500;
     border-color: #9b20a0;
+    background: transparent;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
   .btn-outline:hover {
-    background: var(--gradient-brand);
-    border-color: transparent;
+    background-color: #9b20a0;
+    border-color: #9b20a0;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(155, 32, 160, 0.35);
   }
 
   .btn-outline-light {
