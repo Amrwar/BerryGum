@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between relative">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="relative w-44 h-16 sm:w-52 sm:h-[72px]">
+            <div className="relative w-52 h-20 sm:w-64 sm:h-24">
               <Image
                 src="/logo.png"
                 alt={siteConfig.name}
@@ -191,7 +191,7 @@ export default function Navbar() {
         >
           <div className="bg-white rounded-xl shadow-xl p-4 border border-slate-100">
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
-              <div className="relative w-40 h-14">
+              <div className="relative w-48 h-16">
                 <Image
                   src="/logo.png"
                   alt={siteConfig.name}

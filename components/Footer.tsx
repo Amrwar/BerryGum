@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="pr-8 lg:pr-12 pb-10 lg:pb-0 border-b md:border-b-0 border-purple-100
                           lg:border-r lg:border-purple-100">
             <Link href="/" className="inline-block mb-6">
-              <div className="relative w-52 h-20">
+              <div className="relative w-64 h-24">
                 <Image src="/logo.png" alt={siteConfig.name} fill className="object-contain object-left" />
               </div>
             </Link>
