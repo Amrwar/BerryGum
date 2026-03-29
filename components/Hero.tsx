@@ -9,25 +9,26 @@ export default function Hero() {
 
   return (
     <section className="hero min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Subtle gold grid */}
-      <div className="absolute inset-0 bg-grid-light opacity-30" />
+      {/* Subtle grid */}
+      <div className="absolute inset-0 bg-grid-light opacity-20" />
 
-      {/* Soft gold orbs */}
-      <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-amber-100/60 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-amber-50/80 rounded-full blur-[100px]" />
+      {/* Soft brand orbs */}
+      <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-pink-100/50 rounded-full blur-[100px]" />
 
-      {/* Decorative gold border elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-2xl rotate-12 opacity-20 hidden lg:block"
-           style={{ border: "1px solid rgba(201,160,90,0.5)" }} />
-      <div className="absolute bottom-32 right-20 w-24 h-24 rounded-xl -rotate-12 opacity-20 hidden lg:block"
-           style={{ border: "1px solid rgba(201,160,90,0.5)" }} />
+      {/* Decorative brand border elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 rounded-2xl rotate-12 opacity-15 hidden lg:block"
+           style={{ border: "1px solid rgba(155,32,160,0.4)" }} />
+      <div className="absolute bottom-32 right-20 w-24 h-24 rounded-xl -rotate-12 opacity-15 hidden lg:block"
+           style={{ border: "1px solid rgba(224,0,122,0.4)" }} />
 
       <div className="container-custom relative z-10 py-32">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full mb-8 animate-fade-in">
-            <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-            <span className="text-amber-700 text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 animate-fade-in"
+               style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--gradient-brand)" }} />
+            <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
               {t("hero.badge")}
             </span>
           </div>

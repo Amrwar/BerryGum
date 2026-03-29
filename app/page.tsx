@@ -156,7 +156,7 @@ export default function HomePage() {
               key={feature.title}
               className="group relative bg-white px-7 py-8 rounded-2xl transition-all duration-300 hover:shadow-md"
               style={{
-                border: "2px solid rgba(201, 160, 90, 0.5)",
+                border: "2px solid rgba(155, 32, 160, 0.25)",
               }}
             >
               <div className="feature-icon group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
@@ -179,10 +179,10 @@ export default function HomePage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden bg-[#FDFAF3]"
-               style={{ borderTop: "1px solid rgba(201,160,90,0.25)", borderBottom: "1px solid rgba(201,160,90,0.25)" }}>
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-amber-100/60 rounded-full blur-[80px]" />
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-amber-100/40 rounded-full blur-[60px]" />
+      <section className="relative py-20 overflow-hidden bg-[#fdf6ff]"
+               style={{ borderTop: "1px solid rgba(155,32,160,0.12)", borderBottom: "1px solid rgba(155,32,160,0.12)" }}>
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-100/60 rounded-full blur-[80px]" />
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-pink-100/40 rounded-full blur-[60px]" />
 
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto">

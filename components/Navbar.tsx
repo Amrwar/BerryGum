@@ -62,8 +62,8 @@ export default function Navbar() {
               href="/"
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
-                  ? "text-slate-600 hover:text-amber-600"
-                  : "text-slate-800 hover:text-amber-600"
+                  ? "text-slate-600 hover:text-pink-600"
+                  : "text-slate-800 hover:text-pink-600"
               }`}
             >
               {t("nav.home")}
@@ -78,8 +78,8 @@ export default function Navbar() {
               <button
                 className={`font-medium transition-colors duration-200 flex items-center gap-1 ${
                   isScrolled
-                    ? "text-slate-600 hover:text-amber-600"
-                    : "text-slate-800 hover:text-amber-600"
+                    ? "text-slate-600 hover:text-pink-600"
+                    : "text-slate-800 hover:text-pink-600"
                 }`}
               >
                 {t("nav.services")}
@@ -106,7 +106,7 @@ export default function Navbar() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-purple-50 hover:text-pink-600 transition-colors"
                     >
                       <span className="text-xl">{service.icon}</span>
                       <span className="font-medium">{service.label}</span>
@@ -120,8 +120,8 @@ export default function Navbar() {
               href="/pricing"
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
-                  ? "text-slate-600 hover:text-amber-600"
-                  : "text-slate-800 hover:text-amber-600"
+                  ? "text-slate-600 hover:text-pink-600"
+                  : "text-slate-800 hover:text-pink-600"
               }`}
             >
               {t("nav.pricing")}
@@ -131,8 +131,8 @@ export default function Navbar() {
               href="/portfolio"
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
-                  ? "text-slate-600 hover:text-amber-600"
-                  : "text-slate-800 hover:text-amber-600"
+                  ? "text-slate-600 hover:text-pink-600"
+                  : "text-slate-800 hover:text-pink-600"
               }`}
             >
               {t("nav.portfolio")}
@@ -142,8 +142,8 @@ export default function Navbar() {
               href="/contact"
               className={`font-medium transition-colors duration-200 ${
                 isScrolled
-                  ? "text-slate-600 hover:text-amber-600"
-                  : "text-slate-800 hover:text-amber-600"
+                  ? "text-slate-600 hover:text-pink-600"
+                  : "text-slate-800 hover:text-pink-600"
               }`}
             >
               {t("nav.contact")}
@@ -169,7 +169,7 @@ export default function Navbar() {
             className={`md:hidden p-2 rounded-lg transition-colors ${
               isScrolled
                 ? "text-slate-900 hover:bg-slate-100"
-                : "text-slate-800 hover:bg-amber-50"
+                : "text-slate-800 hover:bg-purple-50"
             }`}
             aria-label="Toggle menu"
           >
@@ -204,7 +204,7 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+              className="block py-3 px-4 text-slate-700 hover:text-pink-600 hover:bg-purple-50 rounded-lg transition-colors font-medium"
             >
               {t("nav.home")}
             </Link>
@@ -219,7 +219,7 @@ export default function Navbar() {
                   key={service.href}
                   href={service.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+                  className="flex items-center gap-3 py-3 px-4 text-slate-700 hover:text-pink-600 hover:bg-purple-50 rounded-lg transition-colors font-medium"
                 >
                   <span>{service.icon}</span>
                   <span>{service.label}</span>
@@ -230,7 +230,7 @@ export default function Navbar() {
             <Link
               href="/pricing"
               onClick={() => setIsOpen(false)}
-              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+              className="block py-3 px-4 text-slate-700 hover:text-pink-600 hover:bg-purple-50 rounded-lg transition-colors font-medium"
             >
               {t("nav.pricing")}
             </Link>
@@ -238,7 +238,7 @@ export default function Navbar() {
             <Link
               href="/portfolio"
               onClick={() => setIsOpen(false)}
-              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+              className="block py-3 px-4 text-slate-700 hover:text-pink-600 hover:bg-purple-50 rounded-lg transition-colors font-medium"
             >
               {t("nav.portfolio")}
             </Link>
@@ -246,7 +246,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block py-3 px-4 text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors font-medium"
+              className="block py-3 px-4 text-slate-700 hover:text-pink-600 hover:bg-purple-50 rounded-lg transition-colors font-medium"
             >
               {t("nav.contact")}
             </Link>
