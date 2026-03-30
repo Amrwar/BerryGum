@@ -44,8 +44,8 @@ const projectDetailPages = [
   "",
   "",
   "",
-  "/portfolio/escape-barbershop",
-  "/portfolio/vroom",
+  "",
+  "",
 ];
 
 interface PortfolioGridProps {
@@ -115,35 +115,34 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             <CardWrapper key={project.id}>
               {/* Thumbnail */}
               <div className={`aspect-[4/3] relative overflow-hidden ${
-                project.id === 6 ? "bg-slate-900" :
-                project.id === 7 ? "bg-white border-b border-slate-100" :
+                project.id === 6 || project.id === 7 ? "bg-slate-900" :
                 `bg-gradient-to-br ${project.color}`
               }`}>
 
-                {/* Escape Barbershop — marketing image */}
+                {/* Escape Barbershop — collab image */}
                 {project.id === 6 && (
                   <Image
-                    src="/portfolio/escape-marketing.png"
+                    src="/portfolio/escape-collab.png"
                     alt="Escape Barbershop"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 )}
 
-                {/* VRoom — branded text logo */}
+                {/* VRoom — collab image */}
                 {project.id === 7 && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                    <p className="text-4xl font-black tracking-tight">
-                      <span style={{ color: "#ef4444" }}>VRoom</span>
-                      <span className="text-slate-800"> CarWash</span>
-                    </p>
-                    <p className="text-xs text-slate-400 font-medium uppercase tracking-widest">Management System</p>
-                  </div>
+                  <Image
+                    src="/portfolio/vroom-collab.png"
+                    alt="VRoom Car Wash"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 )}
 
                 {/* Placeholder for non-real projects */}
-                {project.id <= 5 && (
+                {project.id < 6 && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
                       <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">

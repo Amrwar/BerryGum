@@ -1,31 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
-
-const portfolioDetailPages = [
-  "/portfolio/escape-barbershop",
-  "/portfolio/vroom",
-];
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
-// Screenshots for each system: [main, ...thumbnails]
-const systemScreenshots: string[][] = [
-  [
-    "/portfolio/escape-collab.png",  // Collaboration — main
-    "/portfolio/escape-1.png",       // Dashboard
-    "/portfolio/escape-3.png",       // Reports
-    "/portfolio/escape-4.png",       // New Visit
-  ],
-  [
-    "/portfolio/vroom-collab.png",   // Collaboration — main
-    "/portfolio/vroom-1.png",        // Car Wash list
-    "/portfolio/vroom-3.png",        // Monthly Reports
-    "/portfolio/vroom-4.png",        // Workers & Statistics
-  ],
+const systemImages = [
+  "/portfolio/escape-collab.png",
+  "/portfolio/vroom-collab.png",
 ];
 
 const featureIcons = [
@@ -39,7 +22,6 @@ const featureIcons = [
 
 export default function SystemsPage() {
   const { t, messages } = useLanguage();
-  const [activeScreenshots, setActiveScreenshots] = useState<number[]>([0, 0]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const features: any[] = Object.values(messages.systemsPage.features as any);
@@ -117,7 +99,7 @@ export default function SystemsPage() {
         </div>
       </Section>
 
-      {/* Live Portfolio */}
+      {/* Portfolio */}
       <Section variant="alt">
         <SectionHeader
           badge={t("systemsPage.portfolioBadge")}
@@ -125,88 +107,34 @@ export default function SystemsPage() {
           subtitle={t("systemsPage.portfolioSubtitle")}
         />
         <div className="grid md:grid-cols-2 gap-8">
-          {portfolioItems.map((item, index) => {
-            const shots = systemScreenshots[index] || [];
-            const activeIdx = activeScreenshots[index] ?? 0;
-            return (
-              <div key={index} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-
-                {/* Main screenshot */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                  {shots[activeIdx] && (
-                    <Image
-                      key={shots[activeIdx]}
-                      src={shots[activeIdx]}
-                      alt={`${item.name} screenshot`}
-                      fill
-                      className="object-cover object-top transition-opacity duration-300"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  )}
-                </div>
-
-                {/* Thumbnail strip */}
-                {shots.length > 1 && (
-                  <div className="flex gap-2 px-4 pt-3 pb-1">
-                    {shots.map((src, i) => (
-                      <button
-                        key={i}
-                        onClick={() =>
-                          setActiveScreenshots((prev) => {
-                            const next = [...prev];
-                            next[index] = i;
-                            return next;
-                          })
-                        }
-                        className={`relative h-12 flex-1 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                          i === activeIdx
-                            ? "border-fuchsia-500 shadow-md"
-                            : "border-transparent opacity-60 hover:opacity-90"
-                        }`}
-                      >
-                        <Image
-                          src={src}
-                          alt=""
-                          fill
-                          className="object-cover object-top"
-                          sizes="80px"
-                        />
-                      </button>
-                    ))}
+          {portfolioItems.map((item, index) => (
+            <div key={index} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:border-purple-200 transition-all duration-300">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                <Image
+                  src={systemImages[index]}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="px-6 py-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
+                    <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
+                    <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                )}
-
-                {/* Card body */}
-                <div className="px-6 pb-6 pt-3">
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
-                      <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
-                      <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
-                    </div>
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                         style={{ background: "var(--gradient-brand)" }}>
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
-                      </svg>
-                    </div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                       style={{ background: "var(--gradient-brand)" }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
+                    </svg>
                   </div>
-                  {portfolioDetailPages[index] && (
-                    <Link
-                      href={portfolioDetailPages[index]}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
-                      style={{ color: "#9b20a0" }}
-                    >
-                      View Screenshots
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  )}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Section>
 
