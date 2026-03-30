@@ -71,7 +71,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Bar */}
-      <div className="hidden md:block" style={{ background: "rgba(13,1,32,0.98)", borderBottom: "1px solid rgba(155,32,160,0.2)" }}>
+      <div className="hidden md:block" style={{ background: "linear-gradient(135deg, #160640 0%, #5a1280 55%, #a0005a 100%)", opacity: 0.92 }}>
         <div className="container-custom">
           <div className="flex items-center justify-between py-2">
             <div className="flex items-center gap-6">
@@ -108,11 +108,11 @@ export default function Navbar() {
         className="transition-all duration-300"
         style={{
           background: isScrolled
-            ? "rgba(13,1,32,0.97)"
-            : "rgba(13,1,32,0.95)",
-          backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(155,32,160,0.2)",
-          boxShadow: isScrolled ? "0 4px 24px rgba(0,0,0,0.4)" : "none",
+            ? "linear-gradient(135deg, rgba(30,10,94,0.97) 0%, rgba(100,20,145,0.97) 55%, rgba(180,0,100,0.97) 100%)"
+            : "linear-gradient(135deg, rgba(30,10,94,0.92) 0%, rgba(100,20,145,0.9) 55%, rgba(180,0,100,0.88) 100%)",
+          backdropFilter: "blur(16px)",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          boxShadow: isScrolled ? "0 4px 32px rgba(30,10,94,0.4)" : "none",
         }}
       >
         <div className="container-custom">
@@ -252,7 +252,7 @@ export default function Navbar() {
             isOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pb-4 pt-2" style={{ borderTop: "1px solid rgba(155,32,160,0.2)" }}>
+          <div className="px-4 pb-4 pt-2" style={{ background: "linear-gradient(135deg, rgba(30,10,94,0.98) 0%, rgba(100,20,145,0.98) 55%, rgba(180,0,100,0.98) 100%)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
             {/* Mobile contact info */}
             <div className="flex flex-col gap-1 mb-3 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
