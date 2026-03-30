@@ -91,7 +91,7 @@ export default function PortfolioPage() {
         <div className="rounded-3xl p-10 lg:p-16" style={{ background: "var(--gradient-brand)" }}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: "150+", label: t("portfolioPage.stats.projects") },
+              { value: "50+", label: t("portfolioPage.stats.projects") },
               { value: "98%", label: t("portfolioPage.stats.satisfaction") },
               { value: "50+", label: t("portfolioPage.stats.clients") },
               { value: "5+", label: t("portfolioPage.stats.experience") },

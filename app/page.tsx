@@ -76,7 +76,7 @@ export default function HomePage() {
       ),
       title: t("services.systems.title"),
       description: t("services.systems.description"),
-      href: "/pricing",
+      href: "/services/systems",
       color: "from-indigo-500 to-violet-500",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=360&fit=crop&auto=format",
     },
@@ -129,7 +129,7 @@ export default function HomePage() {
 
   const stats = [
     {
-      value: "150+",
+      value: "50+",
       label: t("about.stats.projects"),
       icon: <svg className="w-5 h-5" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
       color: "from-violet-500 to-fuchsia-500",
@@ -359,7 +359,7 @@ export default function HomePage() {
               {/* Stats row */}
               <div className="inline-grid grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden mb-10 border border-white/15">
                 <div className="px-8 py-4 bg-white/5 text-center">
-                  <div className="text-3xl font-bold text-white">150+</div>
+                  <div className="text-3xl font-bold text-white">50+</div>
                   <div className="text-white/55 text-xs mt-1">{t("about.stats.projects")}</div>
                 </div>
                 <div className="px-8 py-4 bg-white/5 text-center">

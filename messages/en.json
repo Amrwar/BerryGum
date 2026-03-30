@@ -53,7 +53,7 @@
   "about": {
     "badge": "About Us",
     "title": "Your Digital Partner in Egypt",
-    "description1": "We are a passionate team of designers and developers based in Egypt, dedicated to helping businesses establish a powerful online presence. With over 5 years of experience, we have helped 150+ businesses across the Middle East grow with stunning, conversion-focused websites.",
+    "description1": "We are a passionate team of designers and developers based in Egypt, dedicated to helping businesses establish a powerful online presence. With over 5 years of experience, we have helped 50+ businesses across the Middle East grow with stunning, conversion-focused websites.",
     "description2": "Our approach combines international design standards with local market understanding, ensuring your website not only looks world-class but also resonates with your target audience.",
     "stats": {
       "projects": "Projects Completed",
@@ -388,7 +388,9 @@
       "1": { "title": "Restaurant Website", "description": "Restaurant website with digital menu, online reservations, and WhatsApp ordering" },
       "2": { "title": "Business Management System", "description": "Custom business system with inventory management, invoicing, and reporting dashboard" },
       "3": { "title": "Corporate Business Website", "description": "Professional business website with service pages, team showcase, and lead generation" },
-      "4": { "title": "E-commerce Store", "description": "Full-featured online store with product catalog, cart, and payment integration" }
+      "4": { "title": "E-commerce Store", "description": "Full-featured online store with product catalog, cart, and payment integration" },
+      "5": { "title": "Escape Barbershop System", "description": "Full barbershop management system — customer records, staff salaries, daily operations, and visit tracking dashboard" },
+      "6": { "title": "VRoom Car Wash System", "description": "Car wash operations platform with vehicle entry tracking, payment processing, mechanic services, workers management, and analytics reports" }
     }
   },
   "whatsappFloat": {
@@ -579,5 +581,59 @@
     "todaysSpecial": "Today's Special",
     "reviews": "Reviews",
     "orderConfirmed": "Order Confirmed!"
+  },
+  "systemsPage": {
+    "badge": "Custom Management Systems",
+    "title": "Business Systems That",
+    "titleHighlight": "Run Your Operations",
+    "subtitle": "We build custom management systems tailored to your business — from barbershops and car washes to clinics and warehouses. Fully digital. Fully yours.",
+    "cta": "Request a Free Demo",
+    "viewPricing": "View Pricing",
+    "whatsappSystems": "Hi! I'm interested in a custom management system. Can we discuss?",
+    "featuresBadge": "What We Build",
+    "featuresTitle": "Systems Designed Around Your Workflow",
+    "featuresSubtitle": "Every system is custom-built to match your exact operations — no off-the-shelf compromise.",
+    "features": {
+      "0": { "title": "Staff & Salary Management", "description": "Track employee hours, manage salaries, commissions, and performance — all in one place." },
+      "1": { "title": "Customer Records", "description": "Keep a full history of every customer: visits, preferences, spending, and contact info." },
+      "2": { "title": "Operations Dashboard", "description": "A real-time overview of daily operations, revenue, and key metrics at a glance." },
+      "3": { "title": "Payments & Invoicing", "description": "Record payments, generate invoices, and track outstanding balances with ease." },
+      "4": { "title": "Reports & Analytics", "description": "Export detailed reports on revenue, services, and performance for smarter decisions." },
+      "5": { "title": "Multi-Role Access", "description": "Owner, manager, and staff see exactly what they need — nothing more, nothing less." }
+    },
+    "portfolioBadge": "Live Systems",
+    "portfolioTitle": "Systems We Have Built",
+    "portfolioSubtitle": "Real systems currently running real businesses.",
+    "portfolioItems": {
+      "0": {
+        "name": "Escape Barbershop",
+        "type": "Barbershop Management System",
+        "description": "Manages customer visits, staff salaries, daily operations, and a full admin dashboard. Built for a premium barbershop in Egypt.",
+        "url": "https://escape-barbershop.vercel.app/"
+      },
+      "1": {
+        "name": "VRoom Car Wash",
+        "type": "Car Wash Operations Platform",
+        "description": "Tracks vehicle entries, payments, mechanic services, and workers. Includes revenue analytics and data export. Fully in Arabic.",
+        "url": "https://vroom-omega.vercel.app/"
+      }
+    },
+    "includedBadge": "What's Included",
+    "includedTitle": "Everything in Your System",
+    "includedSubtitle": "We deliver a complete, ready-to-use system — not a template.",
+    "includedItems": {
+      "0": "Custom UI tailored to your brand",
+      "1": "Secure login & role-based access",
+      "2": "Staff & salary management",
+      "3": "Customer records & history",
+      "4": "Payments & invoicing module",
+      "5": "Reports & data export",
+      "6": "Operations dashboard",
+      "7": "Mobile-responsive design",
+      "8": "Arabic & English support",
+      "9": "3 months post-launch support"
+    },
+    "ctaTitle": "Ready to Digitize Your Operations?",
+    "ctaSubtitle": "Stop managing your business on paper or WhatsApp. Let's build a system that works for you."
   }
 }

@@ -12,6 +12,8 @@ const projectCategoryMap = [
   "businessSystems",
   "business",
   "ecommerce",
+  "businessSystems",
+  "businessSystems",
 ];
 
 const projectColors = [
@@ -20,6 +22,8 @@ const projectColors = [
   "from-slate-500/20 to-zinc-500/20",
   "from-indigo-500/20 to-blue-500/20",
   "from-purple-500/20 to-pink-500/20",
+  "from-violet-600/30 to-purple-700/30",
+  "from-indigo-600/30 to-violet-600/30",
 ];
 
 const projectTags = [
@@ -28,6 +32,18 @@ const projectTags = [
   ["ERP", "Inventory", "Dashboard"],
   ["Corporate", "Blog", "Lead Generation"],
   ["E-commerce", "Payments", "Inventory"],
+  ["Barbershop", "Staff Salaries", "Operations"],
+  ["Car Wash", "Analytics", "Multi-service"],
+];
+
+const projectUrls = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "https://escape-barbershop.vercel.app/",
+  "https://vroom-omega.vercel.app/",
 ];
 
 interface PortfolioGridProps {
@@ -52,6 +68,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
     description: proj.description,
     color: projectColors[index],
     tags: projectTags[index],
+    url: projectUrls[index] || "",
   }));
 
   const filteredProjects = projects
@@ -97,9 +114,20 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <button className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  {t("portfolioGrid.viewProject")}
-                </button>
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    {t("portfolioGrid.viewProject")}
+                  </a>
+                ) : (
+                  <button className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    {t("portfolioGrid.viewProject")}
+                  </button>
+                )}
               </div>
             </div>
 
@@ -109,6 +137,12 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 <span className="text-xs font-semibold text-fuchsia-700 bg-purple-50 px-2 py-1 rounded-md">
                   {t(`portfolioGrid.categories.${project.category}`)}
                 </span>
+                {project.url && (
+                  <span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Live
+                  </span>
+                )}
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
                 {project.title}

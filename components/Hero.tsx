@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   const stats = [
-    { value: "150+", label: t("about.stats.projects") },
+    { value: "50+", label: t("about.stats.projects") },
     { value: "5+",   label: t("about.stats.experience") },
     { value: "98%",  label: t("about.stats.satisfaction") },
     { value: "2019", label: t("hero.established") },

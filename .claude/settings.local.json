@@ -13,7 +13,10 @@
       "Bash(sed -i 's|<div className=\"\"absolute inset-0\"\">.*||g' \"$f\")",
       "Bash(done)",
       "Bash(npm run:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "WebFetch(domain:escape-barbershop.vercel.app)",
+      "WebFetch(domain:vroom-omega.vercel.app)",
+      "Bash(grep -rn 150 C:UsershefnyDownloadsProjectsberrygum-websitewebstudio --include=*.tsx --include=*.ts --include=*.json)"
     ]
   }
 }

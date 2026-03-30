@@ -17,6 +17,7 @@ export default function Navbar() {
     { href: "/services/clinics", label: t("services.clinics.title"), icon: "🏥" },
     { href: "/services/restaurants", label: t("services.restaurants.title"), icon: "🍽️" },
     { href: "/services/startups", label: t("services.startups.title"), icon: "🚀" },
+    { href: "/services/systems", label: t("services.systems.title"), icon: "🖥️" },
   ];
 
   useEffect(() => {

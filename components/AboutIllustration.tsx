@@ -85,7 +85,7 @@ export default function AboutIllustration() {
       <rect x="347" y="18" width="5" height="66" rx="2.5" fill="url(#ab-pink)" />
       <text x="248" y="47"
         fontFamily="system-ui,-apple-system,sans-serif"
-        fontSize="28" fontWeight="800" fill="#e0007a">150+</text>
+        fontSize="28" fontWeight="800" fill="#e0007a">50+</text>
       <text x="248" y="62"
         fontFamily="system-ui,-apple-system,sans-serif"
         fontSize="10" fill="#94a3b8">Projects Delivered</text>
