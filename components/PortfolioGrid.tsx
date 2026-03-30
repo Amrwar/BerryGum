@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -36,14 +37,15 @@ const projectTags = [
   ["Car Wash", "Analytics", "Multi-service"],
 ];
 
-const projectUrls = [
+// Place screenshots in /public/portfolio/ — leave empty string for placeholder gradient
+const projectImages = [
   "",
   "",
   "",
   "",
   "",
-  "https://escape-barbershop.vercel.app/",
-  "https://vroom-omega.vercel.app/",
+  "/portfolio/escape-barbershop.png",
+  "/portfolio/vroom.png",
 ];
 
 interface PortfolioGridProps {
@@ -68,7 +70,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
     description: proj.description,
     color: projectColors[index],
     tags: projectTags[index],
-    url: projectUrls[index] || "",
+    image: projectImages[index] || "",
   }));
 
   const filteredProjects = projects
@@ -102,32 +104,31 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             className="group card card-hover overflow-hidden"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            {/* Image Placeholder */}
-            <div className={`aspect-[4/3] bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                  <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+            {/* Preview area */}
+            <div className={`aspect-[4/3] relative overflow-hidden ${!project.image ? `bg-gradient-to-br ${project.color}` : ""}`}>
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                  >
-                    {t("portfolioGrid.viewProject")}
-                  </a>
-                ) : (
-                  <button className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    {t("portfolioGrid.viewProject")}
-                  </button>
-                )}
+              {/* Hover overlay — just a visual effect, no external link */}
+              <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="btn btn-primary btn-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
+                  {t("portfolioGrid.viewProject")}
+                </span>
               </div>
             </div>
 
@@ -137,12 +138,6 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 <span className="text-xs font-semibold text-fuchsia-700 bg-purple-50 px-2 py-1 rounded-md">
                   {t(`portfolioGrid.categories.${project.category}`)}
                 </span>
-                {project.url && (
-                  <span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    Live
-                  </span>
-                )}
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
                 {project.title}

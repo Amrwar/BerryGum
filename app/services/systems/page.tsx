@@ -1,9 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
+
+// Screenshots placed in /public/portfolio/
+const portfolioScreenshots: Record<number, string> = {
+  0: "/portfolio/escape-barbershop.png",
+  1: "/portfolio/vroom.png",
+};
 
 const featureIcons = [
   <svg key="0" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
@@ -102,44 +109,43 @@ export default function SystemsPage() {
         />
         <div className="grid md:grid-cols-2 gap-8">
           {portfolioItems.map((item, index) => (
-            <div key={index} className="group relative bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-purple-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/50">
-              {/* Top gradient bar */}
-              <div className="h-[4px] w-full" style={{ background: "var(--gradient-brand)" }} />
+            <div key={index} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-purple-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/50">
+              {/* Screenshot */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-violet-600/20 to-indigo-600/20">
+                {portfolioScreenshots[index] ? (
+                  <Image
+                    src={portfolioScreenshots[index]}
+                    alt={item.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Card body */}
-              <div className="p-8">
-                {/* Header row */}
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
+                    <p className="text-sm font-medium" style={{ color: "#9b20a0" }}>{item.type}</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                        style={{ background: "var(--gradient-brand)" }}>
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
-                      <circle cx="8" cy="7" r="1" fill="white" />
-                      <circle cx="8" cy="15" r="1" fill="white" />
                     </svg>
                   </div>
-                  <span className="flex items-center gap-1.5 text-xs font-semibold text-green-700 bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    Live System
-                  </span>
                 </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{item.name}</h3>
-                <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">{item.description}</p>
-
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-                  style={{ background: "var(--gradient-brand)" }}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  View Live System
-                </a>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             </div>
           ))}
