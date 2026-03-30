@@ -51,6 +51,16 @@ const projectDetailPages = [
   "", "", "", "", "", "", "", "", "", "",
 ];
 
+// Company logo — shown as overlay badge on the card thumbnail
+const projectLogos: string[] = [
+  "", "", "", "", "",
+  "/portfolio/escape-barb.webp",
+  "",
+  "/portfolio/logo-arty-dental.png",
+  "/portfolio/logo-onmedical.png",
+  "/portfolio/logo-valueplus.png",
+];
+
 interface PortfolioGridProps {
   limit?: number;
   showFilters?: boolean;
@@ -114,6 +124,8 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 </div>
               );
 
+          const logo = projectLogos[project.id - 1];
+
           return (
             <CardWrapper key={project.id}>
               {/* Thumbnail */}
@@ -124,41 +136,24 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
                 {/* Escape Barbershop — marketing image */}
                 {project.id === 6 && (
-                  <Image
-                    src="/portfolio/escape-marketing.png"
-                    alt="Escape Barbershop"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                  <Image src="/portfolio/escape-marketing.png" alt="Escape Barbershop" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-
                 {/* VRoom — marketing image */}
                 {project.id === 7 && (
-                  <Image
-                    src="/portfolio/vroom-marketing.png"
-                    alt="VRoom Car Wash"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                  <Image src="/portfolio/vroom-marketing.png" alt="VRoom Car Wash" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-
                 {/* Arty Dental Clinic — collab image */}
                 {project.id === 8 && (
                   <Image src="/portfolio/arty-dental-collab.png" alt="Arty Dental Clinic" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-
-                {/* ON Medical Oncology Solutions — collab image */}
+                {/* ON Medical — collab image */}
                 {project.id === 9 && (
-                  <Image src="/portfolio/onmedical-collab.png" alt="ON Medical Oncology Solutions" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/portfolio/onmedical-collab.png" alt="ON Medical" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-
                 {/* ValuePlus — collab image */}
                 {project.id === 10 && (
                   <Image src="/portfolio/valueplus-collab.png" alt="ValuePlus" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-
                 {/* Placeholder for non-real projects */}
                 {project.id < 6 && (
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -170,29 +165,44 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                   </div>
                 )}
 
+                {/* Company logo badge — bottom-left overlay */}
+                {logo && (
+                  <div className="absolute bottom-3 left-3 rounded-xl overflow-hidden shadow-lg"
+                       style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)", padding: "5px 10px" }}>
+                    <div className="relative h-6 w-20">
+                      <Image src={logo} alt="" fill className="object-contain object-left" sizes="80px" />
+                    </div>
+                  </div>
+                )}
+
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"
                         style={{ background: "var(--gradient-brand)" }}>
-                    {project.detailPage ? t("portfolioGrid.viewProject") : t("portfolioGrid.viewProject")}
+                    {t("portfolioGrid.viewProject")}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-fuchsia-700 bg-purple-50 px-2 py-1 rounded-md">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-semibold text-fuchsia-700 bg-purple-50 px-2.5 py-1 rounded-md">
                     {t(`portfolioGrid.categories.${project.category}`)}
                   </span>
+                  {logo && (
+                    <div className="relative h-5 w-16 opacity-60">
+                      <Image src={logo} alt="" fill className="object-contain object-right" sizes="64px" />
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-500 text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-slate-500 text-sm mb-4 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">
+                    <span key={tag} className="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">
                       {tag}
                     </span>
                   ))}
