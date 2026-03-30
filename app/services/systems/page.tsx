@@ -4,6 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
+
+const portfolioDetailPages = [
+  "/portfolio/escape-barbershop",
+  "/portfolio/vroom",
+];
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -173,7 +178,7 @@ export default function SystemsPage() {
 
                 {/* Card body */}
                 <div className="px-6 pb-6 pt-3">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
                       <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
@@ -186,6 +191,18 @@ export default function SystemsPage() {
                       </svg>
                     </div>
                   </div>
+                  {portfolioDetailPages[index] && (
+                    <Link
+                      href={portfolioDetailPages[index]}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
+                      style={{ color: "#9b20a0" }}
+                    >
+                      View Screenshots
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </div>
             );
