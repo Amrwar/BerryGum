@@ -14,10 +14,42 @@ export default function Navbar() {
   const { t } = useLanguage();
 
   const serviceLinks = [
-    { href: "/services/clinics", label: t("services.clinics.title"), icon: "🏥" },
-    { href: "/services/restaurants", label: t("services.restaurants.title"), icon: "🍽️" },
-    { href: "/services/startups", label: t("services.startups.title"), icon: "🚀" },
-    { href: "/services/systems", label: t("services.systems.title"), icon: "🖥️" },
+    {
+      href: "/services/clinics",
+      label: t("services.clinics.title"),
+      icon: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+    },
+    {
+      href: "/services/restaurants",
+      label: t("services.restaurants.title"),
+      icon: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      href: "/services/startups",
+      label: t("services.startups.title"),
+      icon: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      href: "/services/systems",
+      label: t("services.systems.title"),
+      icon: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" />
+        </svg>
+      ),
+    },
   ];
 
   useEffect(() => {
@@ -124,9 +156,11 @@ export default function Navbar() {
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-pink-600 transition-colors text-sm"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-pink-600 transition-colors text-sm group/item"
                       >
-                        <span>{service.icon}</span>
+                        <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 bg-slate-100 text-slate-500 group-hover/item:bg-pink-50 group-hover/item:text-pink-600 transition-colors">
+                          {service.icon}
+                        </span>
                         <span className="font-medium">{service.label}</span>
                       </Link>
                     ))}
@@ -218,8 +252,10 @@ export default function Navbar() {
               <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">{t("nav.services")}</div>
               {serviceLinks.map((service) => (
                 <Link key={service.href} href={service.href} onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-2 py-2.5 px-3 text-slate-700 hover:text-pink-600 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium">
-                  <span>{service.icon}</span>
+                  className="flex items-center gap-3 py-2.5 px-3 text-slate-700 hover:text-pink-600 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium group/item">
+                  <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 bg-slate-100 text-slate-500 group-hover/item:bg-pink-50 group-hover/item:text-pink-600 transition-colors">
+                    {service.icon}
+                  </span>
                   <span>{service.label}</span>
                 </Link>
               ))}
