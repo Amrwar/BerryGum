@@ -142,17 +142,17 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 {project.id === 7 && (
                   <Image src="/portfolio/vroom-marketing.png" alt="VRoom Car Wash" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-                {/* Arty Dental Clinic — collab image */}
+                {/* Arty Dental Clinic — website screenshot */}
                 {project.id === 8 && (
-                  <Image src="/portfolio/arty-dental-collab.png" alt="Arty Dental Clinic" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/portfolio/arty-dental-website.png" alt="Arty Dental Clinic" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-                {/* ON Medical — collab image */}
+                {/* ON Medical — website screenshot */}
                 {project.id === 9 && (
-                  <Image src="/portfolio/onmedical-collab.png" alt="ON Medical" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/portfolio/onmedical-website.png" alt="ON Medical" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
-                {/* ValuePlus — collab image */}
+                {/* ValuePlus — website screenshot */}
                 {project.id === 10 && (
-                  <Image src="/portfolio/valueplus-collab.png" alt="ValuePlus" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/portfolio/valueplus-website.png" alt="ValuePlus" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
                 {/* Placeholder for non-real projects */}
                 {project.id < 6 && (

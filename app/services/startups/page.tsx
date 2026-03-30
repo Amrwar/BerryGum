@@ -5,7 +5,11 @@ import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
 
 const startupPortfolioImages: (string | undefined)[] = [
-  "/portfolio/valueplus-website.png",
+  "/portfolio/valueplus-collab.png",
+];
+
+const startupPortfolioLogos: (string | undefined)[] = [
+  "/portfolio/logo-valueplus.png",
 ];
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -190,14 +194,15 @@ export default function StartupsPage() {
           title={t("startupsPage.portfolioTitle")}
           subtitle={t("startupsPage.portfolioSubtitle")}
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {portfolioItems.map((item, index) => {
             const img = startupPortfolioImages[index];
+            const logo = startupPortfolioLogos[index];
             return (
-              <div key={index} className="card group overflow-hidden p-0">
+              <div key={index} className="card group overflow-hidden p-0 w-full max-w-sm">
                 <div className="aspect-video relative bg-slate-900 overflow-hidden rounded-t-2xl">
                   {img ? (
-                    <Image src={img} alt={item.name} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src={img} alt={item.name} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 384px" />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
                       <svg className="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,10 +210,26 @@ export default function StartupsPage() {
                       </svg>
                     </div>
                   )}
+                  {/* Company logo badge */}
+                  {logo && (
+                    <div className="absolute bottom-2 left-2 rounded-xl overflow-hidden shadow-lg"
+                         style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)", padding: "4px 8px" }}>
+                      <div className="relative h-5 w-16">
+                        <Image src={logo} alt="" fill className="object-contain object-left" sizes="64px" />
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-slate-900">{item.name}</h3>
-                  <p className="text-sm text-slate-500">{item.type}</p>
+                <div className="p-4 flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="font-bold text-slate-900">{item.name}</h3>
+                    <p className="text-sm text-slate-500">{item.type}</p>
+                  </div>
+                  {logo && (
+                    <div className="relative h-5 w-14 flex-shrink-0 opacity-60 mt-0.5">
+                      <Image src={logo} alt="" fill className="object-contain object-right" sizes="56px" />
+                    </div>
+                  )}
                 </div>
               </div>
             );

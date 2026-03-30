@@ -16,6 +16,15 @@ const clinicPortfolioImages: (string | undefined)[] = [
   "/portfolio/onmedical-collab.png",
 ];
 
+// Company logos — shown as overlay badge on thumbnail and in card header
+const clinicPortfolioLogos: (string | undefined)[] = [
+  undefined,
+  undefined,
+  undefined,
+  "/portfolio/logo-arty-dental.png",
+  "/portfolio/logo-onmedical.png",
+];
+
 const featureIcons = [
   <svg key="0" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
   <svg key="1" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
@@ -202,6 +211,7 @@ export default function ClinicsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {portfolioItems.map((item, index) => {
             const img = clinicPortfolioImages[index];
+            const logo = clinicPortfolioLogos[index];
             return (
               <div key={index} className="card group overflow-hidden p-0">
                 <div className="aspect-video relative bg-slate-900 overflow-hidden rounded-t-2xl">
@@ -220,10 +230,26 @@ export default function ClinicsPage() {
                       </svg>
                     </div>
                   )}
+                  {/* Company logo badge */}
+                  {logo && (
+                    <div className="absolute bottom-2 left-2 rounded-xl overflow-hidden shadow-lg"
+                         style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)", padding: "4px 8px" }}>
+                      <div className="relative h-5 w-16">
+                        <Image src={logo} alt="" fill className="object-contain object-left" sizes="64px" />
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-slate-900">{item.name}</h3>
-                  <p className="text-sm text-slate-500">{item.type}</p>
+                <div className="p-4 flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="font-bold text-slate-900">{item.name}</h3>
+                    <p className="text-sm text-slate-500">{item.type}</p>
+                  </div>
+                  {logo && (
+                    <div className="relative h-5 w-14 flex-shrink-0 opacity-60 mt-0.5">
+                      <Image src={logo} alt="" fill className="object-contain object-right" sizes="56px" />
+                    </div>
+                  )}
                 </div>
               </div>
             );
