@@ -390,6 +390,7 @@
       "ecommerce": "E-commerce"
     },
     "viewProject": "View Project",
+    "comingSoon": "Coming Soon",
     "viewAll": "View All Projects",
     "projects": {
       "0": { "title": "Medical Clinic Website", "description": "Professional clinic website with online appointment booking and doctor profiles" },
