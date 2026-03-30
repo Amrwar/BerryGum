@@ -115,12 +115,12 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
         {filteredProjects.map((project, index) => {
           const CardWrapper = project.detailPage
             ? ({ children }: { children: React.ReactNode }) => (
-                <Link href={project.detailPage} className="group card card-hover overflow-hidden block" style={{ animationDelay: `${index * 100}ms` }}>
+                <Link href={project.detailPage} className="group card card-hover overflow-hidden block relative" style={{ animationDelay: `${index * 100}ms` }}>
                   {children}
                 </Link>
               )
             : ({ children }: { children: React.ReactNode }) => (
-                <div className="group card card-hover overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="group card card-hover overflow-hidden relative" style={{ animationDelay: `${index * 100}ms` }}>
                   {children}
                 </div>
               );
@@ -129,6 +129,9 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
           return (
             <CardWrapper key={project.id}>
+              {/* Top brand border */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] z-10" style={{ background: "var(--gradient-brand)" }} />
+
               {/* Thumbnail */}
               <div className="aspect-[4/3] relative overflow-hidden bg-slate-900">
 
@@ -185,19 +188,23 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
                 {/* Company logo badge — bottom-left overlay */}
                 {logo && (
-                  <div className="absolute bottom-3 left-3 rounded-xl overflow-hidden shadow-lg"
-                       style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)", padding: "5px 10px" }}>
-                    <div className="relative h-6 w-20">
-                      <Image src={logo} alt="" fill className="object-contain object-left" sizes="80px" />
+                  <div className={`absolute bottom-3 left-3 rounded-lg overflow-hidden shadow-md ${project.id === 6 ? "opacity-50" : ""}`}
+                       style={{ background: "rgba(255,255,255,0.9)", backdropFilter: "blur(8px)" }}>
+                    <div className="relative h-7 w-[72px]">
+                      <Image src={logo} alt="" fill className="object-contain" sizes="72px" />
                     </div>
                   </div>
                 )}
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                     style={{ background: "linear-gradient(to bottom, rgba(14,0,37,0.25) 0%, rgba(100,0,80,0.8) 100%)" }}>
+                  <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none shadow-lg"
                         style={{ background: "var(--gradient-brand)" }}>
                     {t("portfolioGrid.viewProject")}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -209,23 +216,26 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                     {t(`portfolioGrid.categories.${project.category}`)}
                   </span>
                   {logo && (
-                    <div className="relative h-5 w-16 opacity-60">
-                      <Image src={logo} alt="" fill className="object-contain object-right" sizes="64px" />
+                    <div className="relative h-5 w-14 opacity-50">
+                      <Image src={logo} alt="" fill className="object-contain object-right" sizes="56px" />
                     </div>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-fuchsia-700 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-slate-500 text-sm mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">
+                    <span key={tag} className="text-xs text-fuchsia-700 bg-purple-50 border border-purple-100 px-2.5 py-1 rounded-full font-medium">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {/* Bottom brand border */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: "var(--gradient-brand)" }} />
             </CardWrapper>
           );
         })}
