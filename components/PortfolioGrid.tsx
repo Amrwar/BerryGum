@@ -15,6 +15,7 @@ const projectCategoryMap = [
   "ecommerce",
   "businessSystems",
   "businessSystems",
+  "clinics",
 ];
 
 const projectColors = [
@@ -23,8 +24,9 @@ const projectColors = [
   "from-slate-500/20 to-zinc-500/20",
   "from-indigo-500/20 to-blue-500/20",
   "from-purple-500/20 to-pink-500/20",
-  "bg-black",          // Escape — dark bg for logo
-  "bg-white",          // VRoom — white bg for logo
+  "bg-black",          // Escape — dark bg
+  "bg-black",          // VRoom — dark bg
+  "bg-slate-900",      // Arty Dental — dark bg
 ];
 
 const projectTags = [
@@ -35,10 +37,12 @@ const projectTags = [
   ["E-commerce", "Payments", "Inventory"],
   ["Barbershop", "Staff Salaries", "Operations"],
   ["Car Wash", "Analytics", "Multi-service"],
+  ["Dental", "Appointments", "Patient Records"],
 ];
 
 // Detail page route — empty = no dedicated page
 const projectDetailPages = [
+  "",
   "",
   "",
   "",
@@ -115,7 +119,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             <CardWrapper key={project.id}>
               {/* Thumbnail */}
               <div className={`aspect-[4/3] relative overflow-hidden ${
-                project.id === 6 || project.id === 7 ? "bg-slate-900" :
+                project.id === 6 || project.id === 7 || project.id === 8 ? "bg-slate-900" :
                 `bg-gradient-to-br ${project.color}`
               }`}>
 
@@ -137,6 +141,17 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                     alt="VRoom Car Wash"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                )}
+
+                {/* Arty Dental Clinic — collab image */}
+                {project.id === 8 && (
+                  <Image
+                    src="/portfolio/arty-dental-collab.png"
+                    alt="Arty Dental Clinic"
+                    fill
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 )}

@@ -1,9 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
+
+// Real images for clinic portfolio items — index matches portfolioItems order
+// undefined = show generic placeholder
+const clinicPortfolioImages: (string | undefined)[] = [
+  undefined,
+  undefined,
+  undefined,
+  "/portfolio/arty-dental-collab.png",
+];
 
 const featureIcons = [
   <svg key="0" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
@@ -188,18 +198,35 @@ export default function ClinicsPage() {
           subtitle={t("clinicsPage.portfolioSubtitle")}
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {portfolioItems.map((item, index) => (
-            <div key={index} className="card group overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-teal-100 rounded-lg mb-4 flex items-center justify-center">
-                <svg className="w-16 h-16 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {portfolioItems.map((item, index) => {
+            const img = clinicPortfolioImages[index];
+            return (
+              <div key={index} className="card group overflow-hidden p-0">
+                <div className="aspect-video relative bg-slate-900 overflow-hidden rounded-t-2xl">
+                  {img ? (
+                    <Image
+                      src={img}
+                      alt={item.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-slate-900">{item.name}</h3>
+                  <p className="text-sm text-slate-500">{item.type}</p>
+                </div>
               </div>
-              <h3 className="font-bold text-slate-900">{item.name}</h3>
-              <p className="text-sm text-slate-500">{item.kind}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-10">

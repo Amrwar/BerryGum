@@ -390,7 +390,8 @@
       "3": { "title": "Corporate Business Website", "description": "Professional business website with service pages, team showcase, and lead generation" },
       "4": { "title": "E-commerce Store", "description": "Full-featured online store with product catalog, cart, and payment integration" },
       "5": { "title": "Escape Barbershop System", "description": "Full barbershop management system — customer records, staff salaries, daily operations, and visit tracking dashboard" },
-      "6": { "title": "VRoom Car Wash System", "description": "Car wash operations platform with vehicle entry tracking, payment processing, mechanic services, workers management, and analytics reports" }
+      "6": { "title": "VRoom Car Wash System", "description": "Car wash operations platform with vehicle entry tracking, payment processing, mechanic services, workers management, and analytics reports" },
+      "7": { "title": "Arty Dental Clinic", "description": "Modern dental clinic website with smart appointment management, digital patient records, and clinic performance analytics" }
     }
   },
   "whatsappFloat": {
@@ -453,7 +454,8 @@
     "portfolioItems": {
       "0": { "name": "Cairo Dental Center", "type": "Multi-specialty Dental Clinic" },
       "1": { "name": "Nile Women's Health", "type": "OB/GYN Clinic" },
-      "2": { "name": "Vision Plus Eye Care", "type": "Ophthalmology Practice" }
+      "2": { "name": "Vision Plus Eye Care", "type": "Ophthalmology Practice" },
+      "3": { "name": "Arty Dental Clinic", "type": "Dental Clinic" }
     },
     "viewFullPortfolio": "View Full Portfolio",
     "testimonial": {
