@@ -88,6 +88,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
   const filteredProjects = projects
     .filter((project) => activeCategory === "all" || project.category === activeCategory)
+    .sort((a, b) => (a.id < 6 ? 1 : 0) - (b.id < 6 ? 1 : 0))
     .slice(0, limit || projects.length);
 
   return (
