@@ -13,6 +13,7 @@ const clinicPortfolioImages: (string | undefined)[] = [
   undefined,
   undefined,
   "/portfolio/arty-dental-collab.png",
+  "/portfolio/onmedical-collab.png",
 ];
 
 const featureIcons = [

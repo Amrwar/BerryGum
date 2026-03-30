@@ -16,6 +16,8 @@ const projectCategoryMap = [
   "businessSystems",
   "businessSystems",
   "clinics",
+  "clinics",
+  "business",
 ];
 
 const projectColors = [
@@ -27,6 +29,8 @@ const projectColors = [
   "bg-black",          // Escape — dark bg
   "bg-black",          // VRoom — dark bg
   "bg-slate-900",      // Arty Dental — dark bg
+  "bg-slate-900",      // ON Medical — dark bg
+  "bg-slate-900",      // ValuePlus — dark bg
 ];
 
 const projectTags = [
@@ -38,18 +42,13 @@ const projectTags = [
   ["Barbershop", "Staff Salaries", "Operations"],
   ["Car Wash", "Analytics", "Multi-service"],
   ["Dental", "Appointments", "Patient Records"],
+  ["Oncology", "Patient Management", "Analytics"],
+  ["Real Estate", "Lead Tracking", "CRM"],
 ];
 
 // Detail page route — empty = no dedicated page
 const projectDetailPages = [
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
+  "", "", "", "", "", "", "", "", "", "",
 ];
 
 interface PortfolioGridProps {
@@ -119,7 +118,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
             <CardWrapper key={project.id}>
               {/* Thumbnail */}
               <div className={`aspect-[4/3] relative overflow-hidden ${
-                project.id === 6 || project.id === 7 || project.id === 8 ? "bg-slate-900" :
+                project.id >= 6 ? "bg-slate-900" :
                 `bg-gradient-to-br ${project.color}`
               }`}>
 
@@ -147,13 +146,17 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
 
                 {/* Arty Dental Clinic — collab image */}
                 {project.id === 8 && (
-                  <Image
-                    src="/portfolio/arty-dental-collab.png"
-                    alt="Arty Dental Clinic"
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                  <Image src="/portfolio/arty-dental-collab.png" alt="Arty Dental Clinic" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                )}
+
+                {/* ON Medical Oncology Solutions — collab image */}
+                {project.id === 9 && (
+                  <Image src="/portfolio/onmedical-collab.png" alt="ON Medical Oncology Solutions" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                )}
+
+                {/* ValuePlus — collab image */}
+                {project.id === 10 && (
+                  <Image src="/portfolio/valueplus-collab.png" alt="ValuePlus" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
 
                 {/* Placeholder for non-real projects */}

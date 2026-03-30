@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
+
+const startupPortfolioImages: (string | undefined)[] = [
+  "/portfolio/valueplus-collab.png",
+];
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -25,6 +30,8 @@ export default function StartupsPage() {
   const includedItems: any[] = Object.values(messages.startupsPage.includedItems as any);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const benefits: any[] = Object.values(messages.startupsPage.benefits as any);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const portfolioItems: any[] = Object.values(messages.startupsPage.portfolioItems as any);
 
   return (
     <>
@@ -173,6 +180,44 @@ export default function StartupsPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Portfolio Section */}
+      <Section variant="alt">
+        <SectionHeader
+          badge={t("startupsPage.portfolioBadge")}
+          title={t("startupsPage.portfolioTitle")}
+          subtitle={t("startupsPage.portfolioSubtitle")}
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portfolioItems.map((item, index) => {
+            const img = startupPortfolioImages[index];
+            return (
+              <div key={index} className="card group overflow-hidden p-0">
+                <div className="aspect-video relative bg-slate-900 overflow-hidden rounded-t-2xl">
+                  {img ? (
+                    <Image src={img} alt={item.name} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-slate-900">{item.name}</h3>
+                  <p className="text-sm text-slate-500">{item.type}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="text-center mt-10">
+          <Link href="/portfolio" className="btn btn-primary">
+            {t("startupsPage.viewFullPortfolio")}
+          </Link>
         </div>
       </Section>
 
