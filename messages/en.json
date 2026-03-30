@@ -43,6 +43,10 @@
       "title": "Startups",
       "description": "Launch your startup with a modern website that attracts investors and customers. MVP-ready designs with growth in mind."
     },
+    "systems": {
+      "title": "Management Systems",
+      "description": "Custom business management systems — POS, inventory, HR, clinic management, and more. Built for your workflow."
+    },
     "learnMore": "Learn more",
     "visitPortfolio": "Visit Portfolio"
   },

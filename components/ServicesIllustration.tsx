@@ -1,7 +1,7 @@
 export default function ServicesIllustration() {
   return (
     <svg
-      viewBox="0 0 336 72"
+      viewBox="0 0 424 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="h-10 w-auto mx-auto"
@@ -23,6 +23,10 @@ export default function ServicesIllustration() {
         <linearGradient id="si-d" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#e0007a" />
           <stop offset="100%" stopColor="#f43f8b" />
+        </linearGradient>
+        <linearGradient id="si-e" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#312e81" />
+          <stop offset="100%" stopColor="#6d28d9" />
         </linearGradient>
         <filter id="si-card-shadow">
           <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#1e0a5e" floodOpacity="0.12" />
@@ -58,6 +62,18 @@ export default function ServicesIllustration() {
       <rect x="292" y="28" width="4" height="4" rx="1" fill="white" />
       <rect x="299" y="28" width="4" height="4" rx="1" fill="white" />
       <rect x="311" y="34" width="4" height="4" rx="1" fill="white" />
+
+      {/* ── 5: Systems / Server rack ── */}
+      <rect x="352" y="0" width="72" height="72" rx="16" fill="url(#si-e)" filter="url(#si-card-shadow)" />
+      <rect x="374" y="19" width="28" height="9" rx="2" stroke="white" strokeWidth="2.5" />
+      <rect x="374" y="32" width="28" height="9" rx="2" stroke="white" strokeWidth="2.5" />
+      <rect x="374" y="45" width="28" height="9" rx="2" stroke="white" strokeWidth="2.5" />
+      <circle cx="396" cy="23.5" r="1.5" fill="white" />
+      <circle cx="396" cy="36.5" r="1.5" fill="white" />
+      <circle cx="396" cy="49.5" r="1.5" fill="white" />
+      <rect x="377" y="22" width="12" height="3" rx="1" fill="white" fillOpacity="0.5" />
+      <rect x="377" y="35" width="12" height="3" rx="1" fill="white" fillOpacity="0.5" />
+      <rect x="377" y="48" width="12" height="3" rx="1" fill="white" fillOpacity="0.5" />
     </svg>
   );
 }

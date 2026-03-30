@@ -65,6 +65,21 @@ export default function HomePage() {
       color: "from-purple-600 to-pink-500",
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=360&fit=crop&auto=format",
     },
+    {
+      icon: (
+        // Server stack — management systems
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
+          <circle cx="8" cy="7" r="1" fill="currentColor" />
+          <circle cx="8" cy="15" r="1" fill="currentColor" />
+        </svg>
+      ),
+      title: t("services.systems.title"),
+      description: t("services.systems.description"),
+      href: "/pricing",
+      color: "from-indigo-500 to-violet-500",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=360&fit=crop&auto=format",
+    },
   ];
 
   const features = [
