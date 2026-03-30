@@ -1,16 +1,27 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
-// Screenshots placed in /public/portfolio/
-const portfolioScreenshots: Record<number, string> = {
-  0: "/portfolio/escape-barbershop.png",
-  1: "/portfolio/vroom.png",
-};
+// Screenshots for each system: [main, ...thumbnails]
+const systemScreenshots: string[][] = [
+  [
+    "/portfolio/escape-1.png",   // Dashboard — main
+    "/portfolio/escape-3.png",   // Reports
+    "/portfolio/escape-4.png",   // New Visit
+    "/portfolio/escape-2.png",   // Cash Drawer
+  ],
+  [
+    "/portfolio/vroom-1.png",    // Car Wash list — main
+    "/portfolio/vroom-3.png",    // Monthly Reports
+    "/portfolio/vroom-4.png",    // Workers & Statistics
+    "/portfolio/vroom-2.png",    // Add New Car
+  ],
+];
 
 const featureIcons = [
   <svg key="0" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
@@ -23,6 +34,7 @@ const featureIcons = [
 
 export default function SystemsPage() {
   const { t, messages } = useLanguage();
+  const [activeScreenshots, setActiveScreenshots] = useState<number[]>([0, 0]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const features: any[] = Object.values(messages.systemsPage.features as any);
@@ -108,47 +120,76 @@ export default function SystemsPage() {
           subtitle={t("systemsPage.portfolioSubtitle")}
         />
         <div className="grid md:grid-cols-2 gap-8">
-          {portfolioItems.map((item, index) => (
-            <div key={index} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-purple-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/50">
-              {/* Screenshot */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-violet-600/20 to-indigo-600/20">
-                {portfolioScreenshots[index] ? (
-                  <Image
-                    src={portfolioScreenshots[index]}
-                    alt={item.name}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          {portfolioItems.map((item, index) => {
+            const shots = systemScreenshots[index] || [];
+            const activeIdx = activeScreenshots[index] ?? 0;
+            return (
+              <div key={index} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:border-purple-200 transition-all duration-300">
+
+                {/* Main screenshot */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                  {shots[activeIdx] && (
+                    <Image
+                      key={shots[activeIdx]}
+                      src={shots[activeIdx]}
+                      alt={`${item.name} screenshot`}
+                      fill
+                      className="object-cover object-top transition-opacity duration-300"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  )}
+                </div>
+
+                {/* Thumbnail strip */}
+                {shots.length > 1 && (
+                  <div className="flex gap-2 px-4 pt-3 pb-1">
+                    {shots.map((src, i) => (
+                      <button
+                        key={i}
+                        onClick={() =>
+                          setActiveScreenshots((prev) => {
+                            const next = [...prev];
+                            next[index] = i;
+                            return next;
+                          })
+                        }
+                        className={`relative h-12 flex-1 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                          i === activeIdx
+                            ? "border-fuchsia-500 shadow-md"
+                            : "border-transparent opacity-60 hover:opacity-90"
+                        }`}
+                      >
+                        <Image
+                          src={src}
+                          alt=""
+                          fill
+                          className="object-cover object-top"
+                          sizes="80px"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Card body */}
+                <div className="px-6 pb-6 pt-3">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
+                      <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
+                      <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                         style={{ background: "var(--gradient-brand)" }}>
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
                       </svg>
                     </div>
                   </div>
-                )}
-              </div>
-
-              {/* Card body */}
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
-                    <p className="text-sm font-medium" style={{ color: "#9b20a0" }}>{item.type}</p>
-                  </div>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                       style={{ background: "var(--gradient-brand)" }}>
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM4 14a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
-                    </svg>
-                  </div>
                 </div>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 

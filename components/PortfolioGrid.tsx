@@ -44,8 +44,8 @@ const projectImages = [
   "",
   "",
   "",
-  "/portfolio/escape-barbershop.png",
-  "/portfolio/vroom.png",
+  "/portfolio/escape-1.png",
+  "/portfolio/vroom-1.png",
 ];
 
 interface PortfolioGridProps {
