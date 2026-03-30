@@ -5,7 +5,7 @@ import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
 
 const startupPortfolioImages: (string | undefined)[] = [
-  "/portfolio/valueplus-collab.png",
+  "/portfolio/valueplus-website.png",
 ];
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
