@@ -183,8 +183,16 @@
     "whatsIncluded": "What's included",
     "notIncluded": "Not included",
     "contractNote": "12-month minimum contract required",
-    "customNote": "Need a custom solution? We're happy to discuss your specific requirements.",
-    "customButton": "Contact Us for Custom Quote",
+    "heroTitle": "Simple Pricing,",
+    "heroTitleGradient": "Powerful Results.",
+    "customNote": "Need something custom?",
+    "customSubNote": "Let's build a solution tailored exactly to your needs.",
+    "customButton": "Contact Us for a Quote",
+    "trust": {
+      "speed": { "title": "Fast Turnaround", "desc": "Quick delivery without compromising quality" },
+      "secure": { "title": "Modern & Secure", "desc": "Clean, scalable code with best security practices" },
+      "support": { "title": "Ongoing Support", "desc": "We're here even after your project goes live" }
+    },
     "compare": {
       "badge": "Compare Plans",
       "title": "What's Included in Each Plan",
