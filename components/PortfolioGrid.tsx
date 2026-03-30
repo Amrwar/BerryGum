@@ -119,10 +119,10 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 `bg-gradient-to-br ${project.color}`
               }`}>
 
-                {/* Escape Barbershop — collab image */}
+                {/* Escape Barbershop — marketing image */}
                 {project.id === 6 && (
                   <Image
-                    src="/portfolio/escape-collab.png"
+                    src="/portfolio/escape-marketing.png"
                     alt="Escape Barbershop"
                     fill
                     className="object-cover"
@@ -130,10 +130,10 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                   />
                 )}
 
-                {/* VRoom — collab image */}
+                {/* VRoom — marketing image */}
                 {project.id === 7 && (
                   <Image
-                    src="/portfolio/vroom-collab.png"
+                    src="/portfolio/vroom-marketing.png"
                     alt="VRoom Car Wash"
                     fill
                     className="object-cover"
