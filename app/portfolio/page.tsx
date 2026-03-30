@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Section, { SectionHeader } from "@/components/Section";
 import PortfolioGrid from "@/components/PortfolioGrid";
+import HeroBg from "@/components/HeroBg";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -17,24 +18,21 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero relative pt-44 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-             style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-             style={{ background: "radial-gradient(circle, rgba(30,10,94,0.09) 0%, rgba(155,32,160,0.05) 50%, transparent 70%)" }} />
-        <div className="container-custom relative">
+      <section className="hero relative pt-44 pb-20 overflow-hidden">
+        <HeroBg />
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-                 style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
-              <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
+                 style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)" }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              <span className="text-sm font-medium text-white">
                 {t("portfolioPage.badge")}
               </span>
             </div>
-            <h1 className="heading-xl text-slate-900 mb-4">
+            <h1 className="heading-xl text-white mb-4">
               {t("portfolioPage.title")}
             </h1>
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-base text-white/70 leading-relaxed">
               {t("portfolioPage.subtitle")}
             </p>
           </div>

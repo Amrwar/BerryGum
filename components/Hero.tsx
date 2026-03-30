@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import HeroBg from "@/components/HeroBg";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -16,11 +17,7 @@ export default function Hero() {
 
   return (
     <section className="hero min-h-[88vh] flex items-center relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(155,32,160,0.10) 0%, rgba(224,0,122,0.06) 50%, transparent 70%)" }} />
-      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
-           style={{ background: "radial-gradient(circle, rgba(30,10,94,0.09) 0%, rgba(155,32,160,0.05) 50%, transparent 70%)" }} />
+      <HeroBg />
 
       <div className="container-custom relative z-10 pt-36 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -96,21 +93,21 @@ export default function Hero() {
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 animate-fade-in"
-                 style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--gradient-brand)" }} />
-              <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
+                 style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)" }}>
+              <span className="w-2 h-2 rounded-full animate-pulse bg-white" />
+              <span className="text-sm font-medium text-white">
                 {t("hero.badge")}
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="heading-xl text-slate-900 mb-6 animate-fade-in">
+            <h1 className="heading-xl text-white mb-6 animate-fade-in">
               {t("hero.title")}{" "}
               <span className="text-gradient-gold">{t("hero.titleHighlight")}</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base text-slate-600 mb-8 leading-relaxed animate-fade-in">
+            <p className="text-base text-white/70 mb-8 leading-relaxed animate-fade-in">
               {t("hero.subtitle")}
             </p>
 
@@ -119,7 +116,7 @@ export default function Hero() {
               <Link href="/contact" className="btn btn-primary btn-lg">
                 {t("nav.getStarted")}
               </Link>
-              <Link href="/pricing" className="btn btn-outline btn-lg">
+              <Link href="/pricing" className="btn btn-outline-light btn-lg">
                 {t("hero.viewPricing")}
               </Link>
             </div>
@@ -131,7 +128,7 @@ export default function Hero() {
                 t("hero.trustConsultation"),
                 t("hero.trustSupport"),
               ].map((item) => (
-                <div key={item} className="flex items-center gap-1.5 text-sm text-slate-500">
+                <div key={item} className="flex items-center gap-1.5 text-sm text-white/60">
                   <svg className="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>

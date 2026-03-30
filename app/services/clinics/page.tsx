@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Section, { SectionHeader } from "@/components/Section";
+import HeroBg from "@/components/HeroBg";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -49,30 +50,26 @@ export default function ClinicsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero relative pt-44 pb-16 overflow-hidden" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-             style={{ background: "radial-gradient(circle, rgba(155,32,160,0.09) 0%, rgba(224,0,122,0.05) 50%, transparent 70%)" }} />
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-             style={{ background: "radial-gradient(circle, rgba(30,10,94,0.09) 0%, rgba(155,32,160,0.05) 50%, transparent 70%)" }} />
-
-        <div className="container-custom relative">
+      <section className="hero relative pt-44 pb-20 overflow-hidden">
+        <HeroBg />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
-                 style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
-              <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>
+                 style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)" }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              <span className="text-sm font-medium text-white">
                 {t("clinicsPage.badge")}
               </span>
             </div>
 
-            <h1 className="heading-xl text-slate-900 mb-4">
+            <h1 className="heading-xl text-white mb-4">
               {t("clinicsPage.title")}{" "}
               <span className="text-gradient">
                 {t("clinicsPage.titleHighlight")}
               </span>
             </h1>
 
-            <p className="text-base text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-base text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">
               {t("clinicsPage.subtitle")}
             </p>
 
@@ -88,7 +85,7 @@ export default function ClinicsPage() {
                 </svg>
                 {t("clinicsPage.cta")}
               </Link>
-              <Link href="/pricing" className="btn btn-outline btn-lg">
+              <Link href="/pricing" className="btn btn-outline-light btn-lg">
                 {t("clinicsPage.viewPricing")}
               </Link>
             </div>
