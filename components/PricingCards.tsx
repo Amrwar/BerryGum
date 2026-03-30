@@ -92,7 +92,7 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
                 </div>
               )}
 
-              <div className="p-8 pt-10 flex flex-col flex-1">
+              <div className="p-5 sm:p-8 pt-8 sm:pt-10 flex flex-col flex-1">
                 {/* Plan name */}
                 <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-2"
                     style={{ color: isPopular ? "#f472b6" : "#a78bfa" }}>
@@ -105,7 +105,7 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
                 {/* Price */}
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-5xl font-black text-white">{plan.price}</span>
+                    <span className="text-4xl sm:text-5xl font-black text-white">{plan.price}</span>
                     <span className="text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
                       {plan.currency}
                     </span>
@@ -199,7 +199,7 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
       </div>
 
       {/* Need something custom? */}
-      <div className="mt-10 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6"
+      <div className="mt-10 rounded-2xl px-4 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6"
            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
         <div>
           <h4 className="font-bold text-white mb-1">{t("pricing.customNote")}</h4>

@@ -150,7 +150,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                 )}
                 {/* ValuePlus — website screenshot */}
                 {project.id === 10 && (
-                  <Image src="/portfolio/valueplus-website.png" alt="ValuePlus" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/portfolio/valueplus-website.png" alt="ValuePlus" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 33vw" />
                 )}
                 {/* Coming Soon — for projects without a real image */}
                 {project.id < 6 && (

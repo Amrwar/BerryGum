@@ -205,10 +205,11 @@ export default function ClinicsPage() {
           subtitle={t("clinicsPage.portfolioSubtitle")}
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {portfolioItems.map((item, index) => {
             const img = clinicPortfolioImages[index];
             const logo = clinicPortfolioLogos[index];
+            if (!img) return null;
             return (
               <div key={index} className="card group overflow-hidden p-0">
                 <div className="aspect-video relative bg-slate-900 overflow-hidden rounded-t-2xl">

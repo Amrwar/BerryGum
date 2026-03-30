@@ -220,7 +220,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="card p-8 lg:p-10">
+              <div className="card p-4 sm:p-8 lg:p-10">
                 <h2 className="heading-md text-slate-900 mb-6">{t("contact.form.sendUs")}</h2>
 
                 {status.type === "success" ? (

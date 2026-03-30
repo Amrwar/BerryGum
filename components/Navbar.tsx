@@ -119,7 +119,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between relative py-2">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative w-48 h-16 sm:w-56 sm:h-20">
+              <div className="relative w-28 h-10 sm:w-44 sm:h-14">
                 <Image
                   src="/logo.png"
                   alt={siteConfig.name}
@@ -249,7 +249,7 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-[640px] opacity-100 overflow-y-auto" : "max-h-0 opacity-0"
           }`}
         >
           <div className="px-4 pb-4 pt-2" style={{ background: "linear-gradient(135deg, rgba(30,10,94,0.98) 0%, rgba(100,20,145,0.98) 55%, rgba(180,0,100,0.98) 100%)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
