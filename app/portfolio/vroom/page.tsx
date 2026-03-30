@@ -7,10 +7,10 @@ import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const screenshots = [
+  { src: "/portfolio/vroom-collab.png", label: "Overview" },
   { src: "/portfolio/vroom-1.png", label: "Car Wash List" },
   { src: "/portfolio/vroom-3.png", label: "Monthly Reports" },
   { src: "/portfolio/vroom-4.png", label: "Workers & Stats" },
-  { src: "/portfolio/vroom-2.png", label: "Add New Car" },
 ];
 
 const tags = ["Car Wash", "Analytics", "Multi-service", "Payments", "Workers Management"];

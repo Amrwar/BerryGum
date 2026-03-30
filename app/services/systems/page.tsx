@@ -15,16 +15,16 @@ import { useLanguage } from "@/lib/LanguageContext";
 // Screenshots for each system: [main, ...thumbnails]
 const systemScreenshots: string[][] = [
   [
-    "/portfolio/escape-1.png",   // Dashboard — main
-    "/portfolio/escape-3.png",   // Reports
-    "/portfolio/escape-4.png",   // New Visit
-    "/portfolio/escape-2.png",   // Cash Drawer
+    "/portfolio/escape-collab.png",  // Collaboration — main
+    "/portfolio/escape-1.png",       // Dashboard
+    "/portfolio/escape-3.png",       // Reports
+    "/portfolio/escape-4.png",       // New Visit
   ],
   [
-    "/portfolio/vroom-1.png",    // Car Wash list — main
-    "/portfolio/vroom-3.png",    // Monthly Reports
-    "/portfolio/vroom-4.png",    // Workers & Statistics
-    "/portfolio/vroom-2.png",    // Add New Car
+    "/portfolio/vroom-collab.png",   // Collaboration — main
+    "/portfolio/vroom-1.png",        // Car Wash list
+    "/portfolio/vroom-3.png",        // Monthly Reports
+    "/portfolio/vroom-4.png",        // Workers & Statistics
   ],
 ];
 

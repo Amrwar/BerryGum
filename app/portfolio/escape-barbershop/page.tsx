@@ -7,10 +7,10 @@ import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const screenshots = [
+  { src: "/portfolio/escape-collab.png", label: "Overview" },
   { src: "/portfolio/escape-1.png", label: "Dashboard" },
   { src: "/portfolio/escape-3.png", label: "Reports" },
   { src: "/portfolio/escape-4.png", label: "New Visit" },
-  { src: "/portfolio/escape-2.png", label: "Cash Drawer" },
 ];
 
 const tags = ["Barbershop", "Staff Salaries", "Operations", "Dashboard", "Visits Tracking"];
