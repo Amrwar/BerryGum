@@ -128,10 +128,30 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { value: "150+", label: t("about.stats.projects") },
-    { value: "98%", label: t("about.stats.satisfaction") },
-    { value: "5+", label: t("about.stats.experience") },
-    { value: "50+", label: t("about.stats.clients") },
+    {
+      value: "150+",
+      label: t("about.stats.projects"),
+      icon: <svg className="w-5 h-5" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
+      color: "from-violet-500 to-fuchsia-500",
+    },
+    {
+      value: "98%",
+      label: t("about.stats.satisfaction"),
+      icon: <svg className="w-5 h-5" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>,
+      color: "from-fuchsia-500 to-pink-500",
+    },
+    {
+      value: "5+",
+      label: t("about.stats.experience"),
+      icon: <svg className="w-5 h-5" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
+      color: "from-indigo-500 to-violet-500",
+    },
+    {
+      value: "50+",
+      label: t("about.stats.clients"),
+      icon: <svg className="w-5 h-5" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
+      color: "from-pink-500 to-rose-500",
+    },
   ];
 
   return (
@@ -223,11 +243,30 @@ export default function HomePage() {
             <h2 className="heading-lg text-slate-900 mb-6">{t("about.title")}</h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">{t("about.description1")}</p>
             <p className="text-slate-600 leading-relaxed mb-8">{t("about.description2")}</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="group">
-                  <div className="text-3xl font-bold text-gradient-gold group-hover:scale-105 transition-transform">{stat.value}</div>
-                  <div className="text-sm text-slate-500">{stat.label}</div>
+                <div
+                  key={stat.label}
+                  className="group relative bg-white rounded-2xl p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{ border: "1px solid rgba(155,32,160,0.1)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+                >
+                  {/* Gradient top bar */}
+                  <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${stat.color}`} />
+                  {/* Soft bg glow on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300`} />
+
+                  {/* Icon tile */}
+                  <div className={`relative w-9 h-9 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3 shadow-sm`}>
+                    {stat.icon}
+                  </div>
+
+                  {/* Number */}
+                  <div className={`relative text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${stat.color}`}>
+                    {stat.value}
+                  </div>
+
+                  {/* Label */}
+                  <div className="relative text-xs text-slate-500 mt-1 leading-tight">{stat.label}</div>
                 </div>
               ))}
             </div>
