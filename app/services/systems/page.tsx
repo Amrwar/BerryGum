@@ -114,7 +114,7 @@ export default function SystemsPage() {
                   src={systemImages[index]}
                   alt={item.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
