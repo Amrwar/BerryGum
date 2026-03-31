@@ -96,6 +96,7 @@ export default function ClinicsPage() {
       {/* Problem/Solution Section */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left — Why text */}
           <div>
             <SectionHeader
               badge={t("clinicsPage.whyBadge")}
@@ -103,24 +104,70 @@ export default function ClinicsPage() {
               subtitle=""
               centered={false}
             />
-            <div className="space-y-4 text-slate-600">
-              <p dangerouslySetInnerHTML={{ __html: t("clinicsPage.whyP1") }} />
-              <p>{t("clinicsPage.whyP2")}</p>
-              <p>{t("clinicsPage.whyP3")}</p>
+
+            {/* Stat callout */}
+            <div className="flex items-center gap-5 p-5 rounded-2xl mb-6"
+                 style={{ background: "rgba(155,32,160,0.06)", border: "1px solid rgba(155,32,160,0.18)" }}>
+              <span className="text-5xl font-black leading-none flex-shrink-0"
+                    style={{ background: "var(--gradient-brand)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                87%
+              </span>
+              <p className="text-slate-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: t("clinicsPage.whyP1").replace(/^<strong>87%<\/strong>\s*of/, "of") }} />
+            </div>
+
+            {/* Bullet points */}
+            <div className="space-y-4">
+              {[t("clinicsPage.whyP2"), t("clinicsPage.whyP3")].map((text, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                       style={{ background: "var(--gradient-brand)" }}>
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed">{text}</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-slate-900 mb-6">{t("clinicsPage.withoutWebsite")}</h3>
-            <ul className="space-y-3">
+
+          {/* Right — Without a website card */}
+          <div className="rounded-2xl overflow-hidden"
+               style={{ background: "linear-gradient(145deg, #0e0025 0%, #2a0a5e 60%, #180038 100%)", border: "1px solid rgba(155,32,160,0.3)", boxShadow: "0 8px 40px rgba(30,10,94,0.3)" }}>
+            {/* Card header */}
+            <div className="flex items-center gap-3 px-6 py-4"
+                 style={{ background: "rgba(224,0,122,0.12)", borderBottom: "1px solid rgba(155,32,160,0.2)" }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                   style={{ background: "rgba(239,68,68,0.2)", border: "1px solid rgba(239,68,68,0.3)" }}>
+                <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-white text-base">{t("clinicsPage.withoutWebsite")}</h3>
+            </div>
+
+            {/* Items */}
+            <ul className="px-6 py-5 space-y-4">
               {withoutItems.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-slate-700">{item}</span>
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                       style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)" }}>
+                    <svg className="w-3 h-3 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <span className="text-white/65 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
+
+            {/* Footer note */}
+            <div className="mx-6 mb-5 px-4 py-3 rounded-xl"
+                 style={{ background: "rgba(155,32,160,0.12)", border: "1px solid rgba(155,32,160,0.2)" }}>
+              <p className="text-xs text-fuchsia-300/70 text-center leading-relaxed">
+                {t("clinicsPage.whyP3")}
+              </p>
+            </div>
           </div>
         </div>
       </Section>
