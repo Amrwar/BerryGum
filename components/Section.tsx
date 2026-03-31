@@ -118,7 +118,12 @@ export function SectionHeader({
           <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>{badge}</span>
         </div>
       )}
-      <h2 className={`heading-lg ${light ? "text-white" : "text-slate-900"}`}>{title}</h2>
+      <h2
+        className={`heading-lg ${light ? "text-white" : ""}`}
+        style={light ? {} : { color: "#1e0a5e" }}
+      >
+        {title}
+      </h2>
       {subtitle && (
         <p className={`mt-3 text-base ${light ? "text-slate-400" : "text-slate-600"}`}>{subtitle}</p>
       )}

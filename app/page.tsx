@@ -240,7 +240,7 @@ export default function HomePage() {
                 <span className="text-sm font-medium" style={{ color: "#9b20a0" }}>{t("about.badge")}</span>
               </div>
             </div>
-            <h2 className="heading-lg text-slate-900 mb-6">{t("about.title")}</h2>
+            <h2 className="heading-lg mb-6" style={{ color: "#1e0a5e" }}>{t("about.title")}</h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">{t("about.description1")}</p>
             <p className="text-slate-600 leading-relaxed mb-8">{t("about.description2")}</p>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
