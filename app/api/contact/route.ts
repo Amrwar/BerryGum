@@ -29,13 +29,7 @@ function validateFormData(data: ContactFormData): { valid: boolean; errors: stri
     errors.push("Message must be at least 10 characters long");
   }
 
-  // Optional phone validation (Egyptian phone format)
-  if (data.phone && data.phone.trim()) {
-    const phoneClean = data.phone.replace(/[\s\-\(\)]/g, "");
-    if (!/^(\+20|0)?1[0125]\d{8}$/.test(phoneClean)) {
-      errors.push("Please provide a valid Egyptian phone number");
-    }
-  }
+  // Phone is optional — any format accepted (Egyptian or international)
 
   return {
     valid: errors.length === 0,
