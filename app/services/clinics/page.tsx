@@ -95,6 +95,15 @@ export default function ClinicsPage() {
 
       {/* Problem/Solution Section */}
       <Section>
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path d="M9 10a3 3 0 116 0c0 2-3 3-3 5" />
+              <path d="M12 18h.01" />
+            </svg>
+          </div>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Why text */}
           <div>
@@ -174,6 +183,13 @@ export default function ClinicsPage() {
 
       {/* Features Section */}
       <Section variant="alt">
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+        </div>
         <SectionHeader
           badge={t("clinicsPage.featuresBadge")}
           title={t("clinicsPage.featuresTitle")}
@@ -195,6 +211,13 @@ export default function ClinicsPage() {
 
       {/* What's Included */}
       <Section>
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeader
@@ -246,6 +269,13 @@ export default function ClinicsPage() {
 
       {/* Portfolio Preview */}
       <Section variant="alt">
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </div>
         <SectionHeader
           badge={t("clinicsPage.portfolioBadge")}
           title={t("clinicsPage.portfolioTitle")}
@@ -305,22 +335,6 @@ export default function ClinicsPage() {
           <Link href="/portfolio" className="btn btn-primary">
             {t("clinicsPage.viewFullPortfolio")}
           </Link>
-        </div>
-      </Section>
-
-      {/* Testimonial */}
-      <Section>
-        <div className="max-w-3xl mx-auto text-center">
-          <svg className="w-12 h-12 text-blue-200 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-          </svg>
-          <blockquote className="text-2xl text-slate-700 font-medium mb-6">
-            &ldquo;{t("clinicsPage.testimonial.quote")}&rdquo;
-          </blockquote>
-          <div>
-            <div className="font-bold text-slate-900">{t("clinicsPage.testimonial.author")}</div>
-            <div className="text-slate-500">{t("clinicsPage.testimonial.company")}</div>
-          </div>
         </div>
       </Section>
 
