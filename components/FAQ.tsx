@@ -29,7 +29,7 @@ export default function FAQ({ limit }: FAQProps) {
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full px-6 py-5 flex items-center justify-between text-left"
             >
-              <span className="font-semibold text-slate-900 pr-4">
+              <span className="font-semibold pr-4" style={{ color: "#1e0a5e" }}>
                 {faq.question}
               </span>
               <span

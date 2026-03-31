@@ -201,7 +201,7 @@ export default function ContactPage() {
 
               {/* Social Links */}
               <div className="mt-10">
-                <h3 className="font-semibold text-slate-900 mb-4">{t("contact.info.followUs")}</h3>
+                <h3 className="font-semibold mb-4" style={{ color: "#1e0a5e" }}>{t("contact.info.followUs")}</h3>
                 <div className="flex gap-3">
                   <a
                     href={siteConfig.social.instagram}
@@ -230,7 +230,7 @@ export default function ContactPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{t("contact.status.messageSent")}</h3>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: "#1e0a5e" }}>{t("contact.status.messageSent")}</h3>
                     <p className="text-slate-600 mb-6">{status.message}</p>
                     <Link
                       href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.contact)}`}

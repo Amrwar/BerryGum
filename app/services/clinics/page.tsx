@@ -186,7 +186,7 @@ export default function ClinicsPage() {
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 {featureIcons[index]}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#1e0a5e" }}>{feature.title}</h3>
               <p className="text-slate-500 text-sm">{feature.description}</p>
             </div>
           ))}
@@ -287,7 +287,7 @@ export default function ClinicsPage() {
                 </div>
                 <div className="p-4 flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-bold text-slate-900">{item.name}</h3>
+                    <h3 className="font-bold" style={{ color: "#1e0a5e" }}>{item.name}</h3>
                     <p className="text-sm text-slate-500">{item.type}</p>
                   </div>
                   {logo && (

@@ -230,7 +230,7 @@ export default function PortfolioGrid({ limit, showFilters = true }: PortfolioGr
                     </div>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-fuchsia-700 transition-colors">
+                <h3 className="text-lg font-bold mb-2 group-hover:text-fuchsia-600 transition-colors" style={{ color: "#1e0a5e" }}>
                   {project.title}
                 </h3>
                 <p className="text-slate-500 text-sm mb-4 leading-relaxed">{project.description}</p>

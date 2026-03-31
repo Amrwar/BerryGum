@@ -165,7 +165,7 @@ export default function RestaurantsPage() {
               <div className="w-14 h-14 rounded-2xl bg-purple-100 text-fuchsia-700 flex items-center justify-center mb-6">
                 {featureIcons[index]}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-3" style={{ color: "#1e0a5e" }}>{feature.title}</h3>
               <p className="text-slate-600 leading-relaxed">{feature.description}</p>
             </div>
           ))}
@@ -254,7 +254,7 @@ export default function RestaurantsPage() {
               <div className="w-16 h-16 rounded-full text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4" style={{ background: "var(--gradient-brand)" }}>
                 {phase.step}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{phase.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#1e0a5e" }}>{phase.title}</h3>
               <p className="text-slate-600 text-sm">{phase.description}</p>
             </div>
           ))}

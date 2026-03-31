@@ -183,7 +183,7 @@ export default function HomePage() {
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{service.title}</h3>
+                <h3 className="text-lg font-bold mb-2 group-hover:text-fuchsia-600 transition-colors" style={{ color: "#1e0a5e" }}>{service.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed flex-1">{service.description}</p>
                 <div className="mt-4 flex items-center text-fuchsia-700 font-medium text-sm">
                   {t("services.learnMore")}
@@ -302,7 +302,7 @@ export default function HomePage() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#1e0a5e" }}>{feature.title}</h3>
 
               {/* Description */}
               <p className="text-slate-500 text-sm leading-relaxed mb-4">{feature.description}</p>

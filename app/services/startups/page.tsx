@@ -101,7 +101,7 @@ export default function StartupsPage() {
             </div>
           </div>
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-slate-900 mb-6">{t("startupsPage.benefitsTitle")}</h3>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#1e0a5e" }}>{t("startupsPage.benefitsTitle")}</h3>
             <ul className="space-y-3">
               {benefits.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -129,7 +129,7 @@ export default function StartupsPage() {
               <div className="feature-icon group-hover:scale-110 transition-transform">
                 {featureIcons[index]}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#1e0a5e" }}>{feature.title}</h3>
               <p className="text-slate-500 text-sm">{feature.description}</p>
             </div>
           ))}
@@ -219,7 +219,7 @@ export default function StartupsPage() {
                 </div>
                 <div className="p-4 flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-bold text-slate-900">{item.name}</h3>
+                    <h3 className="font-bold" style={{ color: "#1e0a5e" }}>{item.name}</h3>
                     <p className="text-sm text-slate-500">{item.type}</p>
                   </div>
                   {logo && (

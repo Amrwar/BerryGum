@@ -89,7 +89,7 @@ export default function SystemsPage() {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mb-5 text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                 {featureIcons[index]}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#1e0a5e" }}>{feature.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
@@ -118,7 +118,7 @@ export default function SystemsPage() {
               <div className="px-6 py-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-0.5">{item.name}</h3>
+                    <h3 className="text-xl font-bold mb-0.5" style={{ color: "#1e0a5e" }}>{item.name}</h3>
                     <p className="text-sm font-medium mb-3" style={{ color: "#9b20a0" }}>{item.type}</p>
                     <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
                   </div>
