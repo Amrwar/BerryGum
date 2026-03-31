@@ -116,7 +116,6 @@ export default function ClinicsPage() {
               badge={t("clinicsPage.whyBadge")}
               title={t("clinicsPage.whyTitle")}
               subtitle=""
-              centered={false}
             />
 
             {/* Stat callout */}
@@ -239,7 +238,6 @@ export default function ClinicsPage() {
               badge={t("clinicsPage.includedBadge")}
               title={t("clinicsPage.includedTitle")}
               subtitle={t("clinicsPage.includedSubtitle")}
-              centered={false}
             />
             <div className="grid sm:grid-cols-2 gap-3 mt-8">
               {includedItems.map((item, index) => (
