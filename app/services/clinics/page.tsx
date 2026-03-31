@@ -98,8 +98,8 @@ export default function ClinicsPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Why text */}
           <div>
-            <div className="mb-6">
-              <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex justify-center mb-8">
+              <svg width="52" height="52" fill="none" viewBox="0 0 24 24" style={{ overflow: "visible" }} strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round">
                 <defs>
                   <linearGradient id="iconGradWhy" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1e0a5e"/>
@@ -109,7 +109,7 @@ export default function ClinicsPage() {
                 </defs>
                 <path stroke="url(#iconGradWhy)" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <path stroke="url(#iconGradWhy)" d="M9 10a3 3 0 116 0c0 2-3 3-3 5" />
-                <path stroke="url(#iconGradWhy)" d="M12 18h.01" />
+                <path stroke="url(#iconGradWhy)" d="M12 18h.01" strokeWidth={2} />
               </svg>
             </div>
             <SectionHeader
@@ -189,7 +189,7 @@ export default function ClinicsPage() {
       {/* Features Section */}
       <Section variant="alt">
         <div className="flex justify-center mb-6">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+          <svg width="52" height="52" fill="none" viewBox="0 0 24 24" style={{ overflow: "visible" }} strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round">
             <defs>
               <linearGradient id="iconGradFeatures" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#1e0a5e"/>
@@ -223,8 +223,8 @@ export default function ClinicsPage() {
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="mb-6">
-              <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex justify-center mb-8">
+              <svg width="52" height="52" fill="none" viewBox="0 0 24 24" style={{ overflow: "visible" }} strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round">
                 <defs>
                   <linearGradient id="iconGradIncluded" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1e0a5e"/>
@@ -287,7 +287,7 @@ export default function ClinicsPage() {
       {/* Portfolio Preview */}
       <Section variant="alt">
         <div className="flex justify-center mb-6">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+          <svg width="52" height="52" fill="none" viewBox="0 0 24 24" style={{ overflow: "visible" }} strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round">
             <defs>
               <linearGradient id="iconGradWork" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#1e0a5e"/>
