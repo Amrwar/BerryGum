@@ -7,7 +7,7 @@ export const siteConfig = {
   // Contact Information
   whatsapp: "+201107578212",
   email: "berrygumstudio@yahoo.com",
-  phone: "+201107578212",
+  phone: "+201110410498",
   address: "Smart Village, 6th of October City, Giza, Egypt",
 
   // Social Links
