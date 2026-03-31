@@ -237,7 +237,7 @@
         "0": {
           "name": "Starter",
           "description": "Perfect for small businesses getting started online",
-          "price": "15,000",
+          "price": "12,000",
           "currency": "EGP",
           "features": ["Up to 5 pages", "Mobile responsive design", "Basic SEO setup", "Contact form", "WhatsApp integration", "Social media links", "1 month support", "Basic analytics setup"],
           "notIncluded": ["E-commerce functionality", "Custom animations", "Blog setup"]
@@ -245,7 +245,7 @@
         "1": {
           "name": "Professional",
           "description": "For growing businesses that need more features",
-          "price": "30,000",
+          "price": "25,000",
           "currency": "EGP",
           "features": ["Up to 15 pages", "Premium responsive design", "Advanced SEO optimization", "Contact form with CRM", "WhatsApp chat widget", "Social media integration", "3 months support", "Google Analytics + Search Console", "Blog/News section", "Custom animations", "Speed optimization"],
           "notIncluded": ["E-commerce functionality"]
@@ -253,7 +253,7 @@
         "2": {
           "name": "Enterprise",
           "description": "Complete solution for established businesses",
-          "price": "55,000",
+          "price": "35,000",
           "currency": "EGP",
           "features": ["Unlimited pages", "Custom premium design", "Full SEO package", "Advanced forms & integrations", "WhatsApp Business API ready", "Full social media suite", "6 months priority support", "Advanced analytics dashboard", "Blog with categories", "Premium animations", "E-commerce ready (up to 50 products)", "Multi-language support", "Custom admin panel"],
           "notIncluded": []

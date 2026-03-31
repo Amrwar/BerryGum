@@ -135,11 +135,27 @@ export default function PricingCards({ showToggle = true }: PricingCardsProps) {
                   href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(`مرحباً! أريد الاستفسار عن باقة ${plan.name}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all hover:opacity-90"
+                  className="group/btn flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   style={isPopular
-                    ? { background: "var(--gradient-brand)", color: "white" }
+                    ? { background: "var(--gradient-brand)", color: "white", boxShadow: "0 0 0 rgba(224,0,122,0)" }
                     : { background: "transparent", border: "1px solid rgba(255,255,255,0.2)", color: "white" }
                   }
+                  onMouseEnter={e => {
+                    if (!isPopular) {
+                      (e.currentTarget as HTMLAnchorElement).style.background = "var(--gradient-brand)";
+                      (e.currentTarget as HTMLAnchorElement).style.border = "1px solid transparent";
+                    } else {
+                      (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 30px rgba(224,0,122,0.4)";
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (!isPopular) {
+                      (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                      (e.currentTarget as HTMLAnchorElement).style.border = "1px solid rgba(255,255,255,0.2)";
+                    } else {
+                      (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 0 rgba(224,0,122,0)";
+                    }
+                  }}
                 >
                   {t("pricing.getStarted")} →
                 </Link>

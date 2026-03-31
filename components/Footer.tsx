@@ -15,12 +15,11 @@ export default function Footer() {
     { label: t("nav.contact"),   href: "/contact" },
   ];
 
-  const serviceNames = [
-    t("services.clinics.title"),
-    t("services.restaurants.title"),
-    t("services.ecommerce.title"),
-    t("services.startups.title"),
-    t("services.corporate.title"),
+  const serviceLinks = [
+    { label: t("services.clinics.title"),     href: "/services/clinics" },
+    { label: t("services.restaurants.title"), href: "/services/restaurants" },
+    { label: t("services.startups.title"),    href: "/services/startups" },
+    { label: t("services.systems.title"),     href: "/services/systems" },
   ];
 
   return (
@@ -94,13 +93,20 @@ export default function Footer() {
               {t("footer.services")}
             </h4>
             <ul className="space-y-3">
-              {serviceNames.map((name) => (
-                <li key={name} className="flex items-center gap-2.5 text-sm text-slate-400">
-                  <span
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ background: "linear-gradient(135deg, #9b20a0, #e0007a)" }}
-                  />
-                  {name}
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="group flex items-center gap-2 text-sm text-slate-400 hover:text-fuchsia-300 transition-colors duration-200"
+                  >
+                    <svg
+                      className="w-3 h-3 text-fuchsia-600/50 group-hover:text-fuchsia-400 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all duration-200 flex-shrink-0"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
