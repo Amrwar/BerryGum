@@ -221,19 +221,21 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <div className="mb-6 inline-flex flex-col items-center gap-3">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* centre person */}
-                  <circle cx="12" cy="8" r="3.5" />
-                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                  {/* left person */}
-                  <circle cx="4.5" cy="10" r="2.5" />
-                  <path d="M1 20c0-2.8 1.5-5 3.5-5" />
-                  {/* right person */}
-                  <circle cx="19.5" cy="10" r="2.5" />
-                  <path d="M23 20c0-2.8-1.5-5-3.5-5" />
-                </svg>
-              </div>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <defs>
+                  <linearGradient id="iconGradAbout" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e0a5e"/>
+                    <stop offset="55%" stopColor="#9b20a0"/>
+                    <stop offset="100%" stopColor="#e0007a"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="8" r="3.5" stroke="url(#iconGradAbout)" />
+                <path stroke="url(#iconGradAbout)" d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                <circle cx="4.5" cy="10" r="2.5" stroke="url(#iconGradAbout)" />
+                <path stroke="url(#iconGradAbout)" d="M1 20c0-2.8 1.5-5 3.5-5" />
+                <circle cx="19.5" cy="10" r="2.5" stroke="url(#iconGradAbout)" />
+                <path stroke="url(#iconGradAbout)" d="M23 20c0-2.8-1.5-5-3.5-5" />
+              </svg>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
                 style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}>
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gradient-brand)" }} />
@@ -311,9 +313,11 @@ export default function HomePage() {
               <ul className="space-y-2">
                 {feature.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-center gap-2 text-xs text-slate-600">
-                    <svg className="w-3.5 h-3.5 text-fuchsia-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+                    <span className="w-3.5 h-3.5 rounded-full flex-shrink-0 flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+                      <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
                     {bullet}
                   </li>
                 ))}
@@ -324,7 +328,7 @@ export default function HomePage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#f8fafc]">
+      <section className="py-16">
         <div className="container-custom">
           <div className="relative rounded-3xl overflow-hidden" style={{ background: "var(--gradient-brand)" }}>
 
@@ -338,15 +342,28 @@ export default function HomePage() {
             <svg className="absolute top-8 right-32 w-6 h-6 text-white/20 pointer-events-none" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
             <svg className="absolute bottom-10 left-28 w-4 h-4 text-white/15 pointer-events-none" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
 
-            {/* Content */}
-            <div className="relative z-10 px-8 py-16 lg:px-16 lg:py-20 max-w-4xl mx-auto text-center">
-
-              {/* Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+            {/* Left hanging lightbulb */}
+            <div className="absolute top-0 left-12 lg:left-20 flex flex-col items-center pointer-events-none z-0">
+              <div className="w-px h-10 bg-white/25" />
+              <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
+            </div>
+
+            {/* Right hanging lightbulb */}
+            <div className="absolute top-0 right-12 lg:right-20 flex flex-col items-center pointer-events-none z-0">
+              <div className="w-px h-10 bg-white/25" />
+              <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 px-8 py-16 lg:px-16 lg:py-20 max-w-4xl mx-auto text-center">
 
               {/* Heading */}
               <h2 className="heading-lg text-white mb-4">{t("cta.title")}</h2>

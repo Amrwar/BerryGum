@@ -70,56 +70,53 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Bar */}
+      {/* Top Bar — dark, contact info right-aligned */}
       <div className="hidden md:block" style={{ background: "linear-gradient(135deg, #160640 0%, #5a1280 55%, #a0005a 100%)", opacity: 0.92 }}>
         <div className="container-custom">
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-6">
-              {/* Phone */}
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-xs"
-              >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                {siteConfig.phone}
-              </a>
-              {/* Email */}
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-xs"
-              >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                {siteConfig.email}
-              </a>
-            </div>
-            <div className="flex items-center gap-4">
-              <LanguageSwitcher />
-            </div>
+          <div className="flex items-center justify-end py-2 gap-6">
+            {/* Phone */}
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-xs"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              {siteConfig.phone}
+            </a>
+            {/* Email */}
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-xs"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {siteConfig.email}
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar — light, logo-friendly */}
       <nav
         className="transition-all duration-300"
         style={{
           background: isScrolled
-            ? "linear-gradient(135deg, rgba(30,10,94,0.97) 0%, rgba(100,20,145,0.97) 55%, rgba(180,0,100,0.97) 100%)"
-            : "linear-gradient(135deg, rgba(30,10,94,0.92) 0%, rgba(100,20,145,0.9) 55%, rgba(180,0,100,0.88) 100%)",
+            ? "rgba(255,255,255,0.98)"
+            : "rgba(255,255,255,0.95)",
           backdropFilter: "blur(16px)",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
-          boxShadow: isScrolled ? "0 4px 32px rgba(30,10,94,0.4)" : "none",
+          borderBottom: isScrolled
+            ? "1px solid rgba(155,32,160,0.15)"
+            : "1px solid rgba(255,255,255,0.3)",
+          boxShadow: isScrolled ? "0 4px 24px rgba(30,10,94,0.12)" : "none",
         }}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between relative py-2">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative w-28 h-10 sm:w-44 sm:h-14">
+              <div className="relative w-32 h-12 sm:w-48 sm:h-16">
                 <Image
                   src="/logo.png"
                   alt={siteConfig.name}
@@ -135,9 +132,9 @@ export default function Navbar() {
               <Link
                 href="/"
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.7)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#e0007a")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                style={{ color: "#1e0a5e" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
               >
                 {t("nav.home")}
               </Link>
@@ -150,7 +147,9 @@ export default function Navbar() {
               >
                 <button
                   className="px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1"
-                  style={{ color: "rgba(255,255,255,0.7)" }}
+                  style={{ color: "#1e0a5e" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
                 >
                   {t("nav.services")}
                   <svg
@@ -193,9 +192,9 @@ export default function Navbar() {
               <Link
                 href="/pricing"
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.7)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#e0007a")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                style={{ color: "#1e0a5e" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
               >
                 {t("nav.pricing")}
               </Link>
@@ -203,9 +202,9 @@ export default function Navbar() {
               <Link
                 href="/portfolio"
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.7)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#e0007a")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                style={{ color: "#1e0a5e" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
               >
                 {t("nav.portfolio")}
               </Link>
@@ -213,18 +212,26 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.7)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#e0007a")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                style={{ color: "#1e0a5e" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
               >
                 {t("nav.contact")}
               </Link>
             </div>
 
-            {/* Right: CTA */}
+            {/* Right: Language Switcher + CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <Link href="/contact" className="btn btn-primary btn-sm">
+              <LanguageSwitcher />
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-300 hover:shadow-xl hover:scale-[1.03]"
+                style={{ background: "var(--gradient-brand)", boxShadow: "0 4px 16px rgba(155,32,160,0.3)" }}
+              >
                 {t("nav.getStarted")}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </Link>
             </div>
 
@@ -232,7 +239,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 rounded-lg transition-colors"
-              style={{ color: "rgba(255,255,255,0.8)" }}
+              style={{ color: "#1e0a5e" }}
               aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,16 +259,16 @@ export default function Navbar() {
             isOpen ? "max-h-[640px] opacity-100 overflow-y-auto" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pb-4 pt-2" style={{ background: "linear-gradient(135deg, rgba(30,10,94,0.98) 0%, rgba(100,20,145,0.98) 55%, rgba(180,0,100,0.98) 100%)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+          <div className="px-4 pb-4 pt-2" style={{ background: "rgba(255,255,255,0.98)", borderTop: "1px solid rgba(155,32,160,0.12)" }}>
             {/* Mobile contact info */}
-            <div className="flex flex-col gap-1 mb-3 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <div className="flex flex-col gap-1 mb-3 py-3" style={{ borderBottom: "1px solid rgba(155,32,160,0.1)" }}>
+              <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-xs" style={{ color: "rgba(30,10,94,0.5)" }}>
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 {siteConfig.phone}
               </a>
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-xs" style={{ color: "rgba(30,10,94,0.5)" }}>
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -276,7 +283,7 @@ export default function Navbar() {
               <LanguageSwitcher />
             </div>
 
-            <Link href="/" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Link href="/" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>
               {t("nav.home")}
             </Link>
 
@@ -285,7 +292,7 @@ export default function Navbar() {
               {serviceLinks.map((service) => (
                 <Link key={service.href} href={service.href} onClick={() => setIsOpen(false)}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-lg transition-colors text-sm font-medium"
-                  style={{ color: "rgba(255,255,255,0.7)" }}>
+                  style={{ color: "#1e0a5e" }}>
                   <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
                         style={{ background: service.iconBg, color: service.iconColor }}>
                     {service.icon}
@@ -295,16 +302,20 @@ export default function Navbar() {
               ))}
             </div>
 
-            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>{t("nav.pricing")}</Link>
-            <Link href="/portfolio" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>{t("nav.portfolio")}</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>{t("nav.contact")}</Link>
+            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.pricing")}</Link>
+            <Link href="/portfolio" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.portfolio")}</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.contact")}</Link>
 
             <Link
               href="/contact"
-              className="btn btn-primary w-full mt-3"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm text-white mt-3"
+              style={{ background: "var(--gradient-brand)" }}
               onClick={() => setIsOpen(false)}
             >
               {t("nav.getStarted")}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </Link>
           </div>
         </div>

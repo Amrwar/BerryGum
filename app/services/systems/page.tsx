@@ -48,7 +48,7 @@ export default function SystemsPage() {
 
             <h1 className="heading-xl text-white mb-4">
               {t("systemsPage.title")}{" "}
-              <span className="text-gradient">{t("systemsPage.titleHighlight")}</span>
+              <span className="text-gradient-gold">{t("systemsPage.titleHighlight")}</span>
             </h1>
 
             <p className="text-base text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">
@@ -161,7 +161,7 @@ export default function SystemsPage() {
       </Section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#f8fafc]">
+      <section className="py-16">
         <div className="container-custom">
           <div className="relative rounded-3xl overflow-hidden" style={{ background: "var(--gradient-brand)" }}>
             <div className="absolute inset-0 bg-grid opacity-10" />

@@ -64,7 +64,7 @@ export default function ClinicsPage() {
 
             <h1 className="heading-xl text-white mb-4">
               {t("clinicsPage.title")}{" "}
-              <span className="text-gradient">
+              <span className="text-gradient-gold">
                 {t("clinicsPage.titleHighlight")}
               </span>
             </h1>
@@ -95,18 +95,23 @@ export default function ClinicsPage() {
 
       {/* Problem/Solution Section */}
       <Section>
-        <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              <path d="M9 10a3 3 0 116 0c0 2-3 3-3 5" />
-              <path d="M12 18h.01" />
-            </svg>
-          </div>
-        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Why text */}
           <div>
+            <div className="mb-6">
+              <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                <defs>
+                  <linearGradient id="iconGradWhy" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e0a5e"/>
+                    <stop offset="55%" stopColor="#9b20a0"/>
+                    <stop offset="100%" stopColor="#e0007a"/>
+                  </linearGradient>
+                </defs>
+                <path stroke="url(#iconGradWhy)" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path stroke="url(#iconGradWhy)" d="M9 10a3 3 0 116 0c0 2-3 3-3 5" />
+                <path stroke="url(#iconGradWhy)" d="M12 18h.01" />
+              </svg>
+            </div>
             <SectionHeader
               badge={t("clinicsPage.whyBadge")}
               title={t("clinicsPage.whyTitle")}
@@ -184,11 +189,16 @@ export default function ClinicsPage() {
       {/* Features Section */}
       <Section variant="alt">
         <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-            </svg>
-          </div>
+          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <defs>
+              <linearGradient id="iconGradFeatures" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1e0a5e"/>
+                <stop offset="55%" stopColor="#9b20a0"/>
+                <stop offset="100%" stopColor="#e0007a"/>
+              </linearGradient>
+            </defs>
+            <path stroke="url(#iconGradFeatures)" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+          </svg>
         </div>
         <SectionHeader
           badge={t("clinicsPage.featuresBadge")}
@@ -211,15 +221,20 @@ export default function ClinicsPage() {
 
       {/* What's Included */}
       <Section>
-        <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-            </svg>
-          </div>
-        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
+            <div className="mb-6">
+              <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                <defs>
+                  <linearGradient id="iconGradIncluded" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e0a5e"/>
+                    <stop offset="55%" stopColor="#9b20a0"/>
+                    <stop offset="100%" stopColor="#e0007a"/>
+                  </linearGradient>
+                </defs>
+                <path stroke="url(#iconGradIncluded)" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
             <SectionHeader
               badge={t("clinicsPage.includedBadge")}
               title={t("clinicsPage.includedTitle")}
@@ -229,9 +244,11 @@ export default function ClinicsPage() {
             <div className="grid sm:grid-cols-2 gap-3 mt-8">
               {includedItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-teal-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <span className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </span>
                   <span className="text-slate-700">{item}</span>
                 </div>
               ))}
@@ -270,11 +287,16 @@ export default function ClinicsPage() {
       {/* Portfolio Preview */}
       <Section variant="alt">
         <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
+          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <defs>
+              <linearGradient id="iconGradWork" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1e0a5e"/>
+                <stop offset="55%" stopColor="#9b20a0"/>
+                <stop offset="100%" stopColor="#e0007a"/>
+              </linearGradient>
+            </defs>
+            <path stroke="url(#iconGradWork)" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
         </div>
         <SectionHeader
           badge={t("clinicsPage.portfolioBadge")}

@@ -48,7 +48,7 @@ export default function RestaurantsPage() {
                 <span className="text-sm font-medium text-white">{t("restaurantsPage.badge")}</span>
               </div>
               <h1 className="heading-xl text-white mb-4">
-                {t("restaurantsPage.title")} <span className="text-gradient">{t("restaurantsPage.titleHighlight")}</span>
+                {t("restaurantsPage.title")} <span className="text-gradient-gold">{t("restaurantsPage.titleHighlight")}</span>
               </h1>
               <p className="text-white/70 text-base mb-6 leading-relaxed">
                 {t("restaurantsPage.subtitle")}

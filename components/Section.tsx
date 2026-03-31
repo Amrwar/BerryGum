@@ -61,16 +61,16 @@ export default function Section({
   id,
 }: SectionProps) {
   const variantClass = {
-    default: "bg-white",
+    default: "bg-transparent",
     dark: "section-dark",
-    alt: "bg-[#f8fafc]",
-    glass: "bg-[#f8fafc]",
+    alt: "bg-[#faf8ff]",
+    glass: "bg-[#faf8ff]",
   }[variant];
 
   // All non-dark sections use overflow-visible so BrandDivider can straddle the boundary.
   const overflowClass = variant === "dark" ? "overflow-hidden" : "overflow-visible";
 
-  const bgColor = variant === "alt" || variant === "glass" ? "#f8fafc" : "white";
+  const bgColor = variant === "alt" || variant === "glass" ? "#faf8ff" : "white";
 
   return (
     <section

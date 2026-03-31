@@ -21,7 +21,7 @@ export default function PricingPage() {
             </div>
             <h1 className="heading-xl text-white mb-4">
               {t("pricing.heroTitle")}{" "}
-              <span className="text-gradient">{t("pricing.heroTitleGradient")}</span>
+              <span className="text-gradient-gold">{t("pricing.heroTitleGradient")}</span>
             </h1>
             <p className="text-base text-white/70 leading-relaxed">
               {t("pricing.subtitle")}
