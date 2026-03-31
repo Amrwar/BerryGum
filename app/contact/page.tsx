@@ -108,7 +108,8 @@ export default function ContactPage() {
               </span>
             </div>
             <h1 className="heading-xl text-white mb-4">
-              {t("contact.heroTitle")}
+              {t("contact.heroTitle")}{" "}
+              <span className="text-gradient-gold">{t("contact.heroTitleHighlight")}</span>
             </h1>
             <p className="text-base text-white/70 leading-relaxed">
               {t("contact.heroSubtitle")}

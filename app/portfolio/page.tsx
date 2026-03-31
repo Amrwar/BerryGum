@@ -30,7 +30,8 @@ export default function PortfolioPage() {
               </span>
             </div>
             <h1 className="heading-xl text-white mb-4">
-              {t("portfolioPage.title")}
+              {t("portfolioPage.title")}{" "}
+              <span className="text-gradient-gold">{t("portfolioPage.titleHighlight")}</span>
             </h1>
             <p className="text-base text-white/70 leading-relaxed">
               {t("portfolioPage.subtitle")}

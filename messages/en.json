@@ -292,7 +292,8 @@
     "title": "Let us Start a Conversation",
     "subtitle": "Have a project in mind? We would love to hear about it.",
     "heroSubtitle": "Ready to transform your online presence? Fill out the form below or reach out directly. We respond within 24 hours.",
-    "heroTitle": "Let's Start Your Project",
+    "heroTitle": "Let's Start",
+    "heroTitleHighlight": "Your Project",
     "form": {
       "name": "Your Name",
       "fullName": "Full Name",
@@ -343,7 +344,8 @@
   },
   "portfolioPage": {
     "badge": "Our Work",
-    "title": "Projects We're Proud Of",
+    "title": "Projects We're",
+    "titleHighlight": "Proud Of",
     "subtitle": "Explore our portfolio of successful projects across various industries. Each website is crafted with care and designed to deliver results.",
     "testimonials": {
       "badge": "Testimonials",
