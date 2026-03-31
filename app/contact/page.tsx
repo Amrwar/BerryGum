@@ -123,14 +123,21 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="heading-md mb-6" style={{ color: "#1e0a5e" }}>
+              <div className="relative rounded-2xl overflow-hidden p-6 sm:p-8"
+                   style={{ background: "white", border: "1px solid rgba(155,32,160,0.15)", boxShadow: "0 2px 20px rgba(30,10,94,0.07)" }}>
+                {/* Top brand border */}
+                <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "var(--gradient-brand)" }} />
+                {/* Bottom brand border */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: "var(--gradient-brand)" }} />
+
+              <h2 className="heading-md mb-3" style={{ color: "#1e0a5e" }}>
                 {t("contact.info.title")}
               </h2>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-6 leading-relaxed text-sm">
                 {t("contact.info.subtitle")}
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* WhatsApp */}
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.contact)}`}
@@ -144,7 +151,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{t("contact.info.whatsappFastest")}</div>
+                    <div className="font-semibold text-sm" style={{ color: "#1e0a5e" }}>{t("contact.info.whatsappFastest")}</div>
                     <div className="text-slate-600" dir="ltr">{siteConfig.whatsapp}</div>
                     <div className="text-sm text-green-600 mt-1">{t("contact.info.whatsappReply")}</div>
                   </div>
@@ -161,7 +168,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{t("contact.info.email")}</div>
+                    <div className="font-semibold text-sm" style={{ color: "#1e0a5e" }}>{t("contact.info.email")}</div>
                     <div className="text-slate-600">{siteConfig.email}</div>
                     <div className="text-sm text-slate-500 mt-1">{t("contact.info.emailReply")}</div>
                   </div>
@@ -178,7 +185,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{t("contact.info.phone")}</div>
+                    <div className="font-semibold text-sm" style={{ color: "#1e0a5e" }}>{t("contact.info.phone")}</div>
                     <div className="text-slate-600" dir="ltr">{siteConfig.phone}</div>
                     <div className="text-sm text-slate-500 mt-1">{siteConfig.hours.weekdays}</div>
                   </div>
@@ -193,34 +200,40 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{t("contact.info.office")}</div>
+                    <div className="font-semibold text-sm" style={{ color: "#1e0a5e" }}>{t("contact.info.office")}</div>
                     <div className="text-slate-600">{siteConfig.address}</div>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="mt-10">
-                <h3 className="font-semibold mb-4" style={{ color: "#1e0a5e" }}>{t("contact.info.followUs")}</h3>
+              <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(155,32,160,0.12)" }}>
+                <h3 className="font-semibold mb-3 text-sm" style={{ color: "#1e0a5e" }}>{t("contact.info.followUs")}</h3>
                 <div className="flex gap-3">
                   <a
                     href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-slate-100 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-colors group"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+                    style={{ background: "rgba(155,32,160,0.08)", border: "1px solid rgba(155,32,160,0.2)" }}
                     aria-label="Instagram"
                   >
-                    <svg className="w-5 h-5 text-slate-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-fuchsia-600" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                     </svg>
                   </a>
                 </div>
               </div>
+              </div>{/* end card */}
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="card p-4 sm:p-8 lg:p-10">
+              <div className="card p-4 sm:p-8 lg:p-10 relative overflow-hidden">
+                {/* Top brand border */}
+                <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "var(--gradient-brand)" }} />
+                {/* Bottom brand border */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: "var(--gradient-brand)" }} />
                 <h2 className="heading-md mb-6" style={{ color: "#1e0a5e" }}>{t("contact.form.sendUs")}</h2>
 
                 {status.type === "success" ? (
