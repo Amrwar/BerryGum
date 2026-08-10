@@ -1,41 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { validateContactForm, type ContactFormValues } from "@/lib/validation/contactSchema";
 
 // Contact form submission handler
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone?: string;
-  company?: string;
-  budget?: string;
-  message: string;
-}
-
-// Email validation regex
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Validation function
-function validateFormData(data: ContactFormData): { valid: boolean; errors: string[] } {
-  const errors: string[] = [];
-
-  if (!data.name || data.name.trim().length < 2) {
-    errors.push("Name must be at least 2 characters long");
-  }
-
-  if (!data.email || !emailRegex.test(data.email)) {
-    errors.push("Please provide a valid email address");
-  }
-
-  if (!data.message || data.message.trim().length < 10) {
-    errors.push("Message must be at least 10 characters long");
-  }
-
-  // Phone is optional — any format accepted (Egyptian or international)
-
-  return {
-    valid: errors.length === 0,
-    errors,
-  };
-}
+type ContactFormData = ContactFormValues;
 
 // Send email using Resend API
 async function sendEmailWithResend(data: ContactFormData): Promise<{ success: boolean; error?: string }> {
@@ -170,24 +137,16 @@ export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
-    
-    const formData: ContactFormData = {
-      name: body.name?.trim() || "",
-      email: body.email?.trim().toLowerCase() || "",
-      phone: body.phone?.trim() || undefined,
-      company: body.company?.trim() || undefined,
-      budget: body.budget?.trim() || undefined,
-      message: body.message?.trim() || "",
-    };
 
-    // Validate form data
-    const validation = validateFormData(formData);
-    if (!validation.valid) {
+    // Validate against the same schema the contact form uses client-side
+    const validation = validateContactForm(body);
+    if (!validation.success) {
       return NextResponse.json(
         { success: false, error: validation.errors.join(", ") },
         { status: 400 }
       );
     }
+    const formData: ContactFormData = validation.data;
 
     // Check if Resend API key is configured
     const hasResendKey = !!process.env.RESEND_API_KEY;

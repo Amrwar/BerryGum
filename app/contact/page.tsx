@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import HeroBg from "@/components/HeroBg";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
+import { validateContactForm, type ContactFieldErrors } from "@/lib/validation/contactSchema";
 
 interface FormData {
   name: string;
@@ -39,8 +40,25 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [fieldErrors, setFieldErrors] = useState<ContactFieldErrors>({});
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    // Validate client-side first, against the exact same rules the API
+    // enforces, so the user sees field-level feedback instantly instead of
+    // waiting on a round trip for something a regex could have caught here.
+    const validation = validateContactForm(formData);
+    if (!validation.success) {
+      // Field-level messages below each input already explain what's wrong;
+      // repeating the same text in the generic status banner would be
+      // redundant, so that banner is reserved for server/network failures.
+      setFieldErrors(validation.fieldErrors);
+      setStatus({ type: "idle", message: "" });
+      return;
+    }
+    setFieldErrors({});
+
     setStatus({ type: "loading", message: t("contact.status.sending") });
 
     try {
@@ -84,10 +102,19 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    // Clear that field's error as soon as the user starts correcting it,
+    // rather than leaving a stale error visible until the next submit.
+    setFieldErrors((prev) => {
+      if (!(name in prev)) return prev;
+      const next = { ...prev };
+      delete next[name as keyof ContactFieldErrors];
+      return next;
+    });
   };
 
   const budgetOptions = messages.contact.form.budgetOptions;
@@ -259,7 +286,7 @@ export default function ContactPage() {
                     </Link>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} noValidate className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
@@ -274,7 +301,14 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="input"
                           placeholder={t("contact.form.namePlaceholder")}
+                          aria-invalid={!!fieldErrors.name}
+                          aria-describedby={fieldErrors.name ? "name-error" : undefined}
                         />
+                        {fieldErrors.name && (
+                          <p id="name-error" className="mt-1.5 text-sm text-red-600">
+                            {fieldErrors.name}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
@@ -289,7 +323,14 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="input"
                           placeholder={t("contact.form.emailPlaceholder")}
+                          aria-invalid={!!fieldErrors.email}
+                          aria-describedby={fieldErrors.email ? "email-error" : undefined}
                         />
+                        {fieldErrors.email && (
+                          <p id="email-error" className="mt-1.5 text-sm text-red-600">
+                            {fieldErrors.email}
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -355,7 +396,14 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="input resize-none"
                         placeholder={t("contact.form.messagePlaceholder")}
+                        aria-invalid={!!fieldErrors.message}
+                        aria-describedby={fieldErrors.message ? "message-error" : undefined}
                       />
+                      {fieldErrors.message && (
+                        <p id="message-error" className="mt-1.5 text-sm text-red-600">
+                          {fieldErrors.message}
+                        </p>
+                      )}
                     </div>
 
                     {status.type === "error" && (
