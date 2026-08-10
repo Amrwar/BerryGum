@@ -1,13 +1,20 @@
 ﻿"use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
+  function handleClick() {
+    const next = locale === "en" ? "ar" : "en";
+    trackEvent({ name: "language_switched", from: locale, to: next });
+    setLocale(next);
+  }
+
   return (
     <button
-      onClick={() => setLocale(locale === "en" ? "ar" : "en")}
+      onClick={handleClick}
       className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition-colors"
       aria-label="Switch language"
     >
