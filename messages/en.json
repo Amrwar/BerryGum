@@ -4,6 +4,7 @@
     "services": "Services",
     "pricing": "Pricing",
     "estimate": "Get an Estimate",
+    "consultation": "Book a Call",
     "portfolio": "Portfolio",
     "contact": "Contact",
     "getStarted": "Get Started"
@@ -696,5 +697,37 @@
     "sendEstimate": "Send This Estimate on WhatsApp",
     "getPreciseQuote": "Want an exact quote instead?",
     "contactUs": "Talk to us directly"
+  },
+  "consultation": {
+    "badge": "Book a Free Consultation",
+    "title": "Let's Talk About",
+    "titleHighlight": "Your Project",
+    "subtitle": "Pick a day and time that works for you and we'll call to walk through what you need — no pressure, no obligation.",
+    "dateLabel": "Choose a day",
+    "timeLabel": "Choose a time",
+    "loadingSlots": "Loading available times...",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "phoneLabel": "Phone (optional)",
+      "phonePlaceholder": "+20 1xx xxx xxxx",
+      "topicLabel": "What would you like to discuss?",
+      "topicPlaceholder": "Tell us a bit about your project or question...",
+      "submit": "Request This Slot",
+      "sending": "Sending..."
+    },
+    "status": {
+      "sending": "Sending your request...",
+      "success": "Your consultation request has been sent! We'll confirm your slot by email or WhatsApp shortly.",
+      "errorGeneric": "Something went wrong. Please try again or reach us on WhatsApp.",
+      "errorNetwork": "Network error. Please check your connection and try again."
+    },
+    "summaryTitle": "Your Selected Slot",
+    "summaryNote": "This slot is held tentatively until we confirm — for the fastest response, send it to us on WhatsApp too.",
+    "whatsappCta": "Send via WhatsApp Instead",
+    "needSooner": "Need something sooner?",
+    "messageNow": "Message us on WhatsApp now"
   }
 }

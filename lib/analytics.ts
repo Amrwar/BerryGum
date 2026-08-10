@@ -10,12 +10,14 @@
  */
 
 export type AnalyticsEvent =
-  | { name: "whatsapp_click"; source: "hero" | "navbar" | "footer" | "contact_page" | "service_page" | "cta" }
+  | { name: "whatsapp_click"; source: "hero" | "navbar" | "footer" | "contact_page" | "service_page" | "cta" | "consultation_page" }
   | { name: "contact_form_submit"; hasBudget: boolean; hasCompany: boolean }
   | { name: "contact_form_error"; reason: "validation" | "network" | "server" }
   | { name: "pricing_estimate_requested"; serviceType: string; estimatedTotal: number }
   | { name: "language_switched"; from: "en" | "ar"; to: "en" | "ar" }
-  | { name: "portfolio_item_viewed"; itemName: string };
+  | { name: "portfolio_item_viewed"; itemName: string }
+  | { name: "consultation_requested"; dateKey: string; time: string }
+  | { name: "consultation_error"; reason: "validation" | "network" | "server" };
 
 type Dispatcher = (event: AnalyticsEvent) => void;
 
