@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ContactPage from "./page";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { captureAnalyticsEvents } from "@/lib/analytics";
 
 function renderContactPage() {
   return render(
@@ -117,6 +118,60 @@ describe("ContactPage client-side validation", () => {
       "/api/contact",
       expect.objectContaining({ method: "POST" })
     );
+  });
+
+  it("Trap: tracks a contact_form_submit analytics event only after a successful submission, not on every click", async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true, message: "Thank you!" }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const { events, restore } = captureAnalyticsEvents();
+
+    renderContactPage();
+    fillField(/full name/i, "Karim Hassan");
+    fillField(/email address/i, "karim@example.com");
+    fillField(/tell us about your project/i, "I would like a quote for a new website.");
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+
+    await waitFor(() => {
+      expect(events).toEqual(
+        expect.arrayContaining([
+          { name: "contact_form_submit", hasBudget: false, hasCompany: false },
+        ])
+      );
+    });
+    restore();
+  });
+
+  it("tracks a validation-reason contact_form_error event when the client-side check blocks submission", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const { events, restore } = captureAnalyticsEvents();
+
+    renderContactPage();
+    fillField(/full name/i, "K");
+    fillField(/email address/i, "karim@example.com");
+    fillField(/tell us about your project/i, "I would like a quote for a new website.");
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+
+    await waitFor(() => {
+      expect(events).toContainEqual({ name: "contact_form_error", reason: "validation" });
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+    restore();
+  });
+
+  it("tracks a whatsapp_click event from the contact-info WhatsApp link", () => {
+    const { events, restore } = captureAnalyticsEvents();
+    const { container } = renderContactPage();
+
+    const whatsappLink = container.querySelector('a[href^="https://wa.me/"]');
+    expect(whatsappLink).not.toBeNull();
+    fireEvent.click(whatsappLink as Element);
+
+    expect(events).toContainEqual({ name: "whatsapp_click", source: "contact_page" });
+    restore();
   });
 
   it("marks invalid fields with aria-invalid for assistive technology", async () => {

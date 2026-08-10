@@ -8,6 +8,7 @@ import HeroBg from "@/components/HeroBg";
 import { siteConfig } from "@/lib/config";
 import { useLanguage } from "@/lib/LanguageContext";
 import { validateContactForm, type ContactFieldErrors } from "@/lib/validation/contactSchema";
+import { trackEvent } from "@/lib/analytics";
 
 interface FormData {
   name: string;
@@ -53,6 +54,7 @@ export default function ContactPage() {
       // Field-level messages below each input already explain what's wrong;
       // repeating the same text in the generic status banner would be
       // redundant, so that banner is reserved for server/network failures.
+      trackEvent({ name: "contact_form_error", reason: "validation" });
       setFieldErrors(validation.fieldErrors);
       setStatus({ type: "idle", message: "" });
       return;
@@ -73,6 +75,11 @@ export default function ContactPage() {
       const data = await response.json();
 
       if (response.ok) {
+        trackEvent({
+          name: "contact_form_submit",
+          hasBudget: formData.budget.trim().length > 0,
+          hasCompany: formData.company.trim().length > 0,
+        });
         setStatus({
           type: "success",
           message: t("contact.status.success"),
@@ -86,12 +93,14 @@ export default function ContactPage() {
           message: "",
         });
       } else {
+        trackEvent({ name: "contact_form_error", reason: "server" });
         setStatus({
           type: "error",
           message: data.error || t("contact.status.errorGeneric"),
         });
       }
     } catch {
+      trackEvent({ name: "contact_form_error", reason: "network" });
       setStatus({
         type: "error",
         message: t("contact.status.errorNetwork"),
@@ -171,6 +180,7 @@ export default function ContactPage() {
                   href={`https://wa.me/${siteConfig.whatsapp.replace("+", "")}?text=${encodeURIComponent(siteConfig.whatsappMessages.contact)}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent({ name: "whatsapp_click", source: "contact_page" })}
                   className="flex items-start gap-4 p-4 rounded-xl bg-green-50 hover:bg-green-100 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
