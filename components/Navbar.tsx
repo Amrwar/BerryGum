@@ -212,6 +212,16 @@ export default function Navbar() {
               </Link>
 
               <Link
+                href="/estimate"
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                style={{ color: "#1e0a5e" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#9b20a0")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#1e0a5e")}
+              >
+                {t("nav.estimate")}
+              </Link>
+
+              <Link
                 href="/portfolio"
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                 style={{ color: "#1e0a5e" }}
@@ -315,6 +325,7 @@ export default function Navbar() {
             </div>
 
             <Link href="/pricing" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.pricing")}</Link>
+            <Link href="/estimate" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.estimate")}</Link>
             <Link href="/portfolio" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.portfolio")}</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2.5 px-3 rounded-lg transition-colors text-sm font-medium" style={{ color: "#1e0a5e" }}>{t("nav.contact")}</Link>
 

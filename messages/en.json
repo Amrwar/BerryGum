@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
+    "estimate": "Get an Estimate",
     "portfolio": "Portfolio",
     "contact": "Contact",
     "getStarted": "Get Started"
@@ -658,5 +659,42 @@
     },
     "ctaTitle": "Ready to Digitize Your Operations?",
     "ctaSubtitle": "Stop managing your business on paper or WhatsApp. Let's build a system that works for you."
+  },
+  "estimate": {
+    "badge": "Instant Quote Tool",
+    "title": "Get a Rough",
+    "titleHighlight": "Price Estimate",
+    "subtitle": "Answer a few questions and see an instant price range. This is a starting point, not a final quote — we'll refine it together once we understand your project.",
+    "serviceTypeLabel": "What kind of business is this for?",
+    "serviceTypes": {
+      "clinic": "Clinic or Medical Practice",
+      "restaurant": "Restaurant or Café",
+      "startup": "Startup or E-commerce",
+      "systems": "Internal Business System",
+      "other": "Something Else"
+    },
+    "pageCountLabel": "How many pages do you need?",
+    "pageCountHint": "The first {count} pages are included in the base price",
+    "addOnsLabel": "Anything else you need?",
+    "addOns": {
+      "bilingual": "Bilingual content (English + Arabic)",
+      "booking": "Online booking or appointment system",
+      "ecommerce": "E-commerce / online store",
+      "seo": "SEO optimization package",
+      "customIllustration": "Custom illustrations or brand artwork",
+      "monthlyMaintenance": "Monthly maintenance & updates"
+    },
+    "rushLabel": "I need this delivered faster than usual",
+    "rushHint": "Rush delivery adds a surcharge for prioritized scheduling",
+    "resultTitle": "Your Estimated Range",
+    "resultNote": "This estimate updates instantly as you change your answers. Send it to us on WhatsApp and we'll follow up with real numbers.",
+    "breakdownTitle": "Estimate Breakdown",
+    "breakdownBase": "Base package",
+    "breakdownExtraPages": "Extra pages ({count})",
+    "breakdownRush": "Rush delivery surcharge",
+    "breakdownSubtotal": "Subtotal",
+    "sendEstimate": "Send This Estimate on WhatsApp",
+    "getPreciseQuote": "Want an exact quote instead?",
+    "contactUs": "Talk to us directly"
   }
 }
